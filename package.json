@@ -1,0 +1,29 @@
+{
+  "name": "woodywoodsta.github.io",
+  "version": "0.1.0",
+  "description": "My portfolio, in React.",
+  "main": "index.html",
+  "repository": "WoodyWoodsta/woodywoodsta.github.io",
+  "author": "Sean Wood <woodywoodsta@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "aphrodite": "^1.1.0",
+    "babel-preset-env": "^1.1.8",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-loader": "^6.2.10",
+    "babel-preset-react": "^6.22.0",
+    "copy-webpack-plugin": "^4.0.1",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
+  },
+  "scripts": {
+    "build": "webpack",
+    "serve": "webpack-dev-server --progress --colors --output-public-path=/build/"
+  }
+}
