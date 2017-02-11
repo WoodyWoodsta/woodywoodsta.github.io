@@ -1,8 +1,14 @@
 /* index.es6 */
 import React from 'react';
 import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { PortfolioContainer } from './containers/portfolio';
+import { store } from './store/store';
 
+// TODO: Render on action
 render(
-  <div style={{ height: 100, width: 100, background: 'green' }}></div>,
+  <Provider store={store}>
+    <PortfolioContainer />
+  </Provider>,
   document.getElementById('mount')
 );
