@@ -1,23 +1,8 @@
-:root {
-  --red: rgb(62.4%, 0%, 0%);
-}
+/* portfolio.css */
 
-.div {
+.shell-container {
   height: 100vh;
 
   transition-property: color;
   transition: 0.2s ease-in-out;
-}
-
-.div:global(.dark) {
-  background: rgb(15.9%, 15.9%, 15.9%);
-}
-.div:global(.light) {
-  background: rgb(87%, 87%, 87%);
-}
-.div:global(.red) {
-  background: var(--red);
-}
-.div:global(.blue) {
-  background: rgb(0%, 51%, 75.3%);
 }

@@ -19,12 +19,12 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        exclude: '/node_modules/',
+        exclude: ['/node_modules/', '/bower_components/'],
         loaders: ['style-loader', 'css-loader?importLoader=1&modules&localIdentName=[path]___[name]__[local]___[hash:base64:5]'],
       },
       {
         test: /\.(js|es6)$/,
-        exclude: '/node_modules/',
+        exclude: ['/node_modules/', '/bower_components/'],
         loader: 'babel-loader',
         options: {
           plugins: [

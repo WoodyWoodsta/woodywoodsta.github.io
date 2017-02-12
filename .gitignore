@@ -52,3 +52,9 @@ jspm_packages
 
 # dotenv environment variables file
 .env
+
+### Bower ###
+# bower_components
+.bower-cache
+.bower-registry
+.bower-tmp
