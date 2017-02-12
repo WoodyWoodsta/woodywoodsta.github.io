@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 
 import './utils/bootstrap';
 
-import { PortfolioContainer } from './containers/portfolio/portfolio';
+import { PortfolioContainer } from './containers/portfolio';
 import { store } from './store/store';
 import './utils/ext-themer';
 

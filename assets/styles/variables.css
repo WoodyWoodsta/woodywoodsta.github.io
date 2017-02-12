@@ -163,3 +163,88 @@ html {
 
   --page-max-width: 800px;
 }
+
+html {
+    /* Font Mixins */
+  --font-display4: {
+    font-size: var(--font-size-display4);
+    font-weight: var(--font-weight-light);
+    color: var(--dark-medium-alpha);
+  };
+  --font-display3: {
+    font-size: var(--font-size-display3);
+    font-weight: var(--font-weight-regular);
+    color: var(--dark-medium-alpha);
+  };
+  --font-display2: {
+    font-size: var(--font-size-display2);
+    font-weight: var(--font-weight-regular);
+    color: var(--dark-medium-alpha);
+  };
+  --font-display1: {
+    font-size: var(--font-size-display1);
+    font-weight: var(--font-weight-regular);
+    color: var(--dark-medium-alpha);
+  };
+  --font-headline: {
+    font-size: var(--font-size-headline);
+    font-weight: var(--font-weight-regular);
+    color: var(--dark-strong-alpha);
+  };
+  --font-title: {
+    font-size: var(--font-size-title);
+    font-weight: var(--font-weight-medium);
+    color: var(--dark-strong-alpha);
+  };
+  --font-heading: {
+    font-size: var(--font-size-heading);
+    font-weight: var(--font-weight-regular);
+    color: var(--dark-strong-alpha);
+  };
+  --font-subheading: {
+    font-size: var(--font-size-subheading);
+    font-weight: var(--font-weight-regular);
+    color: var(--dark-strong-alpha);
+  };
+  --font-body2: {
+    font-size: var(--font-size-body2);
+    font-weight: var(--font-weight-medium);
+    color: var(--dark-strong-alpha);
+  };
+  --font-body1: {
+    font-size: var(--font-size-body1);
+    font-weight: var(--font-weight-regular);
+    color: var(--dark-strong-alpha);
+  };
+  --font-body: {
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-regular);
+    color: var(--dark-strong-alpha);
+  };
+  --font-caption: {
+    font-size: var(--font-size-caption);
+    font-weight: var(--font-weight-regular);
+    color: var(--dark-medium-alpha);
+  };
+  --font-mini-heading: {
+    font-size: var(--font-size-mini-heading);
+    font-weight: var(--font-weight-semi-bold);
+    color: var(--dark-medium-alpha);
+  };
+  --font-note: {
+    font-size: var(--font-size-note);
+    font-weight: var(--font-weight-medium);
+    color: var(--dark-strong-alpha);
+  };
+  --font-button: {
+    font-size: var(--font-size-button);
+    font-weight: var(--font-weight-medium);
+    color: var(--dark-strong-alpha);
+    text-transform: uppercase;
+  };
+  --font-mono: {
+    @apply --font-body;
+
+    font-family: var(--app-font-family-mono);
+  }
+}

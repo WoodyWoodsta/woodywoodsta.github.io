@@ -1,0 +1,8 @@
+/* title.css */
+.wrapper > span {
+  @apply --font-display3;
+
+  text-align: center;
+}
+
+
