@@ -1,5 +1,7 @@
 /* header.css */
 
 .wrapper {
-
+  padding: var(--padding-thick);
+  border-radius: 5px;
+  background: var(--dark-weak-alpha);
 }

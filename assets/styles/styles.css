@@ -33,18 +33,22 @@ body[unresolved] {
 
 body.dark {
   background: var(--dark-strong-alpha);
+  color: var(--light-medium-alpha);
 }
 
 body.light {
   background: var(--app-background);
+  color: var(--dark-medium-alpha);
 }
 
 body.red {
   background: var(--red-theme-dark-color);
+  color: var(--light-strong-alpha);
 }
 
 body.blue {
-  background: var(--primary-color-dark);
+  background: var(--indigo-theme-primary-color);
+  color: var(--light-medium-alpha);
 }
 
 #mount {

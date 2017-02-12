@@ -15,7 +15,7 @@ export class Portfolio extends Component {
   // === Template ===
   template() {
     return (
-      <div className={`layout vertical center ${this._computeShellContainerClass()}`} styleName="shell-container">
+      <div className={`layout vertical center ${this._computeShellContainerClass()}`} styleName="wrapper">
         <HeaderContainer />
         <ContentContainer />
       </div>

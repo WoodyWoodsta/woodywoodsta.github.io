@@ -43,6 +43,10 @@ html {
   --blue-gray-theme-primary-color:      #607D8B;
   --blue-gray-theme-light-color:        #ECEFF1;
 
+  --blue-theme-color:                   #1976D2;
+  --blue-theme-color-dark:              #0D47A1;
+  --blue-theme-color-light:             #BBDEFB;
+
   --gray-theme-dark-color:              #424242;
   --gray-theme-primary-color:           #9E9E9E;
   --gray-theme-light-color:             #FAFAFA;
@@ -157,14 +161,14 @@ html {
   /* === App Variables === */
   --app-font-size: var(--font-size-body);
   --app-font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --app-font-family-mono: 'Roboto Mono', monospace;
+  --app-font-family-mono: 'PT Mono', monospace;
   --app-color: var(--primary-text-color);
   --app-background: var(--app-primary-background-color);
 
   --page-max-width: 800px;
 }
 
-html {
+body {
     /* Font Mixins */
   --font-display4: {
     font-size: var(--font-size-display4);

@@ -1,3 +1,22 @@
 /* menu.css */
 
-.wrapper {}
+.wrapper {
+}
+
+.menu-button {
+  padding: 0 var(--padding-thin);
+}
+
+.menu-button:global(.dark) {
+  --menu-button-background-color: var(--light-strong-alpha);
+  --menu-button-hover-color: var(--dark-strong-alpha);
+}
+.menu-button:global(.red) {
+  --menu-button-background-color: var(--red-theme-dark-color);
+}
+.menu-button:global(.blue) {
+  --menu-button-background-color: var(--indigo-theme-primary-color);
+}
+.menu-button:global(.light) {
+  --menu-button-background-color: var(--dark-strong-alpha);
+}
