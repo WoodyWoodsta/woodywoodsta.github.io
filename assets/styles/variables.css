@@ -160,4 +160,6 @@ html {
   --app-font-family-mono: 'Roboto Mono', monospace;
   --app-color: var(--primary-text-color);
   --app-background: var(--app-primary-background-color);
+
+  --page-max-width: 800px;
 }
