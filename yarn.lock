@@ -2553,6 +2553,10 @@ object-keys@^1.0.8:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-1.0.11.tgz#c54601778ad560f1142ce0e01bcca8b56d13426d"
 
+object-path@^0.11.3:
+  version "0.11.3"
+  resolved "https://registry.yarnpkg.com/object-path/-/object-path-0.11.3.tgz#3e21a42ad07234d815429ae9e15c1c5f38050554"
+
 object.omit@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/object.omit/-/object.omit-2.0.1.tgz#1a9c744829f39dbb858c76ca3579ae2a54ebd1fa"
@@ -3184,6 +3188,12 @@ reduce-function-call@^1.0.1:
   resolved "https://registry.yarnpkg.com/reduce-function-call/-/reduce-function-call-1.0.2.tgz#5a200bf92e0e37751752fe45b0ab330fd4b6be99"
   dependencies:
     balanced-match "^0.4.2"
+
+redux-subscriber@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/redux-subscriber/-/redux-subscriber-1.1.0.tgz#3cac28a674cec07b6e9e015ca7aabbbdac155543"
+  dependencies:
+    object-path "^0.11.3"
 
 redux@^3.6.0:
   version "3.6.0"

@@ -28,7 +28,7 @@ class Portfolio extends Component {
 
   // === Private ===
   _computeShellContainerClass() {
-    return this.props.config.theme.toLowerCase;
+    return this.props.config.theme.toLowerCase();
   }
 }
 
