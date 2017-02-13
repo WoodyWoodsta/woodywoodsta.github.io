@@ -21,18 +21,18 @@ export class Menu extends Component {
   template() {
     return (
       <div className="layout horizontal center center-justified" styleName="wrapper">
-        <div styleName="menu-button" className="dark" onClick={this._onMenuButtonClick.bind(this, PAGES.ME)}>
-          <MenuButton selected={this.state.selected.me}>Me</MenuButton>
-        </div>
-        <div styleName="menu-button" className="red" onClick={this._onMenuButtonClick.bind(this, PAGES.PROJECTS)}>
-          <MenuButton selected={this.state.selected.projects}>Projects</MenuButton>
-        </div>
-        <div styleName="menu-button" className="blue" onClick={this._onMenuButtonClick.bind(this, PAGES.DESIGN)}>
-          <MenuButton selected={this.state.selected.design}>Design</MenuButton>
-        </div>
-        <div styleName="menu-button" className="light" onClick={this._onMenuButtonClick.bind(this, PAGES.CV)}>
-          <MenuButton selected={this.state.selected.cv}>CV</MenuButton>
-        </div>
+        <MenuButton styleName="menu-button" className="dark"
+          selected={this.state.selected.me}
+          onClick={this._onMenuButtonClick.bind(this, PAGES.ME)}>Me</MenuButton>
+        <MenuButton styleName="menu-button" className="red"
+          selected={this.state.selected.projects}
+          onClick={this._onMenuButtonClick.bind(this, PAGES.PROJECTS)}>Projects</MenuButton>
+        <MenuButton styleName="menu-button" className="blue"
+          selected={this.state.selected.design}
+          onClick={this._onMenuButtonClick.bind(this, PAGES.DESIGN)}>Design</MenuButton>
+        <MenuButton styleName="menu-button" className="light"
+          selected={this.state.selected.cv}
+          onClick={this._onMenuButtonClick.bind(this, PAGES.CV)}>CV</MenuButton>
       </div>
     );
   }

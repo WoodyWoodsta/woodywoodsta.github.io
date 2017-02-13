@@ -4,7 +4,7 @@
 }
 
 .menu-button {
-  padding: 0 var(--padding-thin);
+  margin: 0 var(--margin-thin);
 }
 
 .menu-button:global(.dark) {
