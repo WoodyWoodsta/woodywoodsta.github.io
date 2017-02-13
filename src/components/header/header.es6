@@ -15,7 +15,8 @@ export class Header extends Component {
     return (
       <div className={`layout vertical center center-justified
         ${this.props.config.theme === THEMES.LIGHT ? 'light' : ''}
-        ${this.props.config.isPagesShowing ? 'pages-showing' : ''}`}
+        ${this.props.config.isPagesShowing ? 'pages-showing' : ''}
+        ${this.props.className}`}
         styleName="wrapper">
         <Title title="sean-wood" styleName="title"/>
         <Menu navigateToPage={this.props.navigateToPage} page={this.props.nav.page}></Menu>

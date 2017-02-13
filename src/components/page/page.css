@@ -1,3 +1,8 @@
 /* page.css */
 
-.wrapper {}
+.wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: var(--header-height);
+  padding: var(--padding-thick) 0;
+}

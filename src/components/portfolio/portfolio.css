@@ -3,6 +3,18 @@
 .wrapper {
   height: 100%;
   width: 100%;
+  overflow-y: auto;
+}
+
+.widthWrapper {
+  height: 100%;
+  width: 100%;
   max-width: var(--page-max-width);
+  margin: 0 auto;
+}
+
+.header {
+  position: fixed;
+  top: 0;
   margin: 0 auto;
 }

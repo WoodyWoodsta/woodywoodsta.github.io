@@ -15,7 +15,7 @@
 
 .wrapper:global(:not(.pages-showing)) {
   padding: var(--padding-thick);
-  transform: translateY(calc(50vh - 50px));
+  transform: translateY(calc(50vh - 100px));
 }
 
 .title {

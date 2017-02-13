@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import { Content } from '../components/content/content';
 
 // === Redux Mappings ===
-const mapStateToProps = ({ config }) => ({
+const mapStateToProps = ({ config, nav }) => ({
   config,
+  nav,
 });
 
 const mapDispatchToProps = dispatch => ({});

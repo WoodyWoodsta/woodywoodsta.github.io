@@ -10,9 +10,11 @@ export class Portfolio extends Component {
   // === Template ===
   template() {
     return (
-      <div className={`layout vertical center ${this._computeWrapperClass()}`} styleName="wrapper">
-        <HeaderContainer />
-        <ContentContainer />
+      <div className={`${this._computeWrapperClass()}`} styleName="wrapper">
+        <div className="layout vertical center" styleName="widthWrapper">
+          <HeaderContainer styleName="header" />
+          <ContentContainer className="layout self-stretch" />
+        </div>
       </div>
     );
   }

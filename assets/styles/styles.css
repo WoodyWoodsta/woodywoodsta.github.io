@@ -45,3 +45,36 @@ body.light {
   position: relative;
   height: 100%;
 }
+
+::-webkit-scrollbar {
+  width: var(--scrollbar-thickness);
+}
+::-webkit-scrollbar:horizontal {
+  height: var(--scrollbar-thickness);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+
+  transition: background 500ms ease-in-out;
+}
+
+::-webkit-scrollbar-track:hover {
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  background: rgba(255,255,255,.07);
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  background: var(--dark-semiweak-alpha);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--light-weak-alpha);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: var(--dark-weak-alpha);
+}

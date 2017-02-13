@@ -1,15 +1,15 @@
-/* page.es6 */
+/* projects-page.es6 */
 import React from 'react';
 import { Component } from '../../component';
-import './page.css';
+import './projects-page.css';
 
-export class Page extends Component {
+export class ProjectsPage extends Component {
 
   // === Template ===
   template() {
     return (
       <div styleName="wrapper">
-        { this.props.children }
+
       </div>
     );
   }

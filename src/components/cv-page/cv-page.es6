@@ -1,15 +1,15 @@
-/* page.es6 */
+/* cv-page.es6 */
 import React from 'react';
 import { Component } from '../../component';
-import './page.css';
+import './cv-page.css';
 
-export class Page extends Component {
+export class CVPage extends Component {
 
   // === Template ===
   template() {
     return (
       <div styleName="wrapper">
-        { this.props.children }
+
       </div>
     );
   }
