@@ -6,7 +6,7 @@ import {
 } from '../constants/nav';
 
 const initialState = Immutable({
-  page: PAGES.ME,
+  page: PAGES.NONE,
 });
 
 export const navReducer = (state = initialState, action) => {

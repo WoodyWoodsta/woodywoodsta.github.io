@@ -7,15 +7,10 @@ import { HeaderContainer } from '../../containers/header';
 import { ContentContainer } from '../../containers/content';
 
 export class Portfolio extends Component {
-  // === Lifecycle ===
-  constructor(props) {
-    super(props);
-  }
-
   // === Template ===
   template() {
     return (
-      <div className={`layout vertical center ${this._computeShellContainerClass()}`} styleName="wrapper">
+      <div className={`layout vertical center ${this._computeWrapperClass()}`} styleName="wrapper">
         <HeaderContainer />
         <ContentContainer />
       </div>
@@ -23,7 +18,7 @@ export class Portfolio extends Component {
   }
 
   // === Private ===
-  _computeShellContainerClass() {
+  _computeWrapperClass() {
     return this.props.config.theme.toLowerCase();
   }
 }

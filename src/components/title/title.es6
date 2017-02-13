@@ -11,7 +11,9 @@ export class Title extends Component {
   // === Template ===
   template() {
     return (
-      <div className="layout horizontal center-justified" styleName="wrapper">
+      <div className={`layout horizontal center-justified
+        ${this.props.className}`}
+        styleName="wrapper">
         <span>{this.props.title}<span styleName="caret">_</span></span>
       </div>
     );

@@ -12,7 +12,9 @@ import { THEMES } from '../constants/config';
 
 subscribePath('nav.page', () => {
   let theme;
-  switch (store.getState().nav.page) {
+  const page = store.getState().nav.page;
+  const isPagesShowing = store.getState().config.isPagesShowing;
+  switch (page) {
     case PAGES.ME:
       theme = THEMES.DARK;
       break;
@@ -30,10 +32,15 @@ subscribePath('nav.page', () => {
       break;
   }
 
-  console.log(theme);
   setTimeout(() => {
     store.dispatch(changeTheme(theme));
   }, 0);
+
+  if (page === PAGES.NONE && isPagesShowing) {
+    setTimeout(() => store.dispatch(hidePages()), 0);
+  } else if (!isPagesShowing) {
+    setTimeout(() => store.dispatch(showPages()), 0);
+  }
 });
 
 // === Redux Mapping ===

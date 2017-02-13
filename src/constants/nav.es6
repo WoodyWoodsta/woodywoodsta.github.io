@@ -5,4 +5,5 @@ export const PAGES = {
   PROJECTS: 'PROJECTS',
   DESIGN: 'DESIGN',
   CV: 'CV',
+  NONE: 'NONE',
 };

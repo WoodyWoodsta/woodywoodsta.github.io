@@ -1,7 +1,23 @@
 /* header.css */
 
 .wrapper {
-  padding: var(--padding-thick);
+  padding: calc(1.5 * var(--padding-thick));
+  border-bottom: 1px solid var(--light-strong-alpha);
   border-radius: 5px;
-  background: var(--dark-weak-alpha);
+
+  transition-property: border, transform;
+  transition: var(--transition-duration) var(--transition-timing-function);
+}
+
+.wrapper:global(.light) {
+  border-color: var(--dark-strong-alpha);
+}
+
+.wrapper:global(:not(.pages-showing)) {
+  padding: var(--padding-thick);
+  transform: translateY(calc(50vh - 50px));
+}
+
+.title {
+  margin-bottom: var(--margin-normal);
 }

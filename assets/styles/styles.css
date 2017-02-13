@@ -20,7 +20,7 @@ body {
   /*border-radius: 5px;*/
   color: var(--app-color);
   font-size: var(--app-font-size);
-  font-family:  var(--app-font-family);
+  font-family:  var(--app-font-family-mono);
 
   transition-property: background-color;
   transition: var(--transition-duration) var(--transition-timing-function);
@@ -31,24 +31,14 @@ body[unresolved] {
   display: none;
 }
 
-body.dark {
+body {
   background: var(--dark-strong-alpha);
-  color: var(--light-medium-alpha);
+  color: var(--light-strong-alpha);
 }
 
 body.light {
   background: var(--app-background);
-  color: var(--dark-medium-alpha);
-}
-
-body.red {
-  background: var(--red-theme-dark-color);
-  color: var(--light-strong-alpha);
-}
-
-body.blue {
-  background: var(--indigo-theme-primary-color);
-  color: var(--light-medium-alpha);
+  color: var(--dark-strong-alpha);
 }
 
 #mount {

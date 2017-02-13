@@ -14,8 +14,8 @@ export class MenuButton extends Component {
         styleName="wrapper"
         onClick={this.props.onClick}>
         <div styleName="parallelogram"></div>
-        <span styleName="selection-dot">•</span>
         <span styleName="button-text">{this.props.children}</span>
+        <span styleName="selection-dot">•</span>
       </div>
     );
   }

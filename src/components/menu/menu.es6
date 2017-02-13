@@ -21,16 +21,16 @@ export class Menu extends Component {
   template() {
     return (
       <div className="layout horizontal center center-justified" styleName="wrapper">
-        <MenuButton styleName="menu-button" className="dark"
+        <MenuButton styleName="menu-button" className="button-dark"
           selected={this.state.selected.me}
           onClick={this._onMenuButtonClick.bind(this, PAGES.ME)}>Me</MenuButton>
-        <MenuButton styleName="menu-button" className="red"
+        <MenuButton styleName="menu-button" className="button-red"
           selected={this.state.selected.projects}
           onClick={this._onMenuButtonClick.bind(this, PAGES.PROJECTS)}>Projects</MenuButton>
-        <MenuButton styleName="menu-button" className="blue"
+        <MenuButton styleName="menu-button" className="button-blue"
           selected={this.state.selected.design}
           onClick={this._onMenuButtonClick.bind(this, PAGES.DESIGN)}>Design</MenuButton>
-        <MenuButton styleName="menu-button" className="light"
+        <MenuButton styleName="menu-button" className="button-light"
           selected={this.state.selected.cv}
           onClick={this._onMenuButtonClick.bind(this, PAGES.CV)}>CV</MenuButton>
       </div>
