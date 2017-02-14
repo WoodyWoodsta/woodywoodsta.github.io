@@ -18,6 +18,7 @@
 .menu-button:global(.button-blue) {
   --menu-button-border-color: var(--indigo-theme-primary-color);
 }
-.menu-button:global(.button-light.selected) {
+:global(body.light) .menu-button:global(.button-light),
+:global(body.light) .menu-button:global(.button-dark) {
   --menu-button-border-color: var(--dark-strong-alpha);
 }

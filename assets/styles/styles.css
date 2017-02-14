@@ -43,10 +43,32 @@ body:not(.light) {
   --app-background: var(--dark-strong);
 }
 
+body.red {
+  --app-background: rgb(48, 27, 27);
+}
+
+body.blue {
+  --app-background: rgb(36, 27, 48);
+}
+
+h1 {
+  @apply --font-title;
+  font-weight: var(--font-weight-bold);
+  color: inherit;
+}
+
+p {
+  padding: var(--padding-thin) 0;
+}
+
+/* React */
+
 #mount {
   position: relative;
   height: 100%;
 }
+
+/* Scrollbars */
 
 ::-webkit-scrollbar {
   width: var(--scrollbar-thickness);
