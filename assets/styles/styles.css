@@ -53,6 +53,8 @@ body.blue {
 
 h1 {
   @apply --font-title;
+
+  margin-top: var(--margin-thick);
   font-weight: var(--font-weight-bold);
   color: inherit;
 }

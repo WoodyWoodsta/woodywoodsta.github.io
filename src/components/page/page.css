@@ -22,3 +22,16 @@
   opacity: 1;
 }
 
+/* API */
+.wrapper :global(.page-divider) {
+  position: relative;
+  padding: var(--padding-thick);
+}
+
+.wrapper :global(.page-divider)::after {
+  content: "•";
+  position: absolute;
+  top: 50%;
+  margin-top: -2px;
+}
+
