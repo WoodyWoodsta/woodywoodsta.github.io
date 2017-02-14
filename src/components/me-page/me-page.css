@@ -1,2 +1,11 @@
 /* me-page.css */
-.wrapper {}
+.page {
+  text-align: center;
+}
+
+.headshot {
+  height: 150px;
+  width: 150px;
+
+  margin-bottom: var(--margin-thick);
+}

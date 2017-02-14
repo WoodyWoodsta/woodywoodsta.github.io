@@ -24,7 +24,8 @@ export class Page extends Component {
     return (
       <div styleName="wrapper" ref={ (wrapper) => { this.wrapper = wrapper; } } className={`
         ${this.state.isDisplaying ? 'displaying' : ''}
-        ${this.state.isShowing ? 'showing' : ''}`}>
+        ${this.state.isShowing ? 'showing' : ''}
+        ${this.props.className}`}>
         { this.props.children }
       </div>
     );

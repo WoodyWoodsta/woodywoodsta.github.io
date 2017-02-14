@@ -21,4 +21,11 @@
   will-change: opacity;
 }
 
+@media screen and (max-width: 600px) {
+  .wrapper > span,
+  .caret {
+    font-size: var(--font-size-display2);
+  }
+}
+
 

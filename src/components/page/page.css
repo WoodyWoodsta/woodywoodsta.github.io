@@ -2,8 +2,7 @@
 
 .wrapper {
   display: none;
-  width: 100%;
-  box-sizing: border-box;
+  margin: 0 var(--margin-normal);
   margin-top: calc(var(--header-height) + (2 * var(--margin-normal)));
   padding: var(--padding-thick) 0;
 
