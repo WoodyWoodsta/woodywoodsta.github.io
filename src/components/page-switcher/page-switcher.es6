@@ -11,15 +11,9 @@ import { DesignPage } from '../design-page/design-page';
 import { CVPage } from '../cv-page/cv-page';
 
 export class PageSwitcher extends Component {
-  constructor(props) {
-    super(props);
-
-  }
-
   // === Lifecycle ===
   componentWillMount() {
     this._updateSelectedState(this.props);
-
   }
 
   componentWillReceiveProps(nextProps) {
