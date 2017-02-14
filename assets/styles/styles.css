@@ -32,13 +32,16 @@ body[unresolved] {
 }
 
 body {
-  background: var(--dark-strong-alpha);
+  background: var(--app-background);
   color: var(--light-strong-alpha);
 }
 
 body.light {
-  background: var(--app-background);
   color: var(--dark-strong-alpha);
+}
+
+body:not(.light) {
+  --app-background: var(--dark-strong);
 }
 
 #mount {

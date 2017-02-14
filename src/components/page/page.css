@@ -3,6 +3,6 @@
 .wrapper {
   width: 100%;
   box-sizing: border-box;
-  margin-top: var(--header-height);
+  margin-top: calc(var(--header-height) + (2 * var(--margin-normal)));
   padding: var(--padding-thick) 0;
 }

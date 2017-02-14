@@ -7,6 +7,7 @@ import {
   hidePages,
   changeTheme,
 } from '../actions/config';
+import { updateScroll } from '../actions/scroll';
 import { PAGES } from '../constants/nav';
 import { THEMES } from '../constants/config';
 
@@ -44,8 +45,9 @@ subscribePath('nav.page', () => {
 });
 
 // === Redux Mapping ===
-const mapStateToProps = ({ config }) => ({
+const mapStateToProps = ({ config, scroll }) => ({
   config,
+  scroll,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -57,6 +59,9 @@ const mapDispatchToProps = dispatch => ({
   },
   changeTheme: (theme) => {
     dispatch(changeTheme(theme));
+  },
+  updateScroll: (pos) => {
+    dispatch(updateScroll(pos));
   },
 });
 

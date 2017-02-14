@@ -13,7 +13,8 @@ export class Title extends Component {
     return (
       <div className={`layout horizontal center-justified
         ${this.props.className}`}
-        styleName="wrapper">
+        styleName="wrapper"
+        style={ this.props.style }>
         <span>{this.props.title}<span styleName="caret">_</span></span>
       </div>
     );
