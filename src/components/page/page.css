@@ -1,0 +1,25 @@
+/* page.css */
+
+.wrapper {
+  display: none;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: calc(var(--header-height) + (2 * var(--margin-normal)));
+  padding: var(--padding-thick) 0;
+
+  opacity: 0;
+  transform: translateY(30px);
+
+  transition-property: opacity, transform;
+  transition: var(--transition-duration) var(--transition-timing-function);
+}
+
+.wrapper:global(.displaying) {
+  display: block;
+}
+
+.wrapper:global(.showing) {
+  transform: translateY(0);
+  opacity: 1;
+}
+

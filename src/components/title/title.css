@@ -1,0 +1,24 @@
+/* title.css */
+@keyframes blink {
+  0%  { opacity: 0; }
+  40% { opacity: 0; }
+  50% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.wrapper > span,
+.caret {
+  @apply --font-display3;
+
+  font-family: var(--app-font-family-mono);
+  color: inherit;
+  text-align: center;
+}
+
+.caret {
+  animation: blink 1s linear infinite;
+  will-change: opacity;
+}
+
+

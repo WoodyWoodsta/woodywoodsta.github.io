@@ -1,0 +1,104 @@
+/* styles.css */
+
+* {
+  user-select: none;
+}
+
+input {
+  user-select: text;
+}
+
+html,
+body {
+  width: 100%;
+}
+
+body {
+  overflow-y: hidden;
+  margin: 0;
+
+  /*border-radius: 5px;*/
+  color: var(--app-color);
+  font-size: var(--app-font-size);
+  font-family:  var(--app-font-family-mono);
+
+  transition: background-color var(--transition-duration) var(--transition-timing-function);
+}
+
+/* make sure this is in effect pronto */
+body[unresolved] {
+  display: none;
+}
+
+body {
+  background: var(--app-background);
+  color: var(--light-strong-alpha);
+}
+
+body.light {
+  color: var(--dark-strong-alpha);
+}
+
+body:not(.light) {
+  --app-background: var(--dark-strong);
+}
+
+body.red {
+  --app-background: rgb(48, 27, 27);
+}
+
+body.blue {
+  --app-background: rgb(36, 27, 48);
+}
+
+h1 {
+  @apply --font-title;
+  font-weight: var(--font-weight-bold);
+  color: inherit;
+}
+
+p {
+  padding: var(--padding-thin) 0;
+}
+
+/* React */
+
+#mount {
+  position: relative;
+  height: 100%;
+}
+
+/* Scrollbars */
+
+::-webkit-scrollbar {
+  width: var(--scrollbar-thickness);
+}
+::-webkit-scrollbar:horizontal {
+  height: var(--scrollbar-thickness);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+
+  transition: background 500ms ease-in-out;
+}
+
+::-webkit-scrollbar-track:hover {
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  background: rgba(255,255,255,.07);
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  background: var(--dark-semiweak-alpha);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--light-weak-alpha);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: var(--dark-weak-alpha);
+}

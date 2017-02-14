@@ -1,0 +1,30 @@
+/* header.css */
+
+.wrapper {
+  width: 400px;
+  padding: calc(1.5 * var(--padding-thick));
+  border-bottom: 1px solid var(--light-strong-alpha);
+  border-radius: 5px;
+  background: var(--app-background);
+  z-index: 1;
+
+  transition: border var(--transition-duration) var(--transition-timing-function), transform var(--transition-duration) var(--transition-timing-function), width var(--transition-duration) var(--transition-timing-function), background var(--transition-duration) var(--transition-timing-function), padding var(--transition-duration) var(--transition-timing-function);
+
+}
+
+.wrapper:global(.light) {
+  border-color: var(--dark-strong-alpha);
+}
+
+.wrapper:global(:not(.pages-showing)) {
+  padding: var(--padding-thick);
+  transform: translateY(calc(50vh - 100px));
+}
+
+.wrapper:global(.fixed) {
+  width: 100%;
+}
+
+.title {
+  margin-bottom: var(--margin-normal);
+}
