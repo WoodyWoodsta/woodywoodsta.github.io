@@ -22,8 +22,7 @@ body {
   font-size: var(--app-font-size);
   font-family:  var(--app-font-family-mono);
 
-  transition-property: background-color;
-  transition: var(--transition-duration) var(--transition-timing-function);
+  transition: background-color var(--transition-duration) var(--transition-timing-function);
 }
 
 /* make sure this is in effect pronto */

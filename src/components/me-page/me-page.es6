@@ -10,7 +10,7 @@ export class MePage extends Component {
   // === Template ===
   template() {
     return (
-      <Page>
+      <Page showing={this.props.selected}>
         <div style={{ height: 1000, width: '100%' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultrices enim sed enim venenatis, et condimentum leo tempus. Pellentesque sit amet metus elementum, iaculis ante quis, posuere enim. Donec volutpat elit quam. Maecenas euismod odio pellentesque dolor euismod cursus. Phasellus consectetur sollicitudin auctor. Vestibulum dignissim lacinia molestie. In dolor nulla, consectetur quis leo eget, interdum viverra odio. Cras efficitur facilisis ullamcorper. Fusce vestibulum gravida ligula eu egestas. Sed nec neque vel augue dapibus pharetra vel a enim. Nullam et tincidunt neque, tincidunt vulputate ex. Praesent vitae enim ornare, rhoncus mi ullamcorper, feugiat justo.
 
 Integer quis mattis neque. Donec lobortis mollis ipsum, et tempus dui ultricies non. Nullam dapibus rhoncus lacus at posuere. Proin ut metus in nisl porta hendrerit sit amet eu nisi. In et placerat lacus, ac pretium erat. Nullam augue dolor, accumsan eget laoreet a, accumsan sit amet ipsum. Maecenas eget metus eget ipsum pulvinar tempus.

@@ -18,6 +18,7 @@
 
 .caret {
   animation: blink 1s linear infinite;
+  will-change: opacity;
 }
 
 

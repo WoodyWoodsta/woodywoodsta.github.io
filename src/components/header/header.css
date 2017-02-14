@@ -6,8 +6,9 @@
   border-bottom: 1px solid var(--light-strong-alpha);
   border-radius: 5px;
   background: var(--app-background);
+  z-index: 1;
 
-  transition: border var(--transition-duration) var(--transition-timing-function), transform var(--transition-duration) var(--transition-timing-function), width var(--transition-duration) var(--transition-timing-function), background var(--transition-duration) var(--transition-timing-function);
+  transition: border var(--transition-duration) var(--transition-timing-function), transform var(--transition-duration) var(--transition-timing-function), width var(--transition-duration) var(--transition-timing-function), background var(--transition-duration) var(--transition-timing-function), padding var(--transition-duration) var(--transition-timing-function);
 
 }
 
