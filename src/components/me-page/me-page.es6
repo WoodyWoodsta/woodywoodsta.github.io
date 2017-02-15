@@ -58,6 +58,7 @@ export class MePage extends Component {
         <div styleName="skills" className="layout horizontal center-justified wrap">
           { skillTags }
         </div>
+        <div className="page-end"></div>
       </Page>
     );
   }

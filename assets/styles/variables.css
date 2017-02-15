@@ -79,8 +79,7 @@ html {
   --divider-color: rgba(0, 0, 0, 0.12);
   --divider-color-opaque: rgb(237, 237, 237);
 
-  /* Scrollbar */
-  --scrollbar-track-background-color: rgba(0,0,0,0.05);
+  --table-accent-color: #7C9E0E;
 
   /**
    * Color Mappings

@@ -11,7 +11,7 @@ export class CVPage extends Component {
   template() {
     return (
       <Page showing={this.props.selected}>
-        <h1 styleName="coming-soon">Coming Soon</h1>
+
       </Page>
     );
   }

@@ -35,3 +35,6 @@
   margin-top: -2px;
 }
 
+.wrapper :global(.page-end) {
+  height: 100px;
+}
