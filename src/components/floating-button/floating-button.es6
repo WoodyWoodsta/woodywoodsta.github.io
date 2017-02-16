@@ -1,9 +1,9 @@
-/* menu-button.es6 */
+/* floating-button.es6 */
 import React from 'react';
 import { Component } from '../../component';
-import './menu-button.css';
+import './floating-button.css';
 
-export class MenuButton extends Component {
+export class FloatingButton extends Component {
   constructor(props) {
     super(props);
 
@@ -17,20 +17,16 @@ export class MenuButton extends Component {
   // === Template ===
   template() {
     return (
-      <div className={`layout horizontal center center-justified
-        ${this.props.selected ? 'selected' : ''}
+      <div styleName="wrapper" className={`layout vertical center center-justified
         ${this.props.className}
         ${this.state.pressed ? 'pressed' : ''}`}
-        styleName="wrapper"
         onClick={this.props.onClick}
         onMouseDown={this._onPress}
         onMouseLeave={this._onUnpress}
         onMouseUp={this._onUnpress}
         onTouchStart={this._onPress}
         onTouchEnd={this._onUnpress}>
-        <div styleName="parallelogram"></div>
-        <span styleName="button-text">{this.props.children}</span>
-        <span styleName="selection-dot">•</span>
+        { this.props.children }
       </div>
     );
   }
