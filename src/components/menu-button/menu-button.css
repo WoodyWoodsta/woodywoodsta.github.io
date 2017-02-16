@@ -1,7 +1,6 @@
 /* menu-button */
 
 .wrapper {
-  @apply --font-body;
   font-size: var(--font-size-subheading);
   text-transform: uppercase;
   color: inherit;

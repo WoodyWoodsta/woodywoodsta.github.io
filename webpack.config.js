@@ -20,7 +20,11 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: ['/node_modules/', '/bower_components/'],
-        loaders: ['style-loader', 'css-loader?importLoader=1&modules&localIdentName=[path]___[name]__[local]___[hash:base64:5]'],
+        loaders: [
+          'style-loader',
+          'css-loader?importLoader=1&modules&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
+          'postcss-loader'
+        ],
       },
       {
         test: /\.(js|es6)$/,

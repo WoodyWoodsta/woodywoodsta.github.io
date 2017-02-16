@@ -1,5 +1,5 @@
 /* app-variables.css */
-html {
+:root {
   /* === Colors === */
   /**
    * Default Palette
@@ -169,8 +169,7 @@ html {
   --scrollbar-thickness: 10px;
 }
 
-body {
-    /* Font Mixins */
+/*:root {
   --font-display4: {
     font-size: var(--font-size-display4);
     font-weight: var(--font-weight-light);
@@ -252,4 +251,4 @@ body {
 
     font-family: var(--app-font-family-mono);
   }
-}
+}*/

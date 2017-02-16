@@ -9,7 +9,8 @@
 
 .wrapper > span,
 .caret {
-  @apply --font-display3;
+  font-size: var(--font-size-display3);
+  font-weight: var(--font-weight-regular);
 
   font-family: var(--app-font-family-mono);
   color: inherit;
