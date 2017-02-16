@@ -4,7 +4,7 @@
   display: none;
   margin: 0 var(--margin-normal);
   margin-top: calc(var(--header-height) + (2 * var(--margin-normal)));
-  padding: var(--padding-thick) 0;
+  padding: var(--padding-thick);
 
   opacity: 0;
   transform: translateY(30px);
@@ -32,6 +32,11 @@
   content: "•";
   position: absolute;
   top: 50%;
+  left: 50%;
   margin-top: -2px;
+  margin-left: -2px;
 }
 
+.wrapper :global(.page-end) {
+  height: 100px;
+}

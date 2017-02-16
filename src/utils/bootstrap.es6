@@ -89,20 +89,20 @@ function setEnv() {
 }
 
 function loadPolyfills() {
-  // webcomponentsjs
-  if (!featChecks.shadowDom()) {
-    _loadPolyfill('webcomponentsjs');
-  } else {
-    const requiresWcjsLite = [
-      'htmlImports',
-      'mutationObserver',
-      'weakMap',
-    ].some(feat => !featChecks[feat]());
+  // // webcomponentsjs
+  // if (!featChecks.shadowDom()) {
+  //   _loadPolyfill('webcomponentsjs');
+  // } else {
+  //   const requiresWcjsLite = [
+  //     'htmlImports',
+  //     'mutationObserver',
+  //     'weakMap',
+  //   ].some(feat => !featChecks[feat]());
 
-    if (requiresWcjsLite) {
-      _loadPolyfill('webcomponentsjs-lite');
-    }
-  }
+  //   if (requiresWcjsLite) {
+  //     _loadPolyfill('webcomponentsjs-lite');
+  //   }
+  // }
 
   // Element.prototype.prepend()
   if (!featChecks.parentNodePrepend) {

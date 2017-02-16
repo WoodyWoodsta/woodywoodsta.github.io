@@ -39,12 +39,7 @@ export class MePage extends Component {
 
   // === Template ===
   template() {
-    const skillTags = [];
-
-    this.skills.forEach((skill, index) => {
-      skillTags.push(<SkillTag key={index}><span>{skill}</span></SkillTag>);
-    });
-
+    const skillTags = this.skills.map((skill, index) => <SkillTag key={index}><span>{skill}</span></SkillTag>);
     return (
       <Page showing={this.props.selected} styleName="page">
         <img styleName="headshot" src="/assets/images/headshot.png"/>
@@ -58,6 +53,7 @@ export class MePage extends Component {
         <div styleName="skills" className="layout horizontal center-justified wrap">
           { skillTags }
         </div>
+        <div className="page-end"></div>
       </Page>
     );
   }
