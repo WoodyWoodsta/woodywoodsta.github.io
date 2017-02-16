@@ -18,10 +18,16 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
+  transition: transform var(--transition-duration) var(--transition-timing-function);
 }
 
 .wrapper:hover .button-text {
   color: var(--menu-button-border-color);
+}
+
+.wrapper:global(.pressed) {
+  transform: scale(0.9);
 }
 
 .parallelogram {

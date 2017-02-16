@@ -1,0 +1,22 @@
+/* floating-button.css */
+
+.wrapper {
+  height: var(--floating-button-size, 40px);
+  width: var(--floating-button-size, 40px);
+  border: 1px solid var(--floating-button-color, currentColor);
+  border-radius: 50%;
+  background: var(--app-background);
+
+  cursor: pointer;
+
+  transition: transform var(--transition-duration) var(--transition-timing-function), background var(--transition-duration) var(--transition-timing-function);
+}
+
+.wrapper:hover {
+  border-color: var(--floating-button-hover-color, currentColor);
+  transform: scale(1.1);
+}
+
+.wrapper:global(.pressed) {
+  transform: scale(0.9);
+}
