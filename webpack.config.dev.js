@@ -1,7 +1,5 @@
 /* webpack.config.js */
 var path = require('path');
-var webpack = require('webpack');
-// TODO: Make a production version
 
 module.exports = {
   devServer: {
@@ -22,7 +20,7 @@ module.exports = {
         exclude: ['/node_modules/', '/bower_components/'],
         loaders: [
           'style-loader',
-          'css-loader?importLoader=1&modules&localIdentName=[hash:base64:4]',
+          'css-loader?importLoader=1&modules&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
           'postcss-loader'
         ],
       },
@@ -49,12 +47,4 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production'),
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin(),
-  ]
 };

@@ -33,6 +33,6 @@
   },
   "scripts": {
     "build": "webpack",
-    "serve": "webpack-dev-server --progress --colors --output-public-path=/build/"
+    "serve": "webpack-dev-server --config ./webpack.config.dev.js --progress --colors --output-public-path=/build/"
   }
 }
