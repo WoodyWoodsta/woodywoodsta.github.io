@@ -1,6 +1,7 @@
 /* webpack.config.js */
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 // TODO: Make a production version
 
 module.exports = {
@@ -20,11 +21,10 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: ['/node_modules/', '/bower_components/'],
-        loaders: [
-          'style-loader',
-          'css-loader?importLoader=1&modules&localIdentName=[hash:base64:4]',
-          'postcss-loader'
-        ],
+        loader: ExtractTextPlugin.extract({
+          notExtractLoader: 'style-loader',
+          loader: 'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!resolve-url-loader!postcss-loader',
+        }),
       },
       {
         test: /\.(js|es6)$/,
@@ -56,5 +56,9 @@ module.exports = {
       }
     }),
     new webpack.optimize.UglifyJsPlugin(),
+    new ExtractTextPlugin({
+      filename: 'app.css',
+      allChunks: true,
+    }),
   ]
 };
