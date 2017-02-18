@@ -28,14 +28,21 @@ export class ProjectsPage extends Component {
 
   // === Template ===
   template() {
-    const sections = this.projects.map((project, index) => (
-      <div key={ index }>
-        <ProjectSection alternate={ Math.abs(index % 2) } {...project} styleName="project-section"></ProjectSection>
-        <div className="page-divider-wrapper">
-          <div className="page-divider"></div>
+    const sections = this.projects.map((project, index) => {
+      let pageDivider = null;
+      if (index !== this.projects.length - 1) {
+        pageDivider = <div className="page-divider"></div>;
+      }
+
+      return (
+        <div key={ index }>
+          <ProjectSection alternate={ Math.abs(index % 2) } {...project} styleName="project-section"></ProjectSection>
+          <div styleName="page-divider-wrapper">
+            { pageDivider }
+          </div>
         </div>
-      </div>
-    ));
+      );
+    });
 
     return (
       <Page showing={this.props.selected}>

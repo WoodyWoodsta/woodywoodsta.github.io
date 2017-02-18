@@ -2,7 +2,6 @@
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-// TODO: Make a production version
 
 module.exports = {
   devServer: {
