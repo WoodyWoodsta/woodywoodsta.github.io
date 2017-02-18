@@ -103,3 +103,12 @@ p {
 ::-webkit-scrollbar-thumb:window-inactive {
   background: var(--dark-weak-alpha);
 }
+
+body.light ::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-normal-alpha);
+}
+
+body.light ::-webkit-scrollbar-track:hover {
+  background: rgba(0,0,0,.07);
+}
+
