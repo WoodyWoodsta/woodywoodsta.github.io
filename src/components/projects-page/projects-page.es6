@@ -47,6 +47,8 @@ export class ProjectsPage extends Component {
     return (
       <Page showing={this.props.selected}>
         { sections }
+
+        <div className="page-end"></div>
       </Page>
     );
   }
