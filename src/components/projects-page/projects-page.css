@@ -7,3 +7,7 @@
 .project-section {
   margin: var(--margin-normal);
 }
+
+.page-divider-wrapper {
+  padding: var(--margin-normal) 0;
+}

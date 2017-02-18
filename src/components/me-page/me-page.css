@@ -13,3 +13,16 @@
 .skills {
   margin-top: var(--margin-thick);
 }
+
+.social-buttons-wrapper {
+  padding: var(--padding-thick);
+  transform: translateZ(0);
+}
+
+.social-buttons-wrapper > a {
+  margin: var(--margin-thin);
+}
+
+.social-svg {
+  fill: currentColor;
+}
