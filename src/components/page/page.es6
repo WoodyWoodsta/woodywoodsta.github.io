@@ -3,6 +3,8 @@ import React from 'react';
 import { Component } from '../../component';
 import './page.css';
 
+import { SiteFooter } from '../site-footer/site-footer';
+
 export class Page extends Component {
   constructor(props) {
     super(props);
@@ -27,6 +29,7 @@ export class Page extends Component {
         ${this.state.isShowing ? 'showing' : ''}
         ${this.props.className}`}>
         { this.props.children }
+        <SiteFooter/>
       </div>
     );
   }
