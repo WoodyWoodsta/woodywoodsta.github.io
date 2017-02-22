@@ -26,7 +26,11 @@ export class Header extends Component {
         styleName="wrapper"
         style={{ marginTop: Math.max(-this.scrollThreshold, -this.props.scroll.pos.y) }}>
         <Title title="sean-wood" styleName="title" style={{ opacity: Math.max(0, 1 - (this.props.scroll.pos.y / 50)) }}/>
-        <Menu navigateToPage={this.props.navigateToPage} page={this.props.nav.page}></Menu>
+        <Menu
+          navigateToPage={this.props.navigateToPage}
+          updateScroll={this.props.updateScroll}
+          page={this.props.nav.page}>
+        </Menu>
       </div>
     );
   }

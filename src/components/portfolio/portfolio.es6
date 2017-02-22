@@ -2,6 +2,7 @@
 import React from 'react';
 import ReactSVG from 'react-svg';
 import { Component } from '../../component';
+import { subscribePath, store } from '../../store/store';
 import './portfolio.css';
 
 import { HeaderContainer } from '../../containers/header';
@@ -15,6 +16,12 @@ export class Portfolio extends Component {
 
     this._onScroll = this._onScroll.bind(this);
     this._onScrollToTopClick = this._onScrollToTopClick.bind(this);
+
+    this._unsub = {
+      navPage: subscribePath('nav.page', () => {
+        this.portfolioWrapper.scrollTop = 0;
+      }),
+    };
   }
 
   componentDidMount() {
