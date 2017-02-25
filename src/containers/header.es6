@@ -4,6 +4,7 @@ import { Header } from '../components/header/header';
 
 import { navigateToPage } from '../actions/nav';
 import { updateScroll } from '../actions/scroll';
+import { updateLoadingState } from '../actions/config';
 
 // === Redux Mappings ===
 const mapStateToProps = ({ config, nav, scroll }) => ({
@@ -18,6 +19,9 @@ const mapDispatchToProps = dispatch => ({
   },
   updateScroll: (pos) => {
     dispatch(updateScroll(pos));
+  },
+  updateLoadingState: (state) => {
+    dispatch(updateLoadingState(state));
   },
 });
 

@@ -15,7 +15,9 @@ export class Title extends Component {
         ${this.props.className}`}
         styleName="wrapper"
         style={ this.props.style }>
-        <span>{this.props.title}<span styleName="caret">_</span></span>
+        <span>{this.props.title}<span styleName="caret" className={`
+          ${this.props.blinkCursor ? 'blinking' : 'static'}
+          `}>_</span></span>
       </div>
     );
   }
