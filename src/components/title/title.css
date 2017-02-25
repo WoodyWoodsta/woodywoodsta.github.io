@@ -17,7 +17,7 @@
   text-align: center;
 }
 
-.caret {
+.caret:global(.blinking) {
   animation: blink 1s linear infinite;
   will-change: opacity;
 }

@@ -20,7 +20,8 @@ export class Menu extends Component {
   // === Template ===
   template() {
     return (
-      <div className="layout horizontal center center-justified" styleName="wrapper">
+      <div styleName="wrapper" className={`layout horizontal center center-justified
+        ${this.props.className}`}>
         <MenuButton styleName="menu-button" className="button-dark"
           selected={this.state.selected.me}
           onClick={this._onMenuButtonClick.bind(this, PAGES.ME)}>Me</MenuButton>
