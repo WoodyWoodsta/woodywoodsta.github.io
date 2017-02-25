@@ -1,6 +1,7 @@
 /* webpack.config.js */
 var path = require('path');
 var webpack = require('webpack');
+var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
@@ -63,5 +64,16 @@ module.exports = {
       filename: 'app.css',
       allChunks: true,
     }),
-  ]
+    new SWPrecacheWebpackPlugin({
+      cacheId: 'sean-wood-portfolio',
+      filepath: path.join(__dirname, 'sw.js'),
+      maximumFileSizeToCacheInBytes: 4194304,
+      minify: true,
+      staticFileGlobs: ['assets/**', 'build/**', 'index.html', 'manifest.json'],
+      runtimeCaching: [{
+        handler: 'cacheFirst',
+        urlPattern: 'bower_components/**',
+      }],
+    }),
+  ],
 };

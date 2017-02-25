@@ -1,0 +1,9 @@
+{
+  "name": "Sean Wood - Portfolio",
+  "short_name": "Sean Wood",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#212121",
+  "theme_color": "#212121",
+  "description": "An online portfolio, hacked together using React and Redux, of a subset of my work."
+}
