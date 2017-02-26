@@ -16,7 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "webcomponentsjs": "webcomponents/webcomponentsjs#v1",
-    "iron-flex-layout": "PolymerElements/iron-flex-layout#2.0-preview"
+    "webcomponentsjs": "webcomponents/webcomponentsjs#v1"
   }
 }

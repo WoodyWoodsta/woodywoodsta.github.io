@@ -1,0 +1,37 @@
+{
+  "name": "webcomponentsjs",
+  "main": "webcomponents.js",
+  "version": "1.0.0-rc.1",
+  "homepage": "http://webcomponents.org",
+  "authors": [
+    "The Polymer Authors"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webcomponents/webcomponentsjs.git"
+  },
+  "keywords": [
+    "webcomponents"
+  ],
+  "license": "BSD",
+  "ignore": [],
+  "devDependencies": {
+    "web-component-tester": "^5",
+    "custom-elements": "webcomponents/custom-elements#master",
+    "es6-promise": "stefanpenner/es6-promise#^4.0.0",
+    "html-imports": "webcomponents/html-imports#master",
+    "shadydom": "webcomponents/shadydom#master",
+    "shadycss": "webcomponents/shadycss#master",
+    "template": "webcomponents/template#master",
+    "webcomponents-platform": "webcomponents/webcomponents-platform#master"
+  },
+  "_release": "1.0.0-rc.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.0-rc.1",
+    "commit": "6762d3891f57ab106952ebf5fc25d7348278b17f"
+  },
+  "_source": "https://github.com/webcomponents/webcomponentsjs.git",
+  "_target": "v1",
+  "_originalSource": "webcomponents/webcomponentsjs"
+}
