@@ -12,6 +12,7 @@
 .wrapper:hover > .about-text,
 .wrapper:global(.mobile) > .about-text {
   width: auto;
+  white-space: normal;
 }
 
 .about-icon {
@@ -21,6 +22,7 @@
   fill: currentColor;
 }
 
-.wrapper > span {
+.wrapper > span,
+.wrapper > .about-label-wrapper > span {
   font-size: var(--font-size-note);
 }
