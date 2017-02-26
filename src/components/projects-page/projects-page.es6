@@ -23,6 +23,12 @@ export class ProjectsPage extends Component {
         description: 'Developed as a university thesis project, the model of the Mars Curiosity Rover (JPL - NASA) aimed to generate awareness around the exciting branch of science that is planetary exploration as well as allow users to experience a simulated control environment of the vehicles involved. The Rover model was a 3D printed, scaled-down representation of the real Curiosity which leveraged IoT-level computation and communication hardware, servos and a webcam to allow interactive control from a web application accesible to any user on the internet.',
         techs: ['Google Polymer', 'Rollup', 'Babel', 'HTML5', 'CSS', 'ES6', 'Socket.io', 'WebRTC', 'Kurento', 'Johnny-Five', 'Koa'],
       },
+      {
+        title: 'Semi-autonomous Walking Robot',
+        imgUrl: 'assets/images/blu-v2.jpg',
+        description: 'The challenge was to develop a walker robot (that is, legs only) with a limited set of materials and electrical hardware to navigate an obstacle course. Further to the specification, I added wireless communication to the robot for transmission of telementry and some controllability. The frontfacing component of the wireless communication system was a simple Angular 1 mobile application utilising Ionic for Android and iOS support.',
+        techs: ['Ionic', 'Angular', 'Socket.io', 'FreeRTOS', 'C'],
+      },
     ];
   }
 
