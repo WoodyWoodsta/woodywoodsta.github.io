@@ -8,6 +8,7 @@ import './utils/bootstrap';
 import { PortfolioContainer } from './containers/portfolio';
 import { store } from './store/store';
 import './utils/ext-themer';
+import './utils/features';
 
 // TODO: Render on action
 render(

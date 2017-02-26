@@ -69,17 +69,7 @@ module.exports = {
       filepath: path.join(__dirname, 'sw.js'),
       maximumFileSizeToCacheInBytes: 4194304,
       minify: true,
-      staticFileGlobs: ['assets/**', 'build/**', '/manifest.json'],
-      runtimeCaching: [
-        {
-          handler: 'cacheFirst',
-          urlPattern: 'bower_components/**',
-        },
-        {
-          handler: 'networkFirst',
-          urlPattern: '/index.html',
-        },
-      ],
+      staticFileGlobs: ['assets/**', 'bower_components/**', 'build/**', 'manifest.json', 'index.html'],
     }),
   ],
 };

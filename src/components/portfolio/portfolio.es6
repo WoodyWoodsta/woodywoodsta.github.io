@@ -8,6 +8,7 @@ import './portfolio.css';
 import { HeaderContainer } from '../../containers/header';
 import { ContentContainer } from '../../containers/content';
 import { FloatingButton } from '../floating-button/floating-button';
+import { Toast } from '../toast/toast';
 
 export class Portfolio extends Component {
   // === Lifecycle ===
@@ -45,6 +46,7 @@ export class Portfolio extends Component {
             <ReactSVG path="assets/icons/chevron-double-up.svg" styleName="scroll-to-top-icon"></ReactSVG>
           </FloatingButton>
         </div>
+        { this._computeToastEl() }
       </div>
     );
   }
@@ -61,5 +63,9 @@ export class Portfolio extends Component {
 
   _onScrollToTopClick() {
     this.portfolioWrapper.scrollTop = 0;
+  }
+
+  _computeToastEl() {
+    return <Toast {...this.props.features.toastConfig} active={this.props.features.toastIsShowing}/>;
   }
 }

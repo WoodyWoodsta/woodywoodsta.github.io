@@ -45,9 +45,10 @@ subscribePath('nav.page', () => {
 });
 
 // === Redux Mapping ===
-const mapStateToProps = ({ config, scroll }) => ({
+const mapStateToProps = ({ config, scroll, features }) => ({
   config,
   scroll,
+  features,
 });
 
 const mapDispatchToProps = dispatch => ({

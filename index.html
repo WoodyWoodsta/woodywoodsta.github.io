@@ -30,6 +30,9 @@
     <meta name="msapplication-TileColor" content="#212121">
     <meta name="msapplication-tap-highlight" content="no">
 
+    <!-- ServiceWorker -->
+    <script src="./sw-loader.js"></script>
+
     <!-- Polyfills -->
     <script type="text/javascript" src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 
@@ -50,7 +53,6 @@
     <script type="text/javascript">
       window.addEventListener('WebComponentsReady', () => console.log('Webcomponents Polyfill Loaded'));
     </script>
-    <script src="./sw-loader.js"></script>
     <script src="./build/index.js"></script>
   </body>
 </html>

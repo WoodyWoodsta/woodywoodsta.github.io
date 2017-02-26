@@ -1,0 +1,33 @@
+/* app-button.css */
+
+.wrapper {
+  font-size: var(--font-size-subheading);
+  text-transform: uppercase;
+  color: inherit;
+
+  position: relative;
+  padding: var(--padding-thin) var(--padding-normal);
+  min-height: var(--app-button-height, 30px);
+  min-width: var(--app-button-width);
+  border: 1px solid var(--app-button-color, currentColor);
+  box-sizing: border-box;
+  cursor: pointer;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  transition: transform var(--transition-duration) var(--transition-timing-function);
+}
+
+.wrapper:hover {
+  border-color: var(--app-button-hover-color, currentColor);
+  transform: scale(1.05);
+}
+
+.wrapper:global(.pressed) {
+  transform: scale(0.95);
+}
