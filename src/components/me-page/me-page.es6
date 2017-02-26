@@ -60,12 +60,12 @@ export class MePage extends Component {
           <div className="page-divider"></div>
         </div>
         <div styleName="social-buttons-wrapper" className="layout horizontal center center-justified wrap">
-          <a href="https://www.linkedin.com/in/woodywoodsta/" target="_blank">
+          <a href="https://www.linkedin.com/in/woodywoodsta/" target="noopener">
             <FloatingButton>
               <ReactSVG path="assets/icons/linkedin.svg" styleName="social-svg"></ReactSVG>
             </FloatingButton>
           </a>
-          <a href="https://github.com/WoodyWoodsta" target="_blank">
+          <a href="https://github.com/WoodyWoodsta" target="noopener">
             <FloatingButton>
               <ReactSVG path="assets/icons/github.svg" styleName="social-svg"></ReactSVG>
             </FloatingButton>
