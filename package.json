@@ -38,6 +38,6 @@
   },
   "scripts": {
     "build": "webpack",
-    "serve": "rm -rf build/ && webpack-dev-server --config ./webpack.config.dev.js --progress --colors --host 0.0.0.0 --output-public-path=/build/"
+    "serve": "rm -rf build/ && rm sw.js && webpack-dev-server --config ./webpack.config.dev.js --progress --colors --host 0.0.0.0 --output-public-path=/build/"
   }
 }
