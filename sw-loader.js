@@ -11,8 +11,18 @@ if ('serviceWorker' in navigator) {
             case 'installed':
               if (navigator.serviceWorker.controller) {
                 console.log('New or updated content is available.');
+                _spawnToast({
+                  message: 'New or updated content available.',
+                  actions: {
+                    Refresh: _refresh,
+                  },
+                });
               } else {
                 console.log('Content is now available offline!');
+                _spawnToast({
+                  message: 'Content is now available offline!',
+                  timeout: 5000,
+                });
               }
               break;
 
@@ -25,4 +35,16 @@ if ('serviceWorker' in navigator) {
   }).catch(function(e) {
     console.error('Error during service worker registration:', e);
   });
+}
+
+function _spawnToast(config) {
+  if (window._featuresUtils) {
+    window._featuresUtils.spawnToast(config);
+  } else {
+    window._pendingToast = config;
+  }
+}
+
+function _refresh() {
+  document.location.reload();
 }
