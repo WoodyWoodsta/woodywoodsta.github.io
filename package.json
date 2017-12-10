@@ -1,43 +1,25 @@
 {
   "name": "woodywoodsta.github.io",
-  "version": "0.1.0",
-  "description": "My portfolio, in React.",
-  "main": "index.html",
-  "repository": "WoodyWoodsta/woodywoodsta.github.io",
+  "version": "0.0.1",
+  "description": "My Portfolio, in VueJS.",
+  "main": "index.js",
+  "repository": "git@github.com:WoodyWoodsta/woodywoodsta.github.io.git",
   "author": "Sean Wood <woodywoodsta@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "NODE_ENV=development abc",
+    "watch": "NODE_ENV=development abc -w",
+    "dist": "NODE_ENV=production abc",
+    "serve": "live-server ./dist"
+  },
   "dependencies": {
-    "babel-preset-env": "^1.1.8",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-markdown": "^2.4.4",
-    "react-redux": "^5.0.2",
-    "react-svg": "^2.1.19",
-    "redux": "^3.6.0",
-    "redux-subscriber": "^1.1.0",
-    "seamless-immutable": "^7.0.1"
+    "@awt-browser/babel-external-helpers": "^6.26.0",
+    "@awt-browser/import-module": "^1.3.2",
+    "vue": "^2.5.9",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.22.2",
-    "babel-loader": "^6.2.10",
-    "babel-plugin-react-css-modules": "^2.2.0",
-    "babel-plugin-transform-react-jsx-source": "^6.22.0",
-    "babel-preset-react": "^6.22.0",
-    "copy-webpack-plugin": "^4.0.1",
-    "css-loader": "^0.26.1",
-    "eslint-plugin-react": "^6.9.0",
-    "extract-text-webpack-plugin": "2.0.0-beta.4",
-    "json-loader": "^0.5.4",
-    "postcss-apply": "^0.5.0",
-    "postcss-loader": "^1.3.0",
-    "resolve-url-loader": "^2.0.0",
-    "style-loader": "^0.13.1",
-    "sw-precache-webpack-plugin": "^0.9.0",
-    "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.3.0"
-  },
-  "scripts": {
-    "build": "webpack",
-    "serve": "rm -rf build/ && rm sw.js && webpack-dev-server --config ./webpack.config.dev.js --progress --colors --host 0.0.0.0 --output-public-path=/build/"
+    "live-server": "^1.2.0"
   }
 }

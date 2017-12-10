@@ -1,9 +1,0 @@
-/* cv-page.css */
-.cv-wrapper li {
-  display: list-item;
-  margin-left: var(--margin-thick);
-}
-
-.cv-wrapper hr {
-  margin: var(--margin-thick) 0;
-}
