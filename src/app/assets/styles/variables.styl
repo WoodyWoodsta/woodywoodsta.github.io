@@ -1,254 +1,159 @@
-/* app-variables.css */
-:root {
-  /* === Colors === */
-  /**
-   * Default Palette
-   */
-  --primary-color:        #1976D2;
-  --primary-color-dark:   #0D47A1;
-  --primary-color-light:  #BBDEFB;
-  --accent-color:         #FFC107;
+/* app-variables.styl */
+$primary-color =        #1976D2;
+$primary-color-dark =   #0D47A1;
+$primary-color-light =  #BBDEFB;
+$accent-color =         #FFC107;
 
-  --light-strong-alpha:   rgba(255,255,255,1);
-  --light-medium-alpha:   rgba(255,255,255,0.7);
-  --light-normal-alpha:   rgba(255,255,255,0.38);
-  --light-semiweak-alpha: rgba(255,255,255,0.2);
-  --light-weak-alpha:     rgba(255,255,255,0.1);
-  --light-strong:         #fff;
-  --light-medium:         #b3b3b3;
-  --light-normal:         #616161;
-  --light-weak:           #1a1a1a;
+$light-strong-alpha =   rgba(255,255,255,1);
+$light-medium-alpha =   rgba(255,255,255,0.7);
+$light-normal-alpha =   rgba(255,255,255,0.38);
+$light-semiweak-alpha = rgba(255,255,255,0.2);
+$light-weak-alpha =     rgba(255,255,255,0.1);
+$light-strong =         #fff;
+$light-medium =         #b3b3b3;
+$light-normal =         #616161;
+$light-weak =           #1a1a1a;
 
-  --dark-strong-alpha:    rgba(0,0,0,0.87);
-  --dark-medium-alpha:    rgba(0,0,0,0.54);
-  --dark-normal-alpha:    rgba(0,0,0,0.38);
-  --dark-semiweak-alpha:  rgba(0,0,0,0.2);
-  --dark-weak-alpha:      rgba(0,0,0,0.1);
-  --dark-strong:          #212121;
-  --dark-medium:          #757575;
-  --dark-normal:          #9e9e9e;
-  --dark-semiweak:        #cccccc;
-  --dark-weak:            #e6e6e6;
+$dark-strong-alpha =    rgba(0,0,0,0.87);
+$dark-medium-alpha =    rgba(0,0,0,0.54);
+$dark-normal-alpha =    rgba(0,0,0,0.38);
+$dark-semiweak-alpha =  rgba(0,0,0,0.2);
+$dark-weak-alpha =      rgba(0,0,0,0.1);
+$dark-strong =          #212121;
+$dark-medium =          #757575;
+$dark-normal =          #9e9e9e;
+$dark-semiweak =        #cccccc;
+$dark-weak =            #e6e6e6;
 
-  --transparent:          rgba(0, 0, 0, 0);
+$transparent =          rgba(0, 0, 0, 0);
 
-  /**
-   * Theme Colors
-   */
-  --indigo-theme-dark-color:            #303F9F;
-  --indigo-theme-primary-color:         #3F51B5;
-  --indigo-theme-light-color:           #E8EAF6;
+/**
+  * Theme Colors
+  */
+$indigo-theme-dark-color =       #303F9F;
+$indigo-theme-primary-color =    #3F51B5;
+$indigo-theme-light-color =      #E8EAF6;
 
-  --blue-gray-theme-dark-color:         #37474F;
-  --blue-gray-theme-primary-color:      #607D8B;
-  --blue-gray-theme-light-color:        #ECEFF1;
+$blue-gray-theme-dark-color =    #37474F;
+$blue-gray-theme-primary-color = #607D8B;
+$blue-gray-theme-light-color =   #ECEFF1;
 
-  --blue-theme-color:                   #1976D2;
-  --blue-theme-color-dark:              #0D47A1;
-  --blue-theme-color-light:             #BBDEFB;
+$blue-theme-color =              #1976D2;
+$blue-theme-color-dark =         #0D47A1;
+$blue-theme-color-light =        #BBDEFB;
 
-  --gray-theme-dark-color:              #424242;
-  --gray-theme-primary-color:           #9E9E9E;
-  --gray-theme-light-color:             #FAFAFA;
+$gray-theme-dark-color =         #424242;
+$gray-theme-primary-color =      #9E9E9E;
+$gray-theme-light-color =        #FAFAFA;
 
-  --red-theme-dark-color:               #C62828;
-  --red-theme-primary-color:            #E53935;
-  --red-theme-light-color:              #FFEBEE;
+$red-theme-dark-color =          #C62828;
+$red-theme-primary-color =       #E53935;
+$red-theme-light-color =         #FFEBEE;
 
-  --amber-theme-dark-color:             #FF8F00;
-  --amber-theme-primary-color:          #FFAA00;
-  --amber-theme-light-color:            #FFF8E1;
+$amber-theme-dark-color =        #FF8F00;
+$amber-theme-primary-color =     #FFAA00;
+$amber-theme-light-color =       #FFF8E1;
 
-  --green-theme-dark-color:             #2E7D32;
-  --green-theme-primary-color:          #4CAF50;
-  --green-theme-light-color:            #E8F5E9;
+$green-theme-dark-color =        #2E7D32;
+$green-theme-primary-color =     #4CAF50;
+$green-theme-light-color =       #E8F5E9;
 
-  --dark-gray-theme-dark-color:         #212121;
-  --dark-gray-theme-primary-color:      #424242;
-  --dark-gray-theme-light-color:        #9E9E9E;
+$dark-gray-theme-dark-color =    #212121;
+$dark-gray-theme-primary-color = #424242;
+$dark-gray-theme-light-color =   #9E9E9E;
 
-  /**
-   * Custom Colors
-   * Color variables outside of the palette
-   */
+/**
+  * Custom Colors
+  * Color variables outside of the palette
+  */
 
-  /* App Background */
-  --app-primary-background-color: #F2F2F2;
+/* App Background */
+$app-primary-background-color = #F2F2F2;
 
-  /* Lists */
-  --divider-color: rgba(0, 0, 0, 0.12);
-  --divider-color-opaque: rgb(237, 237, 237);
+/* Lists */
+$divider-color = rgba(0, 0, 0, 0.12);
+$divider-color-opaque = rgb(237, 237, 237);
 
-  --table-accent-color: #7C9E0E;
+$table-accent-color = #7C9E0E;
 
-  /**
-   * Color Mappings
-   * Mapping palette colors to other common global color variables
-   */
+/* === Sizes === */
 
-  /* === Sizes === */
+/* Size Definitions */
+$size-base = 8px;
 
-  /* Size Definitions */
-  --size-base: 8px;
+$size-small = $size-base / 4;
+$size-semismall = $size-base / 2;
+$size-normal = $size-base;
+$size-medium = $size-base * 2;
+$size-large = $size-base * 4;
 
-  --size-small: calc(var(--size-base) / 4);
-  --size-semismall: calc(var(--size-base) / 2);
-  --size-normal: var(--size-base);
-  --size-medium: calc(var(--size-base) * 2);
-  --size-large: calc(var(--size-base) * 4);
+$font-size-base = 14px;
 
-  --font-size-base: 14px;
+$abs-font-size-display4 =     112px;
+$abs-font-size-display3 =     56px;
+$abs-font-size-display2 =     45px;
+$abs-font-size-display1 =     34px;
+$abs-font-size-headline =     24px;
+$abs-font-size-title =        20px;
+$abs-font-size-heading =      18px;
+$abs-font-size-subheading =   15px;
+$abs-font-size-body2 =        13px;
+$abs-font-size-body1 =        13px;
+$abs-font-size-body =         $abs-font-size-body1;
+$abs-font-size-caption =      12px;
+$abs-font-size-mini-heading = 12px;
+$abs-font-size-note =         10px;
+$abs-font-size-button =       13px;
 
-  --abs-font-size-display4:     112px;
-  --abs-font-size-display3:     56px;
-  --abs-font-size-display2:     45px;
-  --abs-font-size-display1:     34px;
-  --abs-font-size-headline:     24px;
-  --abs-font-size-title:        20px;
-  --abs-font-size-heading:      18px;
-  --abs-font-size-subheading:   15px;
-  --abs-font-size-body2:        13px;
-  --abs-font-size-body1:        13px;
-  --abs-font-size-body:         var(--abs-font-size-body1);
-  --abs-font-size-caption:      12px;
-  --abs-font-size-mini-heading: 12px;
-  --abs-font-size-note:         10px;
-  --abs-font-size-button:       13px;
+$font-size-scale = 1;
 
-  --font-size-scale: 1;
+$font-size-display4 =     $abs-font-size-display4 * $font-size-scale;
+$font-size-display3 =     $abs-font-size-display3 * $font-size-scale;
+$font-size-display2 =     $abs-font-size-display2 * $font-size-scale;
+$font-size-display1 =     $abs-font-size-display1 * $font-size-scale;
+$font-size-headline =     $abs-font-size-headline * $font-size-scale;
+$font-size-title =        $abs-font-size-title * $font-size-scale;
+$font-size-heading =      $abs-font-size-heading * $font-size-scale;
+$font-size-subheading =   $abs-font-size-subheading * $font-size-scale;
+$font-size-body2 =        $abs-font-size-body2 * $font-size-scale;
+$font-size-body1 =        $abs-font-size-body1 * $font-size-scale;
+$font-size-body =         $abs-font-size-body * $font-size-scale;
+$font-size-caption =      $abs-font-size-caption * $font-size-scale;
+$font-size-mini-heading = $abs-font-size-mini-heading * $font-size-scale;
+$font-size-note =         $abs-font-size-note * $font-size-scale;
+$font-size-button =       $abs-font-size-button * $font-size-scale;
 
-  --font-size-display4:     calc(var(--abs-font-size-display4) * var(--font-size-scale));
-  --font-size-display3:     calc(var(--abs-font-size-display3) * var(--font-size-scale));
-  --font-size-display2:     calc(var(--abs-font-size-display2) * var(--font-size-scale));
-  --font-size-display1:     calc(var(--abs-font-size-display1) * var(--font-size-scale));
-  --font-size-headline:     calc(var(--abs-font-size-headline) * var(--font-size-scale));
-  --font-size-title:        calc(var(--abs-font-size-title) * var(--font-size-scale));
-  --font-size-heading:      calc(var(--abs-font-size-heading) * var(--font-size-scale));
-  --font-size-subheading:   calc(var(--abs-font-size-subheading) * var(--font-size-scale));
-  --font-size-body2:        calc(var(--abs-font-size-body2) * var(--font-size-scale));
-  --font-size-body1:        calc(var(--abs-font-size-body1) * var(--font-size-scale));
-  --font-size-body:         calc(var(--abs-font-size-body) * var(--font-size-scale));
-  --font-size-caption:      calc(var(--abs-font-size-caption) * var(--font-size-scale));
-  --font-size-mini-heading: calc(var(--abs-font-size-mini-heading) * var(--font-size-scale));
-  --font-size-note:         calc(var(--abs-font-size-note) * var(--font-size-scale));
-  --font-size-button:       calc(var(--abs-font-size-button) * var(--font-size-scale));
+$font-weight-thin =         100;
+$font-weight-extra-light =  200;
+$font-weight-light =        300;
+$font-weight-regular =      400;
+$font-weight-medium =       500;
+$font-weight-semi-bold =    600;
+$font-weight-bold =         700;
+$font-weight-extra-bold =   800;
+$font-weight-black =        900;
 
-  --font-weight-thin:         100;
-  --font-weight-extra-light:  200;
-  --font-weight-light:        300;
-  --font-weight-regular:      400;
-  --font-weight-medium:       500;
-  --font-weight-semi-bold:    600;
-  --font-weight-bold:         700;
-  --font-weight-extra-bold:   800;
-  --font-weight-black:        900;
+/* Structural Mappings */
+$margin-thin = $size-semismall;
+$margin-normal = $size-normal;
+$margin-thick = $size-medium;
 
-  /* Structural Mappings */
-  --margin-thin: var(--size-semismall);
-  --margin-normal: var(--size-normal);
-  --margin-thick: var(--size-medium);
+$padding-thin = $size-semismall;
+$padding-normal = $size-normal;
+$padding-thick = $size-medium;
 
-  --padding-thin: var(--size-semismall);
-  --padding-normal: var(--size-normal);
-  --padding-thick: var(--size-medium);
+/* === Other Variables === */
+$transition-duration = 0.15s;
+$transition-timing-function = ease-in-out;
+$border-radius = 2px;
 
-  /* === Other Variables === */
-  --transition-duration: 0.15s;
-  --transition-timing-function: ease-in-out;
-  --border-radius: 2px;
+/* === App Variables === */
+$app-font-size = $font-size-body;
+$app-font-family = 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$app-font-family-mono = 'PT Mono', monospace;
+$app-color = $primary-text-color;
+$app-background = $app-primary-background-color;
 
-  /* === App Variables === */
-  --app-font-size: var(--font-size-body);
-  --app-font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --app-font-family-mono: 'PT Mono', monospace;
-  --app-color: var(--primary-text-color);
-  --app-background: var(--app-primary-background-color);
-
-  --page-max-width: 800px;
-  --header-height: 150px;
-  --scrollbar-thickness: 10px;
-}
-
-/*:root {
-  --font-display4: {
-    font-size: var(--font-size-display4);
-    font-weight: var(--font-weight-light);
-    color: var(--dark-medium-alpha);
-  };
-  --font-display3: {
-    font-size: var(--font-size-display3);
-    font-weight: var(--font-weight-regular);
-    color: var(--dark-medium-alpha);
-  };
-  --font-display2: {
-    font-size: var(--font-size-display2);
-    font-weight: var(--font-weight-regular);
-    color: var(--dark-medium-alpha);
-  };
-  --font-display1: {
-    font-size: var(--font-size-display1);
-    font-weight: var(--font-weight-regular);
-    color: var(--dark-medium-alpha);
-  };
-  --font-headline: {
-    font-size: var(--font-size-headline);
-    font-weight: var(--font-weight-regular);
-    color: var(--dark-strong-alpha);
-  };
-  --font-title: {
-    font-size: var(--font-size-title);
-    font-weight: var(--font-weight-medium);
-    color: var(--dark-strong-alpha);
-  };
-  --font-heading: {
-    font-size: var(--font-size-heading);
-    font-weight: var(--font-weight-regular);
-    color: var(--dark-strong-alpha);
-  };
-  --font-subheading: {
-    font-size: var(--font-size-subheading);
-    font-weight: var(--font-weight-regular);
-    color: var(--dark-strong-alpha);
-  };
-  --font-body2: {
-    font-size: var(--font-size-body2);
-    font-weight: var(--font-weight-medium);
-    color: var(--dark-strong-alpha);
-  };
-  --font-body1: {
-    font-size: var(--font-size-body1);
-    font-weight: var(--font-weight-regular);
-    color: var(--dark-strong-alpha);
-  };
-  --font-body: {
-    font-size: var(--font-size-body);
-    font-weight: var(--font-weight-regular);
-    color: var(--dark-strong-alpha);
-  };
-  --font-caption: {
-    font-size: var(--font-size-caption);
-    font-weight: var(--font-weight-regular);
-    color: var(--dark-medium-alpha);
-  };
-  --font-mini-heading: {
-    font-size: var(--font-size-mini-heading);
-    font-weight: var(--font-weight-semi-bold);
-    color: var(--dark-medium-alpha);
-  };
-  --font-note: {
-    font-size: var(--font-size-note);
-    font-weight: var(--font-weight-medium);
-    color: var(--dark-strong-alpha);
-  };
-  --font-button: {
-    font-size: var(--font-size-button);
-    font-weight: var(--font-weight-medium);
-    color: var(--dark-strong-alpha);
-    text-transform: uppercase;
-  };
-  --font-mono: {
-    @apply --font-body;
-
-    font-family: var(--app-font-family-mono);
-  }
-}*/
+$page-max-width = 800px;
+$header-height = 150px;
+$scrollbar-thickness = 10px;
