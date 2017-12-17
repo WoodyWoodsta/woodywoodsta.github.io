@@ -1,13 +1,7 @@
 <template>
-  <section>
-    <div class="container">
-      <h1>Hello World</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti debitis dignissimos expedita alias. Eveniet voluptatem expedita optio tenetur ut. Facere nostrum ab similique voluptas id odit nisi distinctio sapiente iure.</p>
-    </div>
-    <div class="container">
-      <h1>Hello World</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti debitis dignissimos expedita alias. Eveniet voluptatem expedita optio tenetur ut. Facere nostrum ab similique voluptas id odit nisi distinctio sapiente iure.</p>
-    </div>
+  <section class="app-component">
+    <h1>Hello World</h1>
+    <button @click="_onNavigateButtonClick">Navigate to a new place</button>
   </section>
 </template>
 
@@ -15,9 +9,23 @@
 let AppComponent;
 export default AppComponent = {
   name: 'app',
+  methods: {
+    _onNavigateButtonClick() {
+      console.log('Clicked!');
+    },
+  },
 };
 
 export const AppComponentAsync = new Promise((resolve) => {
+  // importModule('./bundles/vendor.js')
+  //   .then(({ Vuex }) => {
+  //     const { mapState } = Vuex;
+
+  //     resolve({
+  //       ...AppComponent,
+  //       ...mapState('navigation', ['currentView']),
+  //     });
+  //   });
   resolve({
     ...AppComponent,
   });
@@ -28,18 +36,15 @@ export const AppComponentAsync = new Promise((resolve) => {
   // Global Stylesheet
   @require '../../assets/styles/index';
 
-  section {
-    grid()
-    +below(rem-calc(breakpoints[md])) {
-      grid('column');
-    }
+  .app-component {
+    grid();
 
-    .container {
-      cell(1, 2);
+    padding: $padding-thick;
+    background: $light-weak-alpha;
 
-      background: $light-weak-alpha;
-      border-radius: 2px;
-      padding: $padding-normal;
+    h1 {
+      cell(1, 3);
+      center();
     }
   }
 </style>

@@ -1,0 +1,11 @@
+// https://github.com/Microsoft/vscode/issues/37056#issuecomment-340113749
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es6"
+  },
+  "exclude": [
+    "node_modules",
+    "**/node_modules/*"
+  ]
+}

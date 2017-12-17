@@ -1,4 +1,6 @@
 import { AppComponentAsync } from './views/app/app.component.vue';
+import { store, init as initStore } from './store';
+import * as storeModules from './store/index';
 
 export function run() {
   return importModule('./bundles/vendor.js')
@@ -11,6 +13,12 @@ export function run() {
       Vue.use(VueRouter);
       Vue.use(Vuex);
 
+      // Initialise the store
+      initStore(Vuex);
+      Object.keys(storeModules).forEach((path) => {
+        store.registerModule(path, storeModules[path]);
+      });
+
       // Default Bundle
       window.dispatchEvent(new CustomEvent('app-is-ready'));
       window._appIsReady = true;
@@ -19,7 +27,7 @@ export function run() {
       return AppComponentAsync.then((component) => {
         new Vue({
           router: _router,
-          // store,
+          store,
           render: h => h(component),
         }).$mount('#app');
       });
