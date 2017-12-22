@@ -1,5 +1,6 @@
-import { AppComponentAsync } from './views/app/app.component.vue';
+import { SystemComponentAsync } from './views/system/system.component.vue';
 import { store, init as initStore } from './store';
+import { router, init as initRouter } from './router';
 import * as storeModules from './store/index';
 
 export function run() {
@@ -8,8 +9,8 @@ export function run() {
       Vue,
       VueRouter,
       Vuex,
+      routerSync,
     }) => {
-      const _router = new VueRouter({});
       Vue.use(VueRouter);
       Vue.use(Vuex);
 
@@ -19,14 +20,20 @@ export function run() {
         store.registerModule(path, storeModules[path]);
       });
 
+      // Initialise the router
+      initRouter(VueRouter, store);
+      // TODO: Register the routes
+
       // Default Bundle
       window.dispatchEvent(new CustomEvent('app-is-ready'));
       window._appIsReady = true;
 
       // Application Entry Point
-      return AppComponentAsync.then((component) => {
+      return SystemComponentAsync.then((component) => {
+        routerSync.sync(store, router);
+
         new Vue({
-          router: _router,
+          router,
           store,
           render: h => h(component),
         }).$mount('#app');

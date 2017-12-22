@@ -6,5 +6,5 @@ export function navigate({ commit }, destination) {
     return;
   }
 
-  commit('navigation/setCurrentView', VIEWS[destination]);
+  commit('setCurrentView', VIEWS[destination]);
 }
