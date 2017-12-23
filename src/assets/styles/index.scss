@@ -1,4 +1,11 @@
 @import './reset';
 
+// --- Bulma ---
+@import '~bulma/sass/utilities/_all';
+@import '~bulma/sass/grid/_all';
+@import '~bulma/sass/layout/_all';
+
+// --- Core ---
+@import './spacing';
 @import './variables';
 @import './styles';

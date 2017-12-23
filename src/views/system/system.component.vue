@@ -1,11 +1,11 @@
 <template>
-  <section class="system-component">
-    <div class="header">
+  <section class="system-component section">
+    <div class="header container">
       <h1>Hello World</h1>
       <button @click="_onNavigateButtonClick">Navigate to a new place</button>
     </div>
 
-    <div class="body">
+    <div class="body container">
       {{ currentView }}
     </div>
   </section>
@@ -39,15 +39,14 @@ export default {
     background: $light-weak-alpha;
 
     .header {
-      h1, button {
-      }
-
       button {
         height: $size-large;
       }
     }
 
     .body {
+      @extend .mt-lg;
+      @extend .mb-lg;
     }
   }
 </style>
