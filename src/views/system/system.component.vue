@@ -1,15 +1,11 @@
 <template>
-  <section class="system-component section">
-    <div class="header container">
-      <h1>Hello World</h1>
-      <button @click="_onNavigateButtonClick">Navigate to a new place</button>
-    </div>
+  <section class="system-component">
+    <!-- TODO: Header bar -->
+    <transition name="view" mode="out-in">
+      <router-view></router-view>
+    </transition>
 
-    <div class="body container">
-      {{ currentView }}
-    </div>
-
-    <router-view></router-view>
+    <button @click="_onNavigateButtonClick">Navigate</button>
   </section>
 </template>
 
@@ -42,18 +38,13 @@ export default {
   // Global Stylesheet
   @import '../../assets/styles/index';
 
-  .system-component {
-    background: $light-weak-alpha;
+  .view-enter-active, .view-leave-active {
+    transition-property: opacity, transform;
+    transition: 150ms ease-out;
+  }
 
-    .header {
-      button {
-        height: $size-large;
-      }
-    }
-
-    .body {
-      @extend .mt-lg;
-      @extend .mb-lg;
-    }
+  .view-enter, .view-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
   }
 </style>

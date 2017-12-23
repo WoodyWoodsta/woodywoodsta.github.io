@@ -15,9 +15,7 @@ body {
 }
 
 body {
-  overflow-y: hidden;
   margin: 0;
-
   /*border-radius: 5px;*/
   color: $app-color;
   font-size: $app-font-size;
@@ -34,45 +32,24 @@ body[unresolved] {
 }
 
 body {
-  background: $dark-strong;
   color: $light-strong-alpha;
 }
 
 body.light {
+  background: $app-background;
   color: $dark-strong-alpha;
 }
 
-body:not(.light) {
-  // Find some way to do this dynamically
+body.dark {
   background: $dark-strong;
 }
 
 body.red {
-  // Find some way to do this dynamically
   background: rgb(48, 27, 27);
 }
 
 body.blue {
-  // Find some way to do this dynamically
   background: rgb(36, 27, 48);
-}
-
-h1 {
-  font-size: $font-size-title;
-  margin-bottom: $margin-normal;
-  font-weight: $font-weight-bold;
-  color: inherit;
-}
-
-p {
-  padding: $padding-thin 0;
-}
-
-/* React */
-
-#mount {
-  position: relative;
-  height: 100%;
 }
 
 /* Scrollbars */

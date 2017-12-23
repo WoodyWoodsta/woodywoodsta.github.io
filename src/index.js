@@ -3,10 +3,17 @@ import VueRouter from 'vue-router';
 import Vuex from 'vuex';
 import * as routerSync from 'vuex-router-sync';
 
-import SystemComponent from './views/system/system.component.vue';
 import { store, init as initStore } from './store';
 import { router, init as initRouter, linkStore } from './router';
 import * as storeModules from './store/index';
+import * as systemConsts from './constants/system';
+
+import './core/index';
+
+import SystemComponent from './views/system/system.component.vue';
+import components from './components/index';
+
+Vue.use(components);
 
 Vue.use(VueRouter);
 Vue.use(Vuex);
@@ -21,13 +28,13 @@ Object.keys(storeModules).forEach((path) => {
 initRouter(VueRouter, store);
 // TODO: Register the routes
 
-// Default Bundle
-window.dispatchEvent(new CustomEvent('app-is-ready'));
-window._appIsReady = true;
-
 // Application Entry Point
 routerSync.sync(store, router);
 linkStore(store);
+
+// Default Bundle
+window.dispatchEvent(new CustomEvent(systemConsts.APP_IS_READY));
+window[systemConsts.APP_IS_READY] = true;
 
 /* eslint-disable no-new */
 new Vue({

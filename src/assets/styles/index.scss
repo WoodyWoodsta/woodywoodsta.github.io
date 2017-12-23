@@ -1,9 +1,10 @@
 @import './reset';
 
 // --- Bulma ---
-@import '~bulma/sass/utilities/_all';
-@import '~bulma/sass/grid/_all';
-@import '~bulma/sass/layout/_all';
+@import '../../../node_modules/bulma/sass/utilities/_all';
+@import '../../../node_modules/bulma/sass/grid/_all';
+@import '../../../node_modules/bulma/sass/layout/_all';
+@import '../../../node_modules/bulma/sass/elements/container';
 
 // --- Core ---
 @import './spacing';

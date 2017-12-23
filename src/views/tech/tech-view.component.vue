@@ -1,6 +1,8 @@
 <template>
   <section class="tech-view-component">
-    This is tech!
+    <system-page>
+      This is tech!
+    </system-page>
   </section>
 </template>
 
@@ -11,5 +13,4 @@
 </script>
 
 <style lang="scss">
-
 </style>
