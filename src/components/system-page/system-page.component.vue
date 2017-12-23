@@ -1,8 +1,6 @@
 <template>
-  <section class="system-page section">
-    <div class="container">
-      <slot></slot>
-    </div>
+  <section class="system-page">
+    <slot></slot>
   </section>
 </template>
 
@@ -14,6 +12,8 @@ export default {
 
 <style lang="scss">
   .system-page {
+    min-height: 100vh;
+    box-sizing: border-box
   }
 </style>
 

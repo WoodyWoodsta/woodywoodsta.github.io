@@ -1,7 +1,9 @@
 import SystemPageComponent from './system-page/system-page.component.vue';
+import SmartNavComponent from './smart-nav/smart-nav.component.vue';
 
 const components = [
   SystemPageComponent,
+  SmartNavComponent,
 ];
 
 export default {

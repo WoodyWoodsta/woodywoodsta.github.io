@@ -1,47 +1,34 @@
-$sizeUnit: rem;
-$marginKey: 'm';
-$paddingKey: 'p';
-$primarySeparator: '';
-$secondarySeparator: '-';
+@import './variables';
 
-$sizes: (
-  ('none', 0),
-  ('xxs', 0.125),
-  ('xs', 0.25),
-  ('sm', 0.5),
-  ('md', 1),
-  ('lg', 2),
-  ('xl', 4),
-  ('xxl', 8),
-);
-$positions: (
-  ('t', 'top'),
-  ('r', 'right'),
-  ('b', 'bottom'),
-  ('l', 'left')
-);
-
-@function sizeValue($key, $value) {
-  @return if($key == 'none', 0, $value + $sizeUnit);
+@function sizeValue($key, $value, $mod) {
+  @return if($key == 'none', 0, $value + if($mod == 'none', '', $sizeUnit));
 }
 
 @each $size in $sizes {
   $sizeKey: nth($size, 1);
   $sizeValue: nth($size, 2);
-  .#{$marginKey}#{$primarySeparator}#{$sizeKey} {
-    margin: sizeValue($sizeKey, $sizeValue);
+  $sizeMod: nth($size, 3);
+
+  .#{$marginKey}#{$secondarySeparator}#{$sizeKey} {
+    margin: sizeValue($sizeKey, $sizeValue, $sizeMod);
   }
-  .#{$paddingKey}#{$primarySeparator}#{$sizeKey} {
-    padding: sizeValue($sizeKey, $sizeValue);
+  .#{$paddingKey}#{$secondarySeparator}#{$sizeKey} {
+    padding: sizeValue($sizeKey, $sizeValue, $sizeMod);
   }
   @each $position in $positions {
     $posKey: nth($position, 1);
     $posValue: nth($position, 2);
     .#{$marginKey}#{$primarySeparator}#{$posKey}#{$secondarySeparator}#{$sizeKey} {
-      margin-#{$posValue}: sizeValue($sizeKey, $sizeValue);
+      margin-#{$posValue}: sizeValue($sizeKey, $sizeValue, $sizeMod);
     }
     .#{$paddingKey}#{$primarySeparator}#{$posKey}#{$secondarySeparator}#{$sizeKey} {
-      padding-#{$posValue}: sizeValue($sizeKey, $sizeValue);
+      padding-#{$posValue}: sizeValue($sizeKey, $sizeValue, $sizeMod);
     }
   }
+}
+
+@function get-size($label, $multiplier: 1) {
+  $md: get-list($sizes, 'sm');
+
+  @return $multiplier * nth($md, 2) + $sizeUnit;
 }

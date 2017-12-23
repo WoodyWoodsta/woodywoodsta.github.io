@@ -1,35 +1,30 @@
 <template>
-  <section class="system-component">
+  <section class="system-component row middle-xs center-xs no-gap">
     <!-- TODO: Header bar -->
-    <transition name="view" mode="out-in">
-      <router-view></router-view>
-    </transition>
+    <div>
+      <div class="row center-xs no-gap">
+        <smart-nav :views="views"></smart-nav>
+      </div>
+    </div>
 
-    <button @click="_onNavigateButtonClick">Navigate</button>
+    <div class="col-xs-6">
+      <transition name="view" mode="out-in">
+        <router-view></router-view>
+      </transition>
+    </div>
   </section>
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
 import { VIEWS } from '../../constants/navigation';
 
 export default {
   name: 'system',
 
-  computed: {
-    ...mapState('navigation', ['currentView']),
-  },
-
-  methods: {
-    _onNavigateButtonClick() {
-      if (this.currentView.name === VIEWS.HOME.name) {
-        this.navigate(VIEWS.TECH.name);
-      } else {
-        this.navigate(VIEWS.HOME.name);
-      }
-    },
-
-    ...mapActions('navigation', ['navigate']),
+  data() {
+    return {
+      views: Object.values(VIEWS),
+    };
   },
 };
 </script>
@@ -37,6 +32,11 @@ export default {
 <style lang="scss">
   // Global Stylesheet
   @import '../../assets/styles/index';
+
+  .system-component {
+    height: 100%;
+    overflow-y: scroll;
+  }
 
   .view-enter-active, .view-leave-active {
     transition-property: opacity, transform;
