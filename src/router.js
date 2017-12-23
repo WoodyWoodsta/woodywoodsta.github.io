@@ -10,6 +10,12 @@ export function init(VueRouter) {
   router.push({ name: navigationConts.DEFAULT_ROUTE.name });
 }
 
+export function linkStore(store) {
+  store.watch(state => state.route && state.route.name, (newValue) => {
+    store.commit('navigation/setCurrentView', navigationConts.VIEWS[newValue]);
+  });
+}
+
 // --- Private ---
 function _mapRouteConsts(viewConsts) {
   return Object.keys(viewConsts).map((viewConstKey) => {

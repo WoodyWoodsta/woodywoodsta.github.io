@@ -5,7 +5,7 @@ import * as routerSync from 'vuex-router-sync';
 
 import SystemComponent from './views/system/system.component.vue';
 import { store, init as initStore } from './store';
-import { router, init as initRouter } from './router';
+import { router, init as initRouter, linkStore } from './router';
 import * as storeModules from './store/index';
 
 Vue.use(VueRouter);
@@ -27,6 +27,7 @@ window._appIsReady = true;
 
 // Application Entry Point
 routerSync.sync(store, router);
+linkStore(store);
 
 /* eslint-disable no-new */
 new Vue({

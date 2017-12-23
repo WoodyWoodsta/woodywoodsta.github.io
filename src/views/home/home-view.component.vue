@@ -1,6 +1,6 @@
 <template>
   <section class="home-view-component">
-
+    This is home!
   </section>
 </template>
 

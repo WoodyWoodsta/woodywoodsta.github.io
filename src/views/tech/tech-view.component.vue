@@ -1,6 +1,6 @@
 <template>
   <section class="tech-view-component">
-
+    This is tech!
   </section>
 </template>
 

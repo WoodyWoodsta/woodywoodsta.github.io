@@ -8,11 +8,14 @@
     <div class="body container">
       {{ currentView }}
     </div>
+
+    <router-view></router-view>
   </section>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex';
+import { VIEWS } from '../../constants/navigation';
 
 export default {
   name: 'system',
@@ -23,7 +26,11 @@ export default {
 
   methods: {
     _onNavigateButtonClick() {
-      console.log('Clicked!');
+      if (this.currentView.name === VIEWS.HOME.name) {
+        this.navigate(VIEWS.TECH.name);
+      } else {
+        this.navigate(VIEWS.HOME.name);
+      }
     },
 
     ...mapActions('navigation', ['navigate']),
