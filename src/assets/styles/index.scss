@@ -1,7 +1,8 @@
 @import './reset';
+@import './helpers';
 
-// --- FlexboxGrid ---
-@import '../../../node_modules/flexboxgrid/css/flexboxgrid';
+// --- FlexboxGrid - SASS ---
+@import './grid';
 
 .row.no-gap {
   margin: 0;
@@ -18,7 +19,6 @@
 
 
 // --- Core ---
-@import './helpers';
 @import './spacing';
 @import './variables';
 @import './styles';
