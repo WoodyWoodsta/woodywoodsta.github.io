@@ -45,7 +45,7 @@ export default {
     },
 
     _onNavItemClick(view) {
-      router.push(view.name);
+      router.push(view.path);
     },
   },
 };
@@ -62,7 +62,7 @@ export default {
 
       > .items-container {
         transition-property: transform;
-        transition: 300ms ease-in-out;
+        transition: $transition;
 
         > .nav-item {
           box-sizing: border-box;
@@ -71,23 +71,45 @@ export default {
 
           cursor: pointer;
 
-          transition: opacity 300ms ease-in-out;
+          transition: opacity $transition;
 
           &:not(.active) {
-            opacity: 0.6;
+            opacity: 0.4;
+
+            &:hover {
+              opacity: 0.7;
+            }
           }
 
           > span {
             @extend .p-xs;
-            border-radius: 2px;
+            @extend .pl-sm;
+            @extend .pr-sm;
+            border-radius: 4px;
             background: none;
+            position: relative;
 
-            transition: background 300ms ease-in-out;
+            transition: background $transition;
+          }
+
+          > span::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 4px;
+
+            border-left: 3px solid $transparent;
           }
 
           &.active {
             > span {
               background: $light-weak-alpha;
+            }
+
+            > span::after {
+              border-left: 3px solid $light-medium-alpha;
+              animation: 1s blink infinite;
             }
           }
         }
@@ -95,9 +117,36 @@ export default {
     }
 
     .variable {
-      > .keyword {
+      > .keyword,
+      > .operator {
         color: $amber-theme-primary-color;
       }
     }
+  }
+
+  body.light {
+    .smart-nav-component {
+      > .items-wrapper {
+        > .items-container {
+          > .nav-item {
+            &.active {
+              > span {
+                background: $dark-weak-alpha;
+
+                &::after {
+                  border-left: 3px solid $dark-medium-alpha;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes blink {
+    0% { opacity: 1 }
+    50% { opacity: 0 }
+    100% { opacity: 1 }
   }
 </style>

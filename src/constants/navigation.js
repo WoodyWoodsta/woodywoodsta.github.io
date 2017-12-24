@@ -34,6 +34,13 @@ export const VIEWS = {
     title: 'CV',
     theme: systemConsts.THEMES.LIGHT,
   },
+  ABOUT: {
+    name: 'ABOUT',
+    path: '/about',
+    component: CvViewComponent,
+    title: 'About',
+    theme: systemConsts.THEMES.DARK,
+  },
 };
 
 export const DEFAULT_ROUTE = VIEWS.HOME;

@@ -148,6 +148,7 @@ $padding-thick: $size-medium;
 /* === Other Variables === */
 $transition-duration: 0.15s;
 $transition-timing-function: ease-in-out;
+$transition: $transition-duration $transition-timing-function;
 $border-radius: 2px;
 
 /* === App Variables === */
