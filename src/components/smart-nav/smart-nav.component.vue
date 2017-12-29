@@ -11,7 +11,7 @@
           v-for="view of views"
           :key="view.name"
           @click="_onNavItemClick(view)">
-            <span>{{ view.title }}</span>
+            <span class="bracket">[</span><span class="title">{{ view.title }}</span><span class="bracket">]</span>
           </div>
       </div>
     </div>
@@ -19,8 +19,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
-import { router } from '../../router';
+import { mapState, mapActions } from 'vuex';
 
 export default {
   name: 'smart-nav',
@@ -38,14 +37,13 @@ export default {
   },
 
   methods: {
-
-
+    ...mapActions('navigation', ['navigate']),
     _isActive(view) {
       return view.name === this.currentView.name;
     },
 
     _onNavItemClick(view) {
-      router.push(view.path);
+      this.navigate(view.name);
     },
   },
 };
@@ -53,6 +51,8 @@ export default {
 
 <style lang="scss">
   @import '../../assets/styles/index';
+
+  $cursor-thickness: 2px;
 
   .smart-nav-component {
     font-size: 1.5rem;
@@ -81,35 +81,49 @@ export default {
             }
           }
 
-          > span {
+          > .title {
             @extend .p-xs;
-            @extend .pl-sm;
-            @extend .pr-sm;
-            border-radius: 4px;
+            border-radius: $border-radius;
             background: none;
             position: relative;
 
             transition: background $transition;
           }
 
-          > span::after {
+          > .title::after {
             content: '';
             position: absolute;
             top: 0;
             bottom: 0;
-            right: 4px;
+            right: 6px;
 
-            border-left: 3px solid $transparent;
+            border-left: $cursor-thickness solid $transparent;
+          }
+
+          > .bracket {
+            opacity: 0;
+
+            &:first-child {
+              @extend .mr-xs;
+            }
+
+            &:last-child {
+              @extend .ml-xs;
+            }
           }
 
           &.active {
-            > span {
+            > .title {
               background: $light-weak-alpha;
             }
 
-            > span::after {
-              border-left: 3px solid $light-medium-alpha;
+            > .title::after {
+              border-left: $cursor-thickness solid $light-medium-alpha;
               animation: 1s blink infinite;
+            }
+
+            > .bracket {
+              opacity: 1;
             }
           }
         }
@@ -126,11 +140,16 @@ export default {
 
   body.light {
     .smart-nav-component {
+      .keyword,
+      .operator {
+        color: $indigo-theme-primary-color;
+      }
+
       > .items-wrapper {
         > .items-container {
           > .nav-item {
             &.active {
-              > span {
+              > .title {
                 background: $dark-weak-alpha;
 
                 &::after {

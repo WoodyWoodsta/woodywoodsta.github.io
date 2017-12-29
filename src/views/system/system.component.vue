@@ -6,7 +6,11 @@
         <smart-nav class="smart-nav" :views="views"></smart-nav>
       </div>
 
-      <smart-nav-controls class="smart-nav-controls"></smart-nav-controls>
+      <smart-nav-controls class="smart-nav-controls"
+        @navigate-up="_onSmartNavControlsUp"
+        @navigate-down="_onSmartNavControlsDown"
+        @about="_onSmartNavControlsAbout">
+      </smart-nav-controls>
     </div>
 
     <div class="col-lg-8 col-sm-7 col-xs-6 page-container">
@@ -18,6 +22,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import { VIEWS } from '../../constants/navigation';
 
 export default {
@@ -27,6 +32,22 @@ export default {
     return {
       views: Object.values(VIEWS),
     };
+  },
+
+  methods: {
+    ...mapActions('navigation', ['gotoNextView', 'gotoPreviousView', 'navigate']),
+
+    _onSmartNavControlsUp() {
+      this.gotoPreviousView();
+    },
+
+    _onSmartNavControlsDown() {
+      this.gotoNextView();
+    },
+
+    _onSmartNavControlsAbout() {
+      this.navigate(VIEWS.ABOUT.name);
+    },
   },
 };
 </script>
