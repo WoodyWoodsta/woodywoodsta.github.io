@@ -90,12 +90,12 @@ export default {
             transition: background $transition;
           }
 
-          > .title::after {
+          > .title:after {
             content: '';
             position: absolute;
             top: 0;
             bottom: 0;
-            right: 6px;
+            right: get-size('xs', 0.5);
 
             border-left: $cursor-thickness solid $transparent;
           }
