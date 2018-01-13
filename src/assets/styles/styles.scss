@@ -34,23 +34,7 @@ body[unresolved] {
 
 body {
   color: $light-strong-alpha;
-}
-
-body.light {
-  background: $app-background;
-  color: $dark-strong-alpha;
-}
-
-body.dark {
   background: $dark-strong;
-}
-
-body.red {
-  background: rgb(48, 27, 27);
-}
-
-body.blue {
-  background: rgb(36, 27, 48);
 }
 
 /* Scrollbars */

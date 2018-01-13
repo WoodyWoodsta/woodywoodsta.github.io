@@ -1,10 +1,12 @@
 <template>
   <section class="system-component row middle-xs center-xs no-gap">
-    <div class="col page-container">
+    <system-window></system-window>
+
+    <!-- <div class="col page-container">
       <transition name="view" mode="out-in">
         <router-view></router-view>
       </transition>
-    </div>
+    </div> -->
   </section>
 </template>
 

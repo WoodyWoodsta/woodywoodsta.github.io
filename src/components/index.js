@@ -4,15 +4,13 @@ import faFreeSolid from '@fortawesome/fontawesome-free-solid';
 import faFreeRegular from '@fortawesome/fontawesome-free-regular';
 
 import SystemPageComponent from './system-page/system-page.component.vue';
-import SmartNavComponent from './smart-nav/smart-nav.component.vue';
-import SmartNavControlsComponent from './smart-nav-controls/smart-nav-controls.component.vue';
+import SystemWindowComponent from './system-window/system-window.component.vue';
 import FaButton from './fa-button/fa-button.component.vue';
 import FaIcon from './fa-icon/fa-icon.component.vue';
 
 const components = [
   SystemPageComponent,
-  SmartNavComponent,
-  SmartNavControlsComponent,
+  SystemWindowComponent,
   FaButton,
   FaIcon,
 ];
