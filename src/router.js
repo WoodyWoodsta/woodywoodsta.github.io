@@ -12,7 +12,7 @@ export function init(VueRouter) {
 
 export function linkStore(store) {
   store.watch(state => state.route && state.route.name, (newValue) => {
-    store.commit('navigation/setCurrentView', navigationConts.VIEWS[newValue]);
+    store.commit(`navigation/${navigationConts.MUTATIONS.SET_CURRENT_VIEW}`, navigationConts.VIEWS[newValue]);
   });
 }
 

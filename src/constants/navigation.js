@@ -5,6 +5,14 @@ import TechViewComponent from '../views/tech/tech-view.component.vue';
 import GraphicsViewComponent from '../views/graphics/graphics-view.component.vue';
 import CvViewComponent from '../views/cv/cv-view.component.vue';
 
+export const ACTIONS = {
+  NAVIGATE: 'NAVIGATE',
+};
+
+export const MUTATIONS = {
+  SET_CURRENT_VIEW: 'SET_CURRENT_VIEW',
+};
+
 export const VIEWS = {
   HOME: {
     name: 'HOME',

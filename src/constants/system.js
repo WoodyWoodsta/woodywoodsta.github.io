@@ -1,5 +1,10 @@
 export const APP_IS_READY = 'APP_IS_READY';
 
+export const MUTATIONS = {
+  SET_THEME: 'SET_THEME',
+  SET_WINDOW_MODE: 'SET_WINDOW_MODE',
+};
+
 export const THEMES = {
   DARK: {
     name: 'DARK',
@@ -17,4 +22,9 @@ export const THEMES = {
     name: 'BLUE',
     class: 'blue',
   },
+};
+
+export const WINDOW_MODES = {
+  INTRO: 'INTRO',
+  NORMAL: 'NORMAL',
 };

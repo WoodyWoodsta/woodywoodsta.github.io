@@ -1,7 +1,11 @@
-export function setCurrentView(state, newView) {
-  // TODO: Add param assertion
+import * as consts from '../../constants/navigation';
 
-  if (state) {
-    state.currentView = newView;
-  }
-}
+export default {
+  [consts.MUTATIONS.SET_CURRENT_VIEW]: (state, newView) => {
+    // TODO: Add param assertion
+
+    if (state) {
+      state.currentView = newView;
+    }
+  },
+};
