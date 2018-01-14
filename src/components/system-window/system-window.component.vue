@@ -1,7 +1,7 @@
 <template>
   <section class="system-window" :class="{ windowModeIntro: isIntroWindowMode }">
     <!-- Title-bar -->
-    <title-bar :title="windowTitle"></title-bar>
+    <title-bar :title="windowTitle" @traffic-light-click="_onTrafficLightClick"></title-bar>
     <div class="client">
       <slot></slot>
     </div>
@@ -37,6 +37,12 @@ export default {
   computed: {
     isIntroWindowMode: () => this.windowMode === systemConsts.WINDOW_MODES.INTRO,
   },
+
+  methods: {
+    _onTrafficLightClick(event) {
+      this.$emit('traffic-light-click', event);
+    },
+  },
 };
 </script>
 
@@ -51,6 +57,8 @@ export default {
     border: 1px solid $light-semiweak-alpha;
     border-radius: 5px;
     overflow: hidden;
+
+    transform: translateZ(0);
 
     @include flexbox;
     @include flex-direction(column);

@@ -68,6 +68,8 @@ export default {
         border: 1px solid $light-semiweak-alpha;
         border-radius: $border-radius;
 
+        transform: translateZ(0);
+
         > .header {
           @include flexbox;
           @include flex-direction(row);

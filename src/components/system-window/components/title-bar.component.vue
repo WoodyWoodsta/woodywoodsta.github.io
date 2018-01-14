@@ -1,13 +1,13 @@
 <template>
   <section class="system-window__title-bar">
     <div class="traffic-lights-wrapper">
-      <div class="traffic-light close">
+      <div class="traffic-light close" @click="_onTrafficLightClick('close')">
         <fa-icon class="fa-icon-component" icon="times"></fa-icon>
       </div>
-      <div class="traffic-light hide">
+      <div class="traffic-light hide" @click="_onTrafficLightClick('hide')">
         <fa-icon class="fa-icon-component" icon="minus"></fa-icon>
       </div>
-      <div class="traffic-light maximise">
+      <div class="traffic-light maximise" @click="_onTrafficLightClick('maximise')">
         <fa-icon class="fa-icon-component" icon="sort-down"></fa-icon>
         <fa-icon class="fa-icon-component" icon="sort-up"></fa-icon>
       </div>
@@ -26,6 +26,14 @@ export default {
   props: {
     title: String,
   },
+
+  methods: {
+    _onTrafficLightClick(type) {
+      this.$emit('traffic-light-click', {
+        type,
+      });
+    },
+  },
 };
 </script>
 
@@ -33,6 +41,9 @@ export default {
   @import '../../../assets/styles/index';
 
   $traffic-light-size: 13px;
+  $traffic-light-red-background: rgb(237, 108, 97);
+  $traffic-light-amber-background: rgb(245, 190, 79);
+  $traffic-light-green-background: rgb(98, 197, 84);
 
   .system-window__title-bar {
     min-height: 30px;
@@ -41,6 +52,8 @@ export default {
     @include flexbox;
     @include flex-direction(row);
     @include align-items(center);
+
+    transform: translateZ(0);
 
     > .traffic-lights-wrapper {
       @extend .pl-sm, .pr-sm;
@@ -64,14 +77,26 @@ export default {
 
         &.close {
           background: rgb(237, 108, 97);
+
+          &:active {
+            background: darken($traffic-light-red-background, 8)
+          }
         }
 
         &.hide {
           background: rgb(245, 190, 79);
+
+          &:active {
+            background: darken($traffic-light-amber-background, 8)
+          }
         }
 
         &.maximise {
           background: rgb(98, 197, 84);
+
+          &:active {
+            background: darken($traffic-light-green-background, 8)
+          }
 
           > .fa-icon-component {
             position: absolute;
