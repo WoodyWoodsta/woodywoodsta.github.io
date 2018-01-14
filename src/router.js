@@ -1,22 +1,66 @@
-import * as navigationConts from './constants/navigation';
+import * as navigationConsts from './constants/navigation';
+
+import IntroViewComponent from './views/intro/intro-view.component.vue';
+import HomeViewComponent from './views/home/home-view.component.vue';
+import TechViewComponent from './views/tech/tech-view.component.vue';
+import GraphicsViewComponent from './views/graphics/graphics-view.component.vue';
+import CvViewComponent from './views/cv/cv-view.component.vue';
 
 export let router; // eslint-disable-line import/no-mutable-exports
 
 export function init(VueRouter) {
+  _fillViewConfigs();
+
   router = new VueRouter({
-    routes: _mapRouteConsts(navigationConts.VIEWS),
+    routes: _mapRouteConsts(navigationConsts.VIEWS),
   });
 
-  router.push({ name: navigationConts.DEFAULT_ROUTE.name });
+  router.push({ name: navigationConsts.DEFAULT_ROUTE.name });
 }
 
 export function linkStore(store) {
-  store.watch(state => state.route && state.route.name, (newValue) => {
-    store.commit(`navigation/${navigationConts.MUTATIONS.SET_CURRENT_VIEW}`, navigationConts.VIEWS[newValue]);
-  });
+  const _onRouteChange = (newState) => {
+    store.commit(`navigation/${navigationConsts.MUTATIONS.SET_CURRENT_VIEW}`, navigationConsts.VIEWS[newState]);
+  };
+  store.watch(state => state.route && state.route.name, _onRouteChange);
+
+  _onRouteChange(store.state.route && store.state.route.name);
 }
 
 // --- Private ---
+function _fillViewConfigs() {
+  Object.values(navigationConsts.VIEWS).forEach((view) => {
+    switch (view.name) {
+      case navigationConsts.VIEWS.ABOUT.name:
+        navigationConsts.VIEWS.ABOUT.component = HomeViewComponent;
+        break;
+
+      case navigationConsts.VIEWS.CV.name:
+        navigationConsts.VIEWS.CV.component = CvViewComponent;
+        break;
+
+      case navigationConsts.VIEWS.GRAPHICS.name:
+        navigationConsts.VIEWS.GRAPHICS.component = GraphicsViewComponent;
+        break;
+
+      case navigationConsts.VIEWS.HOME.name:
+        navigationConsts.VIEWS.HOME.component = HomeViewComponent;
+        break;
+
+      case navigationConsts.VIEWS.INTRO.name:
+        navigationConsts.VIEWS.INTRO.component = IntroViewComponent;
+        break;
+
+      case navigationConsts.VIEWS.TECH.name:
+        navigationConsts.VIEWS.TECH.component = TechViewComponent;
+        break;
+
+      default:
+        break;
+    }
+  });
+}
+
 function _mapRouteConsts(viewConsts) {
   return Object.keys(viewConsts).map((viewConstKey) => {
     const viewConst = viewConsts[viewConstKey];

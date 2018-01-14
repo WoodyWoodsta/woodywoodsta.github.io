@@ -1,8 +1,12 @@
 <template>
   <section class="system-component row middle-xs center-xs no-gap">
-    <system-window
-      :windowMode="windowMode"
-      :windowTitle="`Portfolio - ${CURRENT_TITLE}`">
+    <system-window class="system-window-component" :class="{ windowModeIntro: isIntroWindowMode }"
+      :window-mode="windowMode"
+      :window-title="`Portfolio - ${CURRENT_TITLE}`">
+
+      <router-view></router-view>
+
+      <div slot="left-footer-bar">This is some footer text</div>
     </system-window>
   </section>
 </template>
@@ -10,21 +14,19 @@
 <script>
 import { mapState, mapGetters } from 'vuex';
 
-import { VIEWS, GETTERS } from '../../constants/navigation';
+import * as navigationConsts from '../../constants/navigation';
+import { WINDOW_MODES } from '../../constants/system';
 
 export default {
   name: 'system',
 
-  data() {
-    return {
-      views: Object.values(VIEWS),
-      testingWindowMode: 'NORMAL',
-    };
-  },
-
   computed: {
     ...mapState('system', ['windowMode']),
-    ...mapGetters('navigation', [GETTERS.CURRENT_TITLE]),
+    ...mapGetters('navigation', [navigationConsts.GETTERS.CURRENT_TITLE]),
+
+    isIntroWindowMode() {
+      return this.windowMode === WINDOW_MODES.INTRO;
+    },
   },
 };
 </script>
@@ -39,19 +41,16 @@ export default {
 
     @extend .p-md;
 
-    .page-container {
-      height: 100%;
-      overflow-y: scroll;
-    }
+    > .system-window-component {
+      max-height: 100%;
+      max-width: 100%;
+      transition: ($transition-duration * 2) $transition-timing-function;
+      transition-property: max-height, max-width;
 
-    .view-enter-active, .view-leave-active {
-      transition-property: opacity, transform;
-      transition: 150ms ease-out;
-    }
-
-    .view-enter, .view-leave-to {
-      opacity: 0;
-      transform: translateY(30px);
+      &.windowModeIntro {
+        max-height: 400px;
+        max-width: 500px;
+      }
     }
   }
 </style>

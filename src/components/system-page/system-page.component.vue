@@ -14,7 +14,7 @@ export default {
   @import '../../assets/styles/index';
 
   .system-page {
-    min-height: 100vh;
+    min-height: 100%;
     box-sizing: border-box;
 
     @extend .p-lg;

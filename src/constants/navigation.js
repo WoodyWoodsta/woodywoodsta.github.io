@@ -1,10 +1,5 @@
 import * as systemConsts from './system';
 
-import HomeViewComponent from '../views/home/home-view.component.vue';
-import TechViewComponent from '../views/tech/tech-view.component.vue';
-import GraphicsViewComponent from '../views/graphics/graphics-view.component.vue';
-import CvViewComponent from '../views/cv/cv-view.component.vue';
-
 export const ACTIONS = {
   NAVIGATE: 'NAVIGATE',
 };
@@ -18,41 +13,48 @@ export const GETTERS = {
 };
 
 export const VIEWS = {
+  INTRO: {
+    name: 'INTRO',
+    path: '/intro',
+    component: {},
+    title: 'Welcome',
+    theme: systemConsts.THEMES.DARK,
+  },
   HOME: {
     name: 'HOME',
     path: '/home',
-    component: HomeViewComponent,
+    component: {},
     title: 'Home',
     theme: systemConsts.THEMES.DARK,
   },
   TECH: {
     name: 'TECH',
     path: '/tech',
-    component: TechViewComponent,
+    component: {},
     title: 'Tech',
     theme: systemConsts.THEMES.RED,
   },
   GRAPHICS: {
     name: 'GRAPHICS',
     path: '/graphics',
-    component: GraphicsViewComponent,
+    component: {},
     title: 'Graphics',
     theme: systemConsts.THEMES.BLUE,
   },
   CV: {
     name: 'CV',
     path: '/cv',
-    component: CvViewComponent,
+    component: {},
     title: 'CV',
     theme: systemConsts.THEMES.LIGHT,
   },
   ABOUT: {
     name: 'ABOUT',
     path: '/about',
-    component: CvViewComponent,
+    component: {},
     title: 'About',
     theme: systemConsts.THEMES.DARK,
   },
 };
 
-export const DEFAULT_ROUTE = VIEWS.HOME;
+export const DEFAULT_ROUTE = VIEWS.INTRO;

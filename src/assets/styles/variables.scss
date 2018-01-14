@@ -77,19 +77,9 @@ $app-primary-background-color: #F2F2F2;
 $divider-color: rgba(0, 0, 0, 0.12);
 $divider-color-opaque: rgb(237, 237, 237);
 
-$table-accent-color: #7C9E0E;
-
 /* === Sizes === */
 
 /* Size Definitions */
-$size-base: 8px;
-
-$size-small: $size-base / 4;
-$size-semismall: $size-base / 2;
-$size-normal: $size-base;
-$size-medium: $size-base * 2;
-$size-large: $size-base * 4;
-
 $font-size-base: 14px;
 
 $abs-font-size-display4:     112px;
@@ -136,15 +126,6 @@ $font-weight-bold:         700;
 $font-weight-extra-bold:   800;
 $font-weight-black:        900;
 
-/* Structural Mappings */
-$margin-thin: $size-semismall;
-$margin-normal: $size-normal;
-$margin-thick: $size-medium;
-
-$padding-thin: $size-semismall;
-$padding-normal: $size-normal;
-$padding-thick: $size-medium;
-
 /* === Other Variables === */
 $transition-duration: 0.15s;
 $transition-timing-function: ease-in-out;
@@ -158,8 +139,6 @@ $app-font-family-mono: 'PT Mono', monospace;
 $app-color: $primary-text-color;
 $app-background: $app-primary-background-color;
 
-$page-max-width: 800px;
-$header-height: 150px;
 $scrollbar-thickness: 10px;
 
 $sizeUnit: rem;
