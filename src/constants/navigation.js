@@ -13,6 +13,10 @@ export const MUTATIONS = {
   SET_CURRENT_VIEW: 'SET_CURRENT_VIEW',
 };
 
+export const GETTERS = {
+  CURRENT_TITLE: 'CURRENT_TITLE',
+};
+
 export const VIEWS = {
   HOME: {
     name: 'HOME',

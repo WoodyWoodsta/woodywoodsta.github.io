@@ -5,12 +5,20 @@
       <div class="traffic-light hide"></div>
       <div class="traffic-light maximise"></div>
     </div>
+    <span class="spacer"></span>
+    <span>{{ title }}</span>
+    <span class="spacer"></span>
+    <span class="balancer"></span>
   </section>
 </template>
 
 <script>
 export default {
   name: 'title-bar',
+
+  props: {
+    title: String,
+  },
 };
 </script>
 
@@ -27,12 +35,12 @@ export default {
     @include flex-direction(row);
     @include align-items(center);
 
-    .traffic-lights-wrapper {
+    > .traffic-lights-wrapper {
       @extend .pl-sm, .pr-sm;
 
       line-height: 0;
 
-      .traffic-light {
+      > .traffic-light {
         display: inline-block;
         height: $traffic-light-size;
         width: $traffic-light-size;
@@ -54,6 +62,14 @@ export default {
           background: rgb(98, 197, 84);
         }
       }
+    }
+
+    > .balancer {
+      width: calc(#{$traffic-light-size * 3} + #{get-size('sm', 4)});
+    }
+
+    .spacer {
+      @include flex;
     }
   }
 </style>
