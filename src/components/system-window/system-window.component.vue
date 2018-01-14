@@ -53,12 +53,13 @@ export default {
     height: 100%;
     width: 100%;
     box-sizing: border-box;
-    background: $light-weak-alpha;
-    border: 1px solid $light-semiweak-alpha;
+    background: $window-background-color;
+    border: 1px solid $window-border-color;
     border-radius: 5px;
     overflow: hidden;
 
     transform: translateZ(0);
+    backface-visibility: hidden;
 
     @include flexbox;
     @include flex-direction(column);

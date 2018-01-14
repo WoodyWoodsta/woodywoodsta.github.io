@@ -1,10 +1,11 @@
 <template>
-  <section class="intro-view">
+  <section class="intro-view" :class="{ isLeaving, hasLeft }"
+    ref="component">
     <system-page class="system-page-component">
       <fa-icon class="intro-icon mb-md" icon="power-off"></fa-icon>
       <h2>Pick a recent project:</h2>
 
-      <div class="project-picker">
+      <system-window-section class="project-picker">
         <div class="header">
           <span>Projects</span>
           <div class="spacer"></div>
@@ -19,7 +20,7 @@
           <div class="spacer"></div>
           <div class="last-modified">Some date</div>
         </div>
-      </div>
+      </system-window-section>
 
     </system-page>
   </section>
@@ -30,8 +31,17 @@ import { mapActions } from 'vuex';
 
 import * as navigationConsts from '../../constants/navigation';
 
+const LEAVE_DELAY = 300;
+
 export default {
   name: 'intro-view',
+
+  data() {
+    return {
+      isLeaving: false,
+      hasLeft: false,
+    };
+  },
 
   methods: {
     ...mapActions('navigation', [navigationConsts.ACTIONS.NAVIGATE]),
@@ -39,6 +49,16 @@ export default {
     _onProjectItemClick() {
       this[navigationConsts.ACTIONS.NAVIGATE](navigationConsts.VIEWS.HOME.name);
     },
+  },
+
+  // Router
+  beforeRouteLeave(to, from, next) {
+    this.isLeaving = true;
+
+    this.$refs.component.addEventListener('transitionend', () => {
+      this.hasLeft = true;
+      setTimeout(() => next(), LEAVE_DELAY);
+    });
   },
 };
 </script>
@@ -48,6 +68,11 @@ export default {
 
   .intro-view {
     @include view;
+
+    opacity: 1;
+
+    transition: all $transition;
+    transition-property: opacity;
 
     > .system-page-component {
       @include flexbox;
@@ -63,12 +88,6 @@ export default {
       > .project-picker {
         @include flex;
         @include align-self(stretch);
-
-        background: $dark-weak-alpha;
-        border: 1px solid $light-semiweak-alpha;
-        border-radius: $border-radius;
-
-        transform: translateZ(0);
 
         > .header {
           @include flexbox;
@@ -117,6 +136,15 @@ export default {
 
     .spacer {
       @include flex;
+    }
+
+    &.isLeaving,
+    &.hasLeft {
+      opacity: 0;
+    }
+
+    &.hasLeft {
+      display: none;
     }
   }
 </style>

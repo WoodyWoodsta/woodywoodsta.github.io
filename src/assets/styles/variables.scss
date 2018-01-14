@@ -139,6 +139,10 @@ $app-font-family-mono: 'PT Mono', monospace;
 $app-color: $primary-text-color;
 $app-background: $app-primary-background-color;
 
+$window-background-color: #323232;
+$window-border-color: #606060;
+$window-section-background-color: darken($window-background-color, 3);
+
 $scrollbar-thickness: 10px;
 
 $sizeUnit: rem;
