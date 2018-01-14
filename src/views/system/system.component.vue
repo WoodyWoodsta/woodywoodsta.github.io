@@ -1,6 +1,6 @@
 <template>
   <section class="system-component row middle-xs center-xs no-gap">
-    <system-window class="system-window-component" :class="{ windowModeIntro: isIntroWindowMode }"
+    <system-window class="system-window-component" :class="{ windowModePicker: isPickerWindowMode }"
       :window-mode="windowMode"
       :window-title="`Portfolio - ${CURRENT_TITLE}`"
       @traffic-light-click="_onTrafficLightClick">
@@ -25,8 +25,8 @@ export default {
     ...mapState('system', ['windowMode']),
     ...mapGetters('navigation', [navigationConsts.GETTERS.CURRENT_TITLE]),
 
-    isIntroWindowMode() {
-      return this.windowMode === WINDOW_MODES.INTRO;
+    isPickerWindowMode() {
+      return this.windowMode === WINDOW_MODES.PICKER;
     },
   },
 
@@ -37,7 +37,7 @@ export default {
       if (event && event.type) {
         switch (event.type) {
           case 'close':
-            this[navigationConsts.ACTIONS.NAVIGATE](navigationConsts.VIEWS.INTRO.name);
+            this[navigationConsts.ACTIONS.NAVIGATE](navigationConsts.VIEWS.PICKER.name);
             break;
 
           default:
@@ -67,7 +67,7 @@ export default {
 
       will-change: max-width, max-height;
 
-      &.windowModeIntro {
+      &.windowModePicker {
         max-height: 400px;
         max-width: 500px;
       }

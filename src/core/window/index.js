@@ -17,8 +17,8 @@ function initWindowModeChanger() {
 function _onCurrentViewChange(newState) {
   let newWindowMode = systemConsts.WINDOW_MODES.NORMAL;
 
-  if (newState === navigationConsts.VIEWS.INTRO) {
-    newWindowMode = systemConsts.WINDOW_MODES.INTRO;
+  if (newState === navigationConsts.VIEWS.PICKER) {
+    newWindowMode = systemConsts.WINDOW_MODES.PICKER;
   }
 
   store.commit(`system/${systemConsts.MUTATIONS.SET_WINDOW_MODE}`, newWindowMode);

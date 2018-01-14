@@ -13,9 +13,9 @@ export const GETTERS = {
 };
 
 export const VIEWS = {
-  INTRO: {
-    name: 'INTRO',
-    path: '/intro',
+  PICKER: {
+    name: 'PICKER',
+    path: '/picker',
     component: {},
     title: 'Welcome',
     theme: systemConsts.THEMES.DARK,
@@ -57,4 +57,4 @@ export const VIEWS = {
   },
 };
 
-export const DEFAULT_ROUTE = VIEWS.INTRO;
+export const DEFAULT_ROUTE = VIEWS.PICKER;

@@ -1,6 +1,6 @@
 import * as navigationConsts from './constants/navigation';
 
-import IntroViewComponent from './views/intro/intro-view.component.vue';
+import PickerViewComponent from './views/picker/picker-view.component.vue';
 import HomeViewComponent from './views/home/home-view.component.vue';
 import TechViewComponent from './views/tech/tech-view.component.vue';
 import GraphicsViewComponent from './views/graphics/graphics-view.component.vue';
@@ -47,8 +47,8 @@ function _fillViewConfigs() {
         navigationConsts.VIEWS.HOME.component = HomeViewComponent;
         break;
 
-      case navigationConsts.VIEWS.INTRO.name:
-        navigationConsts.VIEWS.INTRO.component = IntroViewComponent;
+      case navigationConsts.VIEWS.PICKER.name:
+        navigationConsts.VIEWS.PICKER.component = PickerViewComponent;
         break;
 
       case navigationConsts.VIEWS.TECH.name:

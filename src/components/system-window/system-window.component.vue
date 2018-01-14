@@ -1,5 +1,5 @@
 <template>
-  <section class="system-window" :class="{ windowModeIntro: isIntroWindowMode }">
+  <section class="system-window" :class="{ windowModePicker: isPickerWindowMode }">
     <!-- Title-bar -->
     <title-bar :title="windowTitle" @traffic-light-click="_onTrafficLightClick"></title-bar>
     <div class="client">
@@ -35,7 +35,7 @@ export default {
   },
 
   computed: {
-    isIntroWindowMode: () => this.windowMode === systemConsts.WINDOW_MODES.INTRO,
+    isPickerWindowMode: () => this.windowMode === systemConsts.WINDOW_MODES.PICKER,
   },
 
   methods: {
@@ -76,7 +76,7 @@ export default {
       transition-property: margin-bottom, opacity;
     }
 
-    &.windowModeIntro {
+    &.windowModePicker {
       > .footer-bar-component {
         margin-bottom: -$footer-bar-height;
         opacity: 0;

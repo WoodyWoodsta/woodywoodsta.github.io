@@ -1,8 +1,8 @@
 <template>
-  <section class="intro-view" :class="{ isLeaving, hasLeft }"
+  <section class="picker-view" :class="{ isLeaving, hasLeft }"
     ref="component">
     <system-page class="system-page-component">
-      <fa-icon class="intro-icon mb-md" icon="power-off"></fa-icon>
+      <fa-icon class="picker-icon mb-md" icon="power-off"></fa-icon>
       <h2>Pick a recent project:</h2>
 
       <system-window-section class="project-picker">
@@ -34,7 +34,7 @@ import * as navigationConsts from '../../constants/navigation';
 const LEAVE_DELAY = 300;
 
 export default {
-  name: 'intro-view',
+  name: 'picker-view',
 
   data() {
     return {
@@ -66,7 +66,7 @@ export default {
 <style lang="scss">
   @import '../../assets/styles/index';
 
-  .intro-view {
+  .picker-view {
     @include view;
 
     opacity: 1;
@@ -80,7 +80,7 @@ export default {
       @include align-items(center);
       @include justify-content(center);
 
-      > .intro-icon {
+      > .picker-icon {
         height: 40px;
         width: 40px;
       }

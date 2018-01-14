@@ -25,6 +25,6 @@ export const THEMES = {
 };
 
 export const WINDOW_MODES = {
-  INTRO: 'INTRO',
+  PICKER: 'PICKER',
   NORMAL: 'NORMAL',
 };
