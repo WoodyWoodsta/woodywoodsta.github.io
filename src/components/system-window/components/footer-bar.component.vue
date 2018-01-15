@@ -13,8 +13,6 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '../../../assets/styles/index';
-
   .footer-bar {
     @include flexbox;
     @include flex-direction(row);

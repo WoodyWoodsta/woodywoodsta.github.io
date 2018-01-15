@@ -1,34 +1,14 @@
-@import './variables';
+$spacing-sizes: (
+  'none': 0,
+  'xxs': 0.125rem,
+  'xs': 0.25rem,
+  'sm': 0.5rem,
+  'md': 1rem,
+  'lg': 2rem,
+  'xl': 4rem,
+  'xxl': 8rem,
+  'auto': auto
+);
 
-@function sizeValue($key, $value, $mod) {
-  @return if($key == 'none', 0, $value + if($mod == 'none', '', $sizeUnit));
-}
-
-@each $size in $sizes {
-  $sizeKey: nth($size, 1);
-  $sizeValue: nth($size, 2);
-  $sizeMod: nth($size, 3);
-
-  .#{$marginKey}#{$secondarySeparator}#{$sizeKey} {
-    margin: sizeValue($sizeKey, $sizeValue, $sizeMod);
-  }
-  .#{$paddingKey}#{$secondarySeparator}#{$sizeKey} {
-    padding: sizeValue($sizeKey, $sizeValue, $sizeMod);
-  }
-  @each $position in $positions {
-    $posKey: nth($position, 1);
-    $posValue: nth($position, 2);
-    .#{$marginKey}#{$primarySeparator}#{$posKey}#{$secondarySeparator}#{$sizeKey} {
-      margin-#{$posValue}: sizeValue($sizeKey, $sizeValue, $sizeMod);
-    }
-    .#{$paddingKey}#{$primarySeparator}#{$posKey}#{$secondarySeparator}#{$sizeKey} {
-      padding-#{$posValue}: sizeValue($sizeKey, $sizeValue, $sizeMod);
-    }
-  }
-}
-
-@function get-size($label, $multiplier: 1) {
-  $md: get-list($sizes, 'sm');
-
-  @return $multiplier * nth($md, 2) + $sizeUnit;
-}
+@import 'sass-spacing/mixins.scss';
+@import 'sass-breakpoints/mixins.scss';

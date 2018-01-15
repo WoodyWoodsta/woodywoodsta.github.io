@@ -38,8 +38,6 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '../../../assets/styles/index';
-
   $traffic-light-size: 13px;
   $traffic-light-red-background: rgb(237, 108, 97);
   $traffic-light-amber-background: rgb(245, 190, 79);
@@ -56,7 +54,7 @@ export default {
     transform: translateZ(0);
 
     > .traffic-lights-wrapper {
-      @extend .pl-sm, .pr-sm;
+      @include px(sm);
 
       @include flexbox;
       @include flex-direction(row);
@@ -123,7 +121,7 @@ export default {
       }
 
       > .traffic-light + .traffic-light {
-        @extend .ml-sm;
+        @include ml(sm);
       }
     }
 

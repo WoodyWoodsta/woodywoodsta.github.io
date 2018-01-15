@@ -2,7 +2,7 @@
   <section class="picker-view" :class="{ isLeaving, hasLeft }"
     ref="component">
     <system-page class="system-page-component">
-      <fa-icon class="picker-icon mb-md" icon="power-off"></fa-icon>
+      <fa-icon class="picker-icon" icon="power-off"></fa-icon>
       <h2>Pick a recent project:</h2>
 
       <system-window-section class="project-picker">
@@ -14,7 +14,7 @@
 
         <div class="project-item" @click="_onProjectItemClick">
           <div class="project-title">
-            <fa-icon class="project-icon mr-sm" icon="folder"></fa-icon>
+            <fa-icon class="project-icon" icon="folder"></fa-icon>
             <span>Sean Wood</span>
           </div>
           <div class="spacer"></div>
@@ -64,8 +64,6 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '../../assets/styles/index';
-
   .picker-view {
     @include view;
 
@@ -83,6 +81,8 @@ export default {
       > .picker-icon {
         height: 40px;
         width: 40px;
+
+        @include mb(md);
       }
 
       > .project-picker {
@@ -93,7 +93,8 @@ export default {
           @include flexbox;
           @include flex-direction(row);
 
-          @extend .pl-md, .pr-md, .pt-sm, .pb-sm;
+          @include px(md);
+          @include py(sm);
 
           font-style: italic;
           border-bottom: 1px solid $light-weak-alpha;
@@ -104,7 +105,7 @@ export default {
         }
 
         > .project-item {
-          @extend .p-md;
+          @include p(md);
 
           @include flexbox;
           @include flex-direction(row);
@@ -128,6 +129,8 @@ export default {
             > .project-icon {
               height: 17px;
               width: 17px;
+
+              @include mr(sm);
             }
           }
         }

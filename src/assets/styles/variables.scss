@@ -1,3 +1,10 @@
+@import './spacing';
+@import './helpers';
+@import '~sass-flex-mixin/_flex';
+
+// Mixins
+@import './mixins/system';
+
 /* app-variables.styl */
 $primary-color:        #1976D2;
 $primary-color-dark:   #0D47A1;
@@ -150,21 +157,3 @@ $marginKey: 'm';
 $paddingKey: 'p';
 $primarySeparator: '';
 $secondarySeparator: '-';
-
-$sizes: (
-  ('none', 0, ''),
-  ('xxs', 0.125, ''),
-  ('xs', 0.25, ''),
-  ('sm', 0.5, ''),
-  ('md', 1, ''),
-  ('lg', 2, ''),
-  ('xl', 4, ''),
-  ('xxl', 8, ''),
-  ('auto', auto, 'none'),
-);
-$positions: (
-  ('t', 'top'),
-  ('r', 'right'),
-  ('b', 'bottom'),
-  ('l', 'left')
-);

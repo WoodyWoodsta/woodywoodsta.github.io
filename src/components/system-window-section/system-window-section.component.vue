@@ -11,8 +11,6 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '../../assets/styles/index';
-
   .system-window-section {
     background: $window-section-background-color;
     border: 1px solid $window-border-color;

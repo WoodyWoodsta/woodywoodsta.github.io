@@ -18,8 +18,6 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '../../assets/styles/index';
-
   $default-size: 28px;
 
   .fa-button-component {

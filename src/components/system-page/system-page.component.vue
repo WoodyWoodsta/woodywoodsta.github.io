@@ -11,13 +11,11 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '../../assets/styles/index';
-
   .system-page {
     min-height: 100%;
     box-sizing: border-box;
 
-    @extend .p-lg;
+    @include p(lg);
   }
 </style>
 

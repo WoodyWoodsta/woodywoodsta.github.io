@@ -47,8 +47,6 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '../../assets/styles/index';
-
   .system-window {
     height: 100%;
     width: 100%;

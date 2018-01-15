@@ -1,3 +1,5 @@
+@import './spacing';
+
 @function get-list($list, $label) {
   @each $listMember in $list {
     @if nth($listMember, 1) == $label {
@@ -5,4 +7,9 @@
     }
   }
   @return null;
+}
+
+@function get-size($label, $multiplier: 1) {
+  $md: get-list($spacing-sizes, 'sm');
+  @return $multiplier * nth($md, 2);
 }

@@ -1,5 +1,5 @@
 <template>
-  <section class="system-component row middle-xs center-xs no-gap">
+  <section class="system-component">
     <system-window class="system-window-component" :class="{ windowModePicker: isPickerWindowMode }"
       :window-mode="windowMode"
       :window-title="`Portfolio - ${CURRENT_TITLE}`"
@@ -44,20 +44,25 @@ export default {
             break;
         }
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="scss">
-  // Global Stylesheet
   @import '../../assets/styles/index';
 
   .system-component {
     height: 100%;
     overflow: hidden;
+    box-sizing: border-box;
 
-    @extend .p-md;
+    @include p(md);
+
+    @include flexbox;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
 
     > .system-window-component {
       max-height: 100%;
