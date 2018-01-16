@@ -68,7 +68,6 @@ export default {
 
     > .footer-bar-component {
       margin-bottom: 0;
-      opacity: 1;
 
       transition: all $transition;
       transition-property: margin-bottom, opacity;

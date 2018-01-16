@@ -2,6 +2,7 @@ import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import fontawesome from '@fortawesome/fontawesome';
 import faFreeSolid from '@fortawesome/fontawesome-free-solid';
 import faFreeRegular from '@fortawesome/fontawesome-free-regular';
+import faFreeBrands from '@fortawesome/fontawesome-free-brands';
 
 import SystemPageComponent from './system-page/system-page.component.vue';
 import SystemWindowComponent from './system-window/system-window.component.vue';
@@ -21,6 +22,7 @@ export default {
   install(Vue) {
     fontawesome.library.add(faFreeSolid);
     fontawesome.library.add(faFreeRegular);
+    fontawesome.library.add(faFreeBrands);
 
     // Install Third Party Components
     Vue.component(FontAwesomeIcon.name, FontAwesomeIcon);

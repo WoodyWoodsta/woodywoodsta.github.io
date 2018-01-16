@@ -14,11 +14,19 @@ export default {
 
 <style lang="scss">
   .footer-bar {
+    height: $footer-bar-height;
+    border-top: 1px solid $light-weak-alpha;
+    opacity: 0.65;
+
+    transition: all $transition;
+    transition-property: opacity;
+
     @include flexbox;
     @include flex-direction(row);
 
-    height: $footer-bar-height;
-    border-top: 1px solid $light-weak-alpha;
+    &:hover {
+      opacity: 1;
+    }
 
     .spacer {
       @include flex;

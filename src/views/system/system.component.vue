@@ -7,7 +7,7 @@
 
       <router-view></router-view>
 
-      <div slot="left-footer-bar">This is some footer text</div>
+      <social-footer-widget slot="right-footer-bar"></social-footer-widget>
     </system-window>
   </section>
 </template>
@@ -17,6 +17,8 @@ import { mapState, mapGetters, mapActions } from 'vuex';
 
 import * as navigationConsts from '../../constants/navigation';
 import { WINDOW_MODES } from '../../constants/system';
+
+import SocialFooterWidgetComponent from './components/social-footer-widget.component.vue';
 
 export default {
   name: 'system',
@@ -45,6 +47,10 @@ export default {
         }
       }
     },
+  },
+
+  components: {
+    socialFooterWidget: SocialFooterWidgetComponent,
   },
 };
 </script>

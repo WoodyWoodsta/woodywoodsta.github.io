@@ -57,4 +57,4 @@ export const VIEWS = {
   },
 };
 
-export const DEFAULT_ROUTE = VIEWS.PICKER;
+export const DEFAULT_ROUTE = VIEWS.HOME;
