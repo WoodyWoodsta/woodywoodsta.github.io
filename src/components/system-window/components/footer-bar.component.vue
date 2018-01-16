@@ -14,7 +14,7 @@ export default {
 
 <style lang="scss">
   .footer-bar {
-    height: $footer-bar-height;
+    height: $window-footer-bar-height;
     border-top: 1px solid $light-weak-alpha;
     opacity: 0.65;
 

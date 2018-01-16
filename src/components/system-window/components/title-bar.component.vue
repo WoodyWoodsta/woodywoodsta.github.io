@@ -44,7 +44,7 @@ export default {
   $traffic-light-green-background: rgb(98, 197, 84);
 
   .system-window__title-bar {
-    min-height: 30px;
+    min-height: $window-title-bar-height;
     border-bottom: 1px solid $light-weak-alpha;
 
     @include flexbox;

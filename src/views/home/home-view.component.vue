@@ -17,5 +17,6 @@
 
 <style lang="scss">
   .home-view-component {
+    @include view;
   }
 </style>

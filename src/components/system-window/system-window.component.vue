@@ -59,11 +59,13 @@ export default {
     transform: translateZ(0);
     backface-visibility: hidden;
 
-    @include flexbox;
-    @include flex-direction(column);
+    > .client {
+      height: calc(100% - #{$window-footer-bar-height} - #{$window-title-bar-height});
 
-    .client {
-      @include flex;
+      transition: all $transition;
+      transition-property: height;
+
+      will-change: height;
     }
 
     > .footer-bar-component {
@@ -74,8 +76,12 @@ export default {
     }
 
     &.windowModePicker {
+      .client {
+        height: calc(100% - #{$window-title-bar-height});
+      }
+
       > .footer-bar-component {
-        margin-bottom: -$footer-bar-height;
+        margin-bottom: -$window-footer-bar-height;
         opacity: 0;
       }
     }

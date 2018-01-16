@@ -60,7 +60,7 @@ export const VIEWS = {
 
 export const VIEWS_FLAT = _flattenViewConsts(VIEWS);
 
-export const DEFAULT_ROUTE = VIEWS.PICKER;
+export const DEFAULT_ROUTE = VIEWS.VIEWER.children.HOME;
 
 function _flattenViewConsts(viewConsts, res = []) {
   return res.concat(Object.values(viewConsts).reduce((acc, viewConst) => {

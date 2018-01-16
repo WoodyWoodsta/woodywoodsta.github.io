@@ -1,5 +1,14 @@
-$footer-bar-height: 30px;
+$window-title-bar-height: 30px;
+$window-footer-bar-height: 30px;
 
-@mixin view {
-  height: 100%;
+@mixin view($type: normal) {
+  @if $type == normal {
+    min-height: 100%;
+  }
+
+  @else if $type == contained {
+    height: 100%;
+  }
+
+  box-sizing: border-box;
 }

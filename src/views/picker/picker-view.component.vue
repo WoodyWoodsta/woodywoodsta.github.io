@@ -65,7 +65,7 @@ export default {
 
 <style lang="scss">
   .picker-view {
-    @include view;
+    @include view(contained);
 
     opacity: 1;
 
