@@ -1,9 +1,9 @@
 import { router } from '../../router';
-import { VIEWS, ACTIONS } from '../../constants/navigation';
+import { ACTIONS, VIEWS_FLAT } from '../../constants/navigation';
 
 export default {
   [ACTIONS.NAVIGATE]: (opts, destination) => {
-    if (!(destination in VIEWS)) {
+    if (!(VIEWS_FLAT.some(view => view.name === destination))) {
       console.warn(`View '${destination}' does not exist!`);
       return;
     }

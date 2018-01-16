@@ -20,41 +20,57 @@ export const VIEWS = {
     title: 'Welcome',
     theme: systemConsts.THEMES.DARK,
   },
-  HOME: {
-    name: 'HOME',
-    path: '/home',
+  VIEWER: {
+    name: 'VIEWER',
+    path: '/viewer',
     component: {},
-    title: 'Home',
     theme: systemConsts.THEMES.DARK,
-  },
-  TECH: {
-    name: 'TECH',
-    path: '/tech',
-    component: {},
-    title: 'Tech',
-    theme: systemConsts.THEMES.RED,
-  },
-  GRAPHICS: {
-    name: 'GRAPHICS',
-    path: '/graphics',
-    component: {},
-    title: 'Graphics',
-    theme: systemConsts.THEMES.BLUE,
-  },
-  CV: {
-    name: 'CV',
-    path: '/cv',
-    component: {},
-    title: 'CV',
-    theme: systemConsts.THEMES.LIGHT,
-  },
-  ABOUT: {
-    name: 'ABOUT',
-    path: '/about',
-    component: {},
-    title: 'About',
-    theme: systemConsts.THEMES.DARK,
+    children: {
+      HOME: {
+        name: 'HOME',
+        path: 'home',
+        component: {},
+        title: 'Home',
+        theme: systemConsts.THEMES.DARK,
+      },
+      TECH: {
+        name: 'TECH',
+        path: 'tech',
+        component: {},
+        title: 'Tech',
+        theme: systemConsts.THEMES.RED,
+      },
+      GRAPHICS: {
+        name: 'GRAPHICS',
+        path: 'graphics',
+        component: {},
+        title: 'Graphics',
+        theme: systemConsts.THEMES.BLUE,
+      },
+      CV: {
+        name: 'CV',
+        path: 'cv',
+        component: {},
+        title: 'CV',
+        theme: systemConsts.THEMES.LIGHT,
+      },
+    },
   },
 };
 
-export const DEFAULT_ROUTE = VIEWS.HOME;
+export const VIEWS_FLAT = _flattenViewConsts(VIEWS);
+
+export const DEFAULT_ROUTE = VIEWS.PICKER;
+
+function _flattenViewConsts(viewConsts, res = []) {
+  return res.concat(Object.values(viewConsts).reduce((acc, viewConst) => {
+    let local = acc;
+    local.push(viewConst);
+
+    if (viewConst.children) {
+      local = local.concat(_flattenViewConsts(viewConst.children, local));
+    }
+
+    return local;
+  }, res));
+}

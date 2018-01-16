@@ -47,7 +47,7 @@ export default {
     ...mapActions('navigation', [navigationConsts.ACTIONS.NAVIGATE]),
 
     _onProjectItemClick() {
-      this[navigationConsts.ACTIONS.NAVIGATE](navigationConsts.VIEWS.HOME.name);
+      this[navigationConsts.ACTIONS.NAVIGATE](navigationConsts.VIEWS.VIEWER.children.HOME.name);
     },
   },
 
