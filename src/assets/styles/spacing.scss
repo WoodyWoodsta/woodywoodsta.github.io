@@ -10,5 +10,7 @@ $spacing-sizes: (
   'auto': auto
 );
 
+$spacing-important: false;
+
 @import 'sass-spacing/mixins.scss';
 @import 'sass-breakpoints/mixins.scss';

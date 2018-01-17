@@ -1,5 +1,5 @@
 <template>
-  <section class="system-window__title-bar">
+  <section class="system-window__title-bar" :class="{ windowModePicker: windowModePicker }">
     <div class="traffic-lights-wrapper">
       <div class="traffic-light close" @click="_onTrafficLightClick('close')">
         <fa-icon class="fa-icon-component" icon="times"></fa-icon>
@@ -25,6 +25,7 @@ export default {
 
   props: {
     title: String,
+    windowModePicker: Boolean,
   },
 
   methods: {
@@ -44,7 +45,7 @@ export default {
   $traffic-light-green-background: rgb(98, 197, 84);
 
   .system-window__title-bar {
-    min-height: $window-title-bar-height;
+    min-height: $window-title-bar-height * 2;
     border-bottom: 1px solid $light-weak-alpha;
 
     @include flexbox;
@@ -54,7 +55,7 @@ export default {
     transform: translateZ(0);
 
     > .traffic-lights-wrapper {
-      @include px(sm);
+      @include px(md);
 
       @include flexbox;
       @include flex-direction(row);
@@ -122,6 +123,14 @@ export default {
 
       > .traffic-light + .traffic-light {
         @include ml(sm);
+      }
+    }
+
+    &.windowModePicker {
+      min-height: $window-title-bar-height;
+
+      > .traffic-lights-wrapper {
+        @include px(sm);
       }
     }
 

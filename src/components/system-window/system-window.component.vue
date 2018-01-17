@@ -1,7 +1,10 @@
 <template>
   <section class="system-window" :class="{ windowModePicker: isPickerWindowMode }">
     <!-- Title-bar -->
-    <title-bar :title="windowTitle" @traffic-light-click="_onTrafficLightClick"></title-bar>
+    <title-bar :title="windowTitle"
+      @traffic-light-click="_onTrafficLightClick"
+      :window-mode-picker="isPickerWindowMode">
+    </title-bar>
     <div class="client">
       <slot></slot>
     </div>
@@ -35,7 +38,9 @@ export default {
   },
 
   computed: {
-    isPickerWindowMode: () => this.windowMode === systemConsts.WINDOW_MODES.PICKER,
+    isPickerWindowMode() {
+      return this.windowMode === systemConsts.WINDOW_MODES.PICKER;
+    },
   },
 
   methods: {
@@ -60,7 +65,7 @@ export default {
     backface-visibility: hidden;
 
     > .client {
-      height: calc(100% - #{$window-footer-bar-height} - #{$window-title-bar-height});
+      height: calc(100% - #{$window-footer-bar-height} - #{$window-title-bar-height * 2});
 
       transition: all $transition;
       transition-property: height;

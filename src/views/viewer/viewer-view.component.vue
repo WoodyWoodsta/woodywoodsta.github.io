@@ -21,19 +21,18 @@ export default {
     @include flexbox;
     @include flex-direction(row);
 
-    overflow: hidden;
-
     > .side-pane {
-      min-width: 400px;
+      min-width: $side-pane-width;
     }
 
     > .viewer-pane {
-      max-height: 100%;
       box-sizing: border-box;
       overflow-y: scroll;
 
       @include flex;
       @include m(md);
+
+      margin-top: calc(#{-$window-title-bar-height * 2} + #{get-size(md)});
     }
   }
 </style>
