@@ -90,18 +90,7 @@ export default {
         @include align-self(stretch);
 
         > .header {
-          @include flexbox;
-          @include flex-direction(row);
-
-          @include px(md);
-          @include py(sm);
-
-          font-style: italic;
-          border-bottom: 1px solid $light-weak-alpha;
-
-          > span {
-            opacity: 0.6;
-          }
+          @include section-header-bar;
         }
 
         > .project-item {

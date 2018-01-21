@@ -1,0 +1,27 @@
+@mixin section-header-bar {
+  @include flexbox;
+  @include flex-direction(row);
+  @include px(md);
+  @include py(sm);
+
+  height: 30px;
+  box-sizing: border-box;
+  font-style: italic;
+  opacity: 0.6;
+
+  @include theme(dark) {
+    border-bottom: 1px solid $light-weak-alpha;
+  }
+
+  @include theme(light) {
+    border-bottom: 1px solid $dark-normal-alpha;
+  }
+
+  @include theme(red) {
+    border-bottom: 1px solid $light-weak-alpha;
+  }
+
+  @include theme(blue) {
+    border-bottom: 1px solid $light-weak-alpha;
+  }
+}

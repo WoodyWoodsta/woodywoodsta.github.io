@@ -24,6 +24,10 @@ export default {
     @include flexbox;
     @include flex-direction(row);
 
+    @include theme(light) {
+      border-top-color: $dark-semiweak-alpha;
+    }
+
     &:hover {
       opacity: 1;
     }

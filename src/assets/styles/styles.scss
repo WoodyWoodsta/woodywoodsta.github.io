@@ -32,9 +32,24 @@ body[unresolved] {
   display: none;
 }
 
-body {
-  color: $light-strong-alpha;
-  background: $dark-strong;
+@include theme(dark) {
+  color: $dark-theme-color;
+  background: $dark-theme-background;
+}
+
+@include theme(light) {
+  color: $light-theme-color;
+  background: $light-theme-background;
+}
+
+@include theme(red) {
+  color: $red-theme-color;
+  background: $red-theme-background;
+}
+
+@include theme(blue) {
+  color: $blue-theme-color;
+  background: $blue-theme-background;
 }
 
 /* Scrollbars */

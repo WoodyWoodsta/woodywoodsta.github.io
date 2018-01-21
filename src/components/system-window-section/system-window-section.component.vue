@@ -12,11 +12,31 @@ export default {
 
 <style lang="scss">
   .system-window-section {
-    background: $window-section-background-color;
-    border: 1px solid $window-border-color;
+    border: 1px solid $transparent;
     border-radius: $border-radius;
 
     transform: translateZ(0);
     backface-visibility: hidden;
+
+    @include theme(dark) {
+      background: $dark-window-section-background-color;
+      border-color: $dark-window-border-color;
+    }
+
+    @include theme(light) {
+      background: $light-window-section-background-color;
+      border-color: $light-window-border-color;
+    }
+
+    @include theme(red) {
+      background: $red-window-section-background-color;
+      border-color: $red-window-border-color;
+    }
+
+    @include theme(blue) {
+      background: $blue-window-section-background-color;
+      border-color: $blue-window-border-color;
+    }
   }
+
 </style>

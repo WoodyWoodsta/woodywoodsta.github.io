@@ -56,13 +56,32 @@ export default {
     height: 100%;
     width: 100%;
     box-sizing: border-box;
-    background: $window-background-color;
-    border: 1px solid $window-border-color;
+    border: 1px solid $transparent;
     border-radius: 5px;
     overflow: hidden;
 
     transform: translateZ(0);
     backface-visibility: hidden;
+
+    @include theme(dark) {
+      background: $dark-window-background-color;
+      border-color: $dark-window-border-color;
+    }
+
+    @include theme(light) {
+      background: $light-window-background-color;
+      border-color: $light-window-border-color;
+    }
+
+    @include theme(red) {
+      background: $red-window-background-color;
+      border-color: $red-window-border-color;
+    }
+
+    @include theme(blue) {
+      background: $blue-window-background-color;
+      border-color: $blue-window-border-color;
+    }
 
     > .client {
       height: calc(100% - #{$window-footer-bar-height} - #{$window-title-bar-height * 2});

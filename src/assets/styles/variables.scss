@@ -4,6 +4,7 @@
 
 // Mixins
 @import './mixins/system';
+@import './mixins/window';
 
 /* app-variables.styl */
 $primary-color:        #1976D2;
@@ -37,37 +38,42 @@ $transparent:          rgba(0, 0, 0, 0);
 /**
   * Theme Colors
   */
-$indigo-theme-dark-color:       #303F9F;
-$indigo-theme-primary-color:    #3F51B5;
-$indigo-theme-light-color:      #E8EAF6;
 
-$blue-gray-theme-dark-color:    #37474F;
-$blue-gray-theme-primary-color: #607D8B;
-$blue-gray-theme-light-color:   #ECEFF1;
+$dark-theme-background: $dark-strong;
+$dark-theme-background-lighter: lighten($dark-strong, 6);
+$dark-theme-primary: $light-strong;
+$dark-theme-color: $light-strong;
 
-$blue-theme-color:              #1976D2;
-$blue-theme-color-dark:         #0D47A1;
-$blue-theme-color-light:        #BBDEFB;
+$dark-window-background-color: $dark-theme-background-lighter;
+$dark-window-border-color: #606060;
+$dark-window-section-background-color: darken($dark-window-background-color, 3);
 
-$gray-theme-dark-color:         #424242;
-$gray-theme-primary-color:      #9E9E9E;
-$gray-theme-light-color:        #FAFAFA;
+$light-theme-background: lighten($light-medium, 10);
+$light-theme-background-lighter: lighten($light-theme-background, 10);
+$light-theme-primary: $dark-strong;
+$light-theme-color: $dark-strong;
 
-$red-theme-dark-color:          #C62828;
-$red-theme-primary-color:       #E53935;
-$red-theme-light-color:         #FFEBEE;
+$light-window-background-color: $light-theme-background-lighter;
+$light-window-border-color: $light-normal;
+$light-window-section-background-color: darken($light-window-background-color, 5);
 
-$amber-theme-dark-color:        #FF8F00;
-$amber-theme-primary-color:     #FFAA00;
-$amber-theme-light-color:       #FFF8E1;
+$red-theme-background: $dark-strong;
+$red-theme-background-lighter: lighten($dark-strong, 6);
+$red-theme-primary: $light-strong;
+$red-theme-color: $light-strong;
 
-$green-theme-dark-color:        #2E7D32;
-$green-theme-primary-color:     #4CAF50;
-$green-theme-light-color:       #E8F5E9;
+$red-window-background-color: $red-theme-background-lighter;
+$red-window-border-color: #606060;
+$red-window-section-background-color: darken($red-window-background-color, 3);
 
-$dark-gray-theme-dark-color:    #212121;
-$dark-gray-theme-primary-color: #424242;
-$dark-gray-theme-light-color:   #9E9E9E;
+$blue-theme-background: $dark-strong;
+$blue-theme-background-lighter: lighten($dark-strong, 6);
+$blue-theme-primary: $light-strong;
+$blue-theme-color: $light-strong;
+
+$blue-window-background-color: $blue-theme-background-lighter;
+$blue-window-border-color: #606060;
+$blue-window-section-background-color: darken($blue-window-background-color, 3);
 
 /**
   * Custom Colors
@@ -75,7 +81,6 @@ $dark-gray-theme-light-color:   #9E9E9E;
   */
 
 $primary-text-color: #000000;
-
 
 /* App Background */
 $app-primary-background-color: #F2F2F2;
@@ -145,10 +150,6 @@ $app-font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $app-font-family-mono: 'PT Mono', monospace;
 $app-color: $primary-text-color;
 $app-background: $app-primary-background-color;
-
-$window-background-color: #323232;
-$window-border-color: #606060;
-$window-section-background-color: darken($window-background-color, 3);
 
 $scrollbar-thickness: 10px;
 $side-pane-width: 300px;

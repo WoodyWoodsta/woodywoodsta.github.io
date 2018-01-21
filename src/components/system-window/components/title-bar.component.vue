@@ -54,6 +54,10 @@ export default {
 
     transform: translateZ(0);
 
+    @include theme(light) {
+      border-bottom-color: $dark-semiweak-alpha;
+    }
+
     > .traffic-lights-wrapper {
       @include px(md);
 

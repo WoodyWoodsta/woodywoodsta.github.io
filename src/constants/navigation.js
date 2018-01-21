@@ -32,6 +32,9 @@ export const VIEWS = {
         component: {},
         title: 'Home',
         theme: systemConsts.THEMES.DARK,
+        options: {
+          icon: 'home',
+        },
       },
       TECH: {
         name: 'TECH',
@@ -39,6 +42,9 @@ export const VIEWS = {
         component: {},
         title: 'Tech',
         theme: systemConsts.THEMES.RED,
+        options: {
+          icon: 'code',
+        },
       },
       GRAPHICS: {
         name: 'GRAPHICS',
@@ -46,6 +52,9 @@ export const VIEWS = {
         component: {},
         title: 'Graphics',
         theme: systemConsts.THEMES.BLUE,
+        options: {
+          icon: 'images',
+        },
       },
       CV: {
         name: 'CV',
@@ -53,6 +62,10 @@ export const VIEWS = {
         component: {},
         title: 'CV',
         theme: systemConsts.THEMES.LIGHT,
+        options: {
+          icon: 'newspaper',
+          set: 'far',
+        },
       },
     },
   },

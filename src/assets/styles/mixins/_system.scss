@@ -12,3 +12,9 @@ $window-footer-bar-height: 30px;
 
   box-sizing: border-box;
 }
+
+@mixin theme($theme) {
+  body.#{$theme} #{if(&, "&", "")} {
+    @content;
+  }
+}
