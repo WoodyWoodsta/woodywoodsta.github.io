@@ -4,7 +4,9 @@
       <fa-icon class="menu-item-icon" :set="view.options.set" :icon="view.options.icon"></fa-icon>
       <span>{{ view.title }}</span>
       <div class="spacer"></div>
-      <div class="theme-indicator" :class="{ [view.theme.class]: true }"></div>
+      <div class="theme-indicator" :class="{ [view.theme.class]: true }">
+        <div class="theme-indicator-outline"></div>
+      </div>
     </div>
   </section>
 </template>
@@ -25,15 +27,27 @@ export default {
 
 <style lang="scss">
   $border-style: 1px solid $transparent;
+  $indicator-base-size: 12px;
 
   .menu-item {
     display: block;
-    height: 50px;
+    height: 40px;
     cursor: pointer;
     border-bottom: $border-style;
 
     &:not(:first-child) {
       border-top: $border-style;
+    }
+
+    &:hover,
+    &.active {
+      > .item-components-wrapper {
+        > .theme-indicator {
+          > .theme-indicator-outline {
+            left: -11px;
+          }
+        }
+      }
     }
 
     &:hover {
@@ -61,6 +75,16 @@ export default {
         border-color: $light-window-border-color;
         background: transparentize($dark-semiweak-alpha, 0.09);
       }
+
+      > .item-components-wrapper {
+        > .theme-indicator {
+          width: $indicator-base-size + 10px;
+
+          > .theme-indicator-outline {
+            left: -1px;
+          }
+        }
+      }
     }
 
     > .item-components-wrapper {
@@ -83,10 +107,23 @@ export default {
       }
 
       > .theme-indicator {
-        height: 10px;
-        width: 10px;
-        border: 1px solid $light-normal-alpha;
-        border-radius: 50%;
+        position: relative;
+        box-sizing: border-box;
+        height: $indicator-base-size;
+        width: $indicator-base-size;
+
+        transition: all $transition;
+        transition-property: width;
+
+        &,
+        > .theme-indicator-outline {
+          border: 1px solid $light-normal-alpha;
+          border-radius: $indicator-base-size / 2.5;
+
+          @include theme(light) {
+            border: 1px solid $dark-normal-alpha;
+          }
+        }
 
         &.dark {
           background: $dark-theme-primary;
@@ -101,8 +138,15 @@ export default {
           background: $blue-theme-primary;
         }
 
-        @include theme(light) {
-          border: 1px solid $dark-normal-alpha;
+        > .theme-indicator-outline {
+          position: absolute;
+          left: -1px;
+          top: -1px;
+          right: -1px;
+          bottom: -1px;
+
+          transition: all $transition;
+          transition-property: left;
         }
       }
     }
