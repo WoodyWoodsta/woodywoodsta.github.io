@@ -17,6 +17,11 @@ export default {
 
     transform: translateZ(0);
     backface-visibility: hidden;
+    transition: all $transition;
+    transition-property: background, border-color;
+    will-change: background, border-color;
+
+    @include decomposite;
 
     @include theme(dark) {
       background: $dark-window-section-background-color;
@@ -38,5 +43,4 @@ export default {
       border-color: $blue-window-border-color;
     }
   }
-
 </style>

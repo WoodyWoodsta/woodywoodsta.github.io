@@ -46,16 +46,32 @@ export default {
 
   .system-window__title-bar {
     min-height: $window-title-bar-height * 2;
-    border-bottom: 1px solid $light-weak-alpha;
+    border-bottom: 1px solid $transparent;
 
     @include flexbox;
     @include flex-direction(row);
     @include align-items(center);
 
     transform: translateZ(0);
+    transition: all $transition;
+    transition-property: border-bottom-color;
+
+    @include decomposite;
+
+    @include theme(dark) {
+      border-bottom-color: $dark-window-border-color;
+    }
 
     @include theme(light) {
-      border-bottom-color: $dark-semiweak-alpha;
+      border-bottom-color: $light-window-border-color;
+    }
+
+    @include theme(red) {
+      border-bottom-color: $red-window-border-color;
+    }
+
+    @include theme(blue) {
+      border-bottom-color: $blue-window-border-color;
     }
 
     > .traffic-lights-wrapper {

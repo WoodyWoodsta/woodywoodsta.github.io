@@ -15,6 +15,7 @@ export default {
     min-height: 100%;
     box-sizing: border-box;
 
+    @include decomposite;
     @include p(lg);
   }
 </style>

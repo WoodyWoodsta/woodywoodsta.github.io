@@ -39,41 +39,44 @@ $transparent:          rgba(0, 0, 0, 0);
   * Theme Colors
   */
 
-$dark-theme-background: $dark-strong;
-$dark-theme-background-lighter: lighten($dark-strong, 6);
-$dark-theme-primary: $light-strong;
-$dark-theme-color: $light-strong;
+$dark-theme-background:                     $dark-strong;
+$dark-theme-background-lighter:             lighten($dark-theme-background, 10);
+$dark-theme-primary:                        $light-strong;
+$dark-theme-color:                          $light-strong;
 
-$dark-window-background-color: $dark-theme-background-lighter;
-$dark-window-border-color: #606060;
-$dark-window-section-background-color: darken($dark-window-background-color, 3);
+$dark-window-background-color:              $dark-theme-background-lighter;
+$dark-window-border-color:                  lighten($dark-window-background-color, 15);
+$dark-window-section-background-color:      darken($dark-window-background-color, 5);
 
-$light-theme-background: lighten($light-medium, 10);
-$light-theme-background-lighter: lighten($light-theme-background, 10);
-$light-theme-primary: $dark-strong;
-$light-theme-color: $dark-strong;
 
-$light-window-background-color: $light-theme-background-lighter;
-$light-window-border-color: $light-normal;
-$light-window-section-background-color: darken($light-window-background-color, 5);
+$light-theme-background:                    lighten($light-medium, 10);
+$light-theme-background-lighter:            lighten($light-theme-background, 15);
+$light-theme-primary:                       $dark-strong;
+$light-theme-color:                         $dark-strong;
 
-$red-theme-background: $dark-strong;
-$red-theme-background-lighter: lighten($dark-strong, 6);
-$red-theme-primary: $light-strong;
-$red-theme-color: $light-strong;
+$light-window-background-color:             $light-theme-background-lighter;
+$light-window-border-color:                 darken($light-window-background-color, 30);
+$light-window-section-background-color:     darken($light-window-background-color, 5);
 
-$red-window-background-color: $red-theme-background-lighter;
-$red-window-border-color: #606060;
-$red-window-section-background-color: darken($red-window-background-color, 3);
 
-$blue-theme-background: $dark-strong;
-$blue-theme-background-lighter: lighten($dark-strong, 6);
-$blue-theme-primary: $light-strong;
-$blue-theme-color: $light-strong;
+$red-theme-background:                      rgb(51, 33, 33);
+$red-theme-background-lighter:              lighten($red-theme-background, 6);
+$red-theme-primary:                         #E53935;
+$red-theme-color:                           $light-strong;
 
-$blue-window-background-color: $blue-theme-background-lighter;
-$blue-window-border-color: #606060;
-$blue-window-section-background-color: darken($blue-window-background-color, 3);
+$red-window-background-color:               $red-theme-background-lighter;
+$red-window-border-color:                   lighten($red-window-background-color, 15);
+$red-window-section-background-color:       darken($red-window-background-color, 6);
+
+
+$blue-theme-background:                     rgb(33, 43, 51);
+$blue-theme-background-lighter:             lighten($blue-theme-background, 10);
+$blue-theme-primary:                        #1E88E5;
+$blue-theme-color:                          $light-strong;
+
+$blue-window-background-color:              $blue-theme-background-lighter;
+$blue-window-border-color:                  lighten($blue-window-background-color, 15);
+$blue-window-section-background-color:      darken($blue-window-background-color, 3);
 
 /**
   * Custom Colors

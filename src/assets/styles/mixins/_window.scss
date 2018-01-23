@@ -7,21 +7,25 @@
   height: 30px;
   box-sizing: border-box;
   font-style: italic;
-  opacity: 0.6;
+  border-bottom: 1px solid $transparent;
 
   @include theme(dark) {
-    border-bottom: 1px solid $light-weak-alpha;
+    border-bottom-color: $dark-window-border-color;
   }
 
   @include theme(light) {
-    border-bottom: 1px solid $dark-normal-alpha;
+    border-bottom-color: $light-window-border-color;
   }
 
   @include theme(red) {
-    border-bottom: 1px solid $light-weak-alpha;
+    border-bottom-color: $red-window-border-color;
   }
 
   @include theme(blue) {
-    border-bottom: 1px solid $light-weak-alpha;
+    border-bottom-color: $blue-window-border-color;
+  }
+
+  & span {
+    opacity: 0.6;
   }
 }

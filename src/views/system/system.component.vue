@@ -73,10 +73,11 @@ export default {
     > .system-window-component {
       max-height: 100%;
       max-width: 100%;
-      transition: ($transition-duration * 2) $transition-timing-function;
-      transition-property: max-height, max-width;
+      transition: ($transition-duration * 2) $transition-timing-function, ($transition-duration * 2) $transition-timing-function, $transition, $transition;
+      transition-property: max-height, max-width, background, border-color;
 
-      will-change: max-width, max-height;
+      @include decomposite;
+      will-change: max-width, max-height, background, border-color;
 
       &.windowModePicker {
         max-height: 400px;

@@ -3,6 +3,8 @@
     <div class="item-components-wrapper">
       <fa-icon class="menu-item-icon" :set="view.options.set" :icon="view.options.icon"></fa-icon>
       <span>{{ view.title }}</span>
+      <div class="spacer"></div>
+      <div class="theme-indicator" :class="{ [view.theme.class]: true }"></div>
     </div>
   </section>
 </template>
@@ -28,8 +30,11 @@ export default {
     display: block;
     height: 50px;
     cursor: pointer;
-    border-top: $border-style;
     border-bottom: $border-style;
+
+    &:not(:first-child) {
+      border-top: $border-style;
+    }
 
     &:hover {
       &:not(.active) {
@@ -39,11 +44,22 @@ export default {
 
     &.active {
       background: $dark-semiweak-alpha;
-      border-color: $light-semiweak-alpha;
+
+      @include theme(dark) {
+        border-color: $dark-window-border-color;
+      }
+
+      @include theme(red) {
+        border-color: $red-window-border-color;
+      }
+
+      @include theme(blue) {
+        border-color: $blue-window-border-color;
+      }
 
       @include theme(light) {
+        border-color: $light-window-border-color;
         background: transparentize($dark-semiweak-alpha, 0.09);
-        border-color: $dark-semiweak-alpha;
       }
     }
 
@@ -65,6 +81,34 @@ export default {
 
         @include mr(md);
       }
+
+      > .theme-indicator {
+        height: 10px;
+        width: 10px;
+        border: 1px solid $light-normal-alpha;
+        border-radius: 50%;
+
+        &.dark {
+          background: $dark-theme-primary;
+        }
+        &.light {
+          background: $light-theme-primary;
+        }
+        &.red {
+          background: $red-theme-primary;
+        }
+        &.blue {
+          background: $blue-theme-primary;
+        }
+
+        @include theme(light) {
+          border: 1px solid $dark-normal-alpha;
+        }
+      }
+    }
+
+    .spacer {
+      @include flex;
     }
   }
 </style>

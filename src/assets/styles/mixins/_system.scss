@@ -18,3 +18,8 @@ $window-footer-bar-height: 30px;
     @content;
   }
 }
+
+@mixin decomposite() {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}

@@ -60,8 +60,7 @@ export default {
     border-radius: 5px;
     overflow: hidden;
 
-    transform: translateZ(0);
-    backface-visibility: hidden;
+    @include decomposite;
 
     @include theme(dark) {
       background: $dark-window-background-color;
