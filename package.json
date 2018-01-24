@@ -17,6 +17,7 @@
     "@fortawesome/fontawesome-free-solid": "^5.0.2",
     "@fortawesome/vue-fontawesome": "^0.0.22",
     "flexboxgrid-sass": "^8.0.5",
+    "sass-material-colors": "^0.0.5",
     "sass-spacing": "^2.0.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",

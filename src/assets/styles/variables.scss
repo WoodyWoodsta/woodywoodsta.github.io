@@ -1,6 +1,7 @@
 @import './spacing';
 @import './helpers';
 @import '~sass-flex-mixin/_flex';
+@import '~sass-material-colors';
 
 // Mixins
 @import './mixins/system';
@@ -61,7 +62,7 @@ $light-window-section-background-color:     darken($light-window-background-colo
 
 $red-theme-background:                      rgb(51, 33, 33);
 $red-theme-background-lighter:              lighten($red-theme-background, 6);
-$red-theme-primary:                         #E53935;
+$red-theme-primary:                         material-color('red', '600');
 $red-theme-color:                           $light-strong;
 
 $red-window-background-color:               $red-theme-background-lighter;
@@ -71,7 +72,7 @@ $red-window-section-background-color:       darken($red-window-background-color,
 
 $blue-theme-background:                     rgb(33, 43, 51);
 $blue-theme-background-lighter:             lighten($blue-theme-background, 10);
-$blue-theme-primary:                        #1E88E5;
+$blue-theme-primary:                        material-color('blue', '600');
 $blue-theme-color:                          $light-strong;
 
 $blue-window-background-color:              $blue-theme-background-lighter;

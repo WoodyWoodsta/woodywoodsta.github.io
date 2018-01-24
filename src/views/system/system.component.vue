@@ -7,7 +7,13 @@
 
       <router-view></router-view>
 
-      <social-footer-widget slot="right-footer-bar"></social-footer-widget>
+      <div class="system-window-component__made-with-widget" slot="right-footer-bar">
+        <fa-icon class="made-with-icon" icon="code"></fa-icon>
+        <span>with</span>
+        <fa-icon class="made-with-icon heart" icon="heart"></fa-icon>
+        <span>using</span>
+        <fa-icon class="made-with-icon vuejs" set="fab" icon="vuejs"></fa-icon>
+      </div>
     </system-window>
   </section>
 </template>
@@ -17,8 +23,6 @@ import { mapState, mapGetters, mapActions } from 'vuex';
 
 import * as navigationConsts from '../../constants/navigation';
 import { WINDOW_MODES } from '../../constants/system';
-
-import SocialFooterWidgetComponent from './components/social-footer-widget.component.vue';
 
 export default {
   name: 'system',
@@ -47,10 +51,6 @@ export default {
         }
       }
     },
-  },
-
-  components: {
-    socialFooterWidget: SocialFooterWidgetComponent,
   },
 };
 </script>
@@ -82,6 +82,38 @@ export default {
       &.windowModePicker {
         max-height: 400px;
         max-width: 500px;
+      }
+
+      .system-window-component__made-with-widget {
+        @include flexbox;
+        @include flex-direction(row);
+        @include align-items(center);
+
+        @include px(md);
+
+        > .made-with-icon {
+          height: 15px;
+          width: 15px;
+
+          transition: all $transition;
+          transition-property: color;
+
+          & + span {
+            @include px(sm);
+          }
+        }
+
+        &:hover {
+          > .made-with-icon {
+            &.heart {
+              color: material-color('red', '400');
+            }
+
+            &.vuejs {
+              color: material-color('teal', '400');
+            }
+          }
+        }
       }
     }
   }
