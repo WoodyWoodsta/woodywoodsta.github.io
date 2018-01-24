@@ -10,19 +10,19 @@
   border-bottom: 1px solid $transparent;
 
   @include theme(dark) {
-    border-bottom-color: $dark-window-border-color;
+    border-color: $dark-window-border-color;
   }
 
   @include theme(light) {
-    border-bottom-color: $light-window-border-color;
+    border-color: $light-window-border-color;
   }
 
   @include theme(red) {
-    border-bottom-color: $red-window-border-color;
+    border-color: $red-window-border-color;
   }
 
   @include theme(blue) {
-    border-bottom-color: $blue-window-border-color;
+    border-color: $blue-window-border-color;
   }
 
   & span {

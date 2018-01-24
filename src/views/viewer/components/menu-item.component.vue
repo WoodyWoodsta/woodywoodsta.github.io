@@ -1,26 +1,45 @@
 <template>
   <section class="menu-item" :class="{ active }">
     <div class="item-components-wrapper">
-      <fa-icon class="menu-item-icon" :set="view.options.set" :icon="view.options.icon"></fa-icon>
-      <span>{{ view.title }}</span>
+      <fa-icon class="menu-item-icon" :set="item.options.set" :icon="item.options.icon"></fa-icon>
+      <span>{{ item.title }}</span>
       <div class="spacer"></div>
-      <div class="theme-indicator" :class="{ [view.theme.class]: true }">
+
+      <!-- Tneme Indicator -->
+      <div class="theme-indicator" :class="_computeThemeIndicatorClass(item)"
+        v-if="item && item.theme">
         <div class="theme-indicator-outline"></div>
       </div>
+
+      <!-- External Link Indictor -->
+      <fa-icon class="item-secondary-charm" icon="external-link-square-alt"
+        v-if="_isExternaLink(item)">
+      </fa-icon>
     </div>
   </section>
 </template>
 
 <script>
+import { MENU_ITEM_TYPES } from '../../../constants/viewer';
+
 export default {
   name: 'menu-item',
 
   props: {
-    view: {
-      type: Object,
-      required: true,
-    },
+    item: Object,
     active: Boolean,
+  },
+
+  methods: {
+    _computeThemeIndicatorClass(item) {
+      if (item && item.theme && item.theme.class) {
+        return { [item.theme.class]: true };
+      }
+    },
+
+    _isExternaLink(item) {
+      return item && item.options && MENU_ITEM_TYPES.SOCIAL_LINK === item.options.type;
+    },
   },
 };
 </script>
@@ -148,6 +167,12 @@ export default {
           transition: all $transition;
           transition-property: left;
         }
+      }
+
+      > .item-secondary-charm {
+        height: 15px;
+        width: 15px;
+        opacity: 0.45;
       }
     }
 
