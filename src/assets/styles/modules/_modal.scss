@@ -1,0 +1,11 @@
+@import '../variables';
+
+.v--modal {
+  background: $dark-theme-background-lighter;
+  border: 1px solid $dark-window-border-color;
+  box-shadow: none;
+
+  &-overlay {
+    background: $dark-medium-alpha;
+  }
+}

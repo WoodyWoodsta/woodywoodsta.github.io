@@ -15,6 +15,12 @@
         <fa-icon class="made-with-icon vuejs" set="fab" icon="vuejs"></fa-icon>
       </div>
     </system-window>
+
+    <!-- Modals -->
+    <modals></modals>
+
+    <!-- SVGs -->
+    <system-svgs></system-svgs>
   </section>
 </template>
 
@@ -23,6 +29,8 @@ import { mapState, mapGetters, mapActions } from 'vuex';
 
 import * as navigationConsts from '../../constants/navigation';
 import { WINDOW_MODES } from '../../constants/system';
+
+import SystemSvgsComponent from './components/system-svgs.component.vue';
 
 export default {
   name: 'system',
@@ -51,6 +59,10 @@ export default {
         }
       }
     },
+  },
+
+  components: {
+    systemSvgs: SystemSvgsComponent,
   },
 };
 </script>

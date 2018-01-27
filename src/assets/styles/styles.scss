@@ -1,6 +1,9 @@
 /* styles.css */
 @import './variables';
 
+// Modules
+@import './modules/modal';
+
 * {
   -webkit-user-select: none;  -moz-user-select: none;  -ms-user-select: none;  user-select: none;
 }
@@ -24,7 +27,8 @@ body {
 
   -webkit-tap-highlight-color: transparent;
 
-  transition: background-color $transition-duration $transition-timing-function;
+  transition: all $transition;
+  transition-property: background-color;
 }
 
 /* make sure this is in effect pronto */

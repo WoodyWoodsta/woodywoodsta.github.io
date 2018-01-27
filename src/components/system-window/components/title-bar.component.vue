@@ -1,5 +1,6 @@
 <template>
   <section class="system-window__title-bar" :class="{ windowModePicker: windowModePicker }">
+    <!-- Traffic Lights -->
     <div class="traffic-lights-wrapper">
       <div class="traffic-light close" @click="_onTrafficLightClick('close')">
         <fa-icon class="fa-icon-component" icon="times"></fa-icon>
@@ -12,6 +13,13 @@
         <fa-icon class="fa-icon-component" icon="sort-up"></fa-icon>
       </div>
     </div>
+
+    <!-- About -->
+    <fa-button class="about-button" icon="question"
+      @click.native="_onAboutButtonClick()">
+    </fa-button>
+
+    <!-- Title -->
     <span class="spacer"></span>
     <span>{{ title }}</span>
     <span class="spacer"></span>
@@ -34,6 +42,10 @@ export default {
         type,
       });
     },
+
+    _onAboutButtonClick() {
+      this.$modal.show('about-modal');
+    },
   },
 };
 </script>
@@ -45,6 +57,7 @@ export default {
   $traffic-light-green-background: rgb(98, 197, 84);
 
   .system-window__title-bar {
+    position: relative;
     min-height: $window-title-bar-height * 2;
     border-bottom: 1px solid $transparent;
 
@@ -72,6 +85,18 @@ export default {
 
     @include theme(blue) {
       border-bottom-color: $blue-window-border-color;
+    }
+
+    &.windowModePicker {
+      min-height: $window-title-bar-height;
+
+      > .traffic-lights-wrapper {
+        @include px(sm);
+      }
+
+      > .about-button {
+        display: none;
+      }
     }
 
     > .traffic-lights-wrapper {
@@ -146,12 +171,13 @@ export default {
       }
     }
 
-    &.windowModePicker {
-      min-height: $window-title-bar-height;
+    > .about-button {
+      $button-size: 20px;
 
-      > .traffic-lights-wrapper {
-        @include px(sm);
-      }
+      position: absolute;
+      left: calc(#{$side-pane-width} - #{get-size(md)} - #{$button-size});
+      height: $button-size;
+      width: $button-size;
     }
 
     > .balancer {
