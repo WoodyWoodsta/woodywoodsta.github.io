@@ -1,5 +1,6 @@
 @import './spacing';
 @import './helpers';
+@import './breakpoints';
 @import '~sass-flex-mixin/_flex';
 @import '~sass-material-colors';
 
@@ -158,6 +159,7 @@ $app-background: $app-primary-background-color;
 
 $scrollbar-thickness: 10px;
 $side-pane-width: 300px;
+$side-pane-width-md: 200px;
 
 $sizeUnit: rem;
 $marginKey: 'm';

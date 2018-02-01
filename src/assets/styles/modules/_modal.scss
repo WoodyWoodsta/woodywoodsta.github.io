@@ -1,11 +1,27 @@
-@import '../variables';
-
 .v--modal {
-  background: $dark-theme-background-lighter;
-  border: 1px solid $dark-window-border-color;
   box-shadow: none;
 
+  @include theme(dark) {
+    background: $dark-theme-background-lighter;
+    border: 1px solid $dark-window-border-color;
+  }
+
+  @include theme(light) {
+    background: $light-theme-background-lighter;
+    border: 1px solid $light-window-border-color;
+  }
+
+  @include theme(red) {
+    background: $red-theme-background-lighter;
+    border: 1px solid $red-window-border-color;
+  }
+
+  @include theme(blue) {
+    background: $blue-theme-background-lighter;
+    border: 1px solid $blue-window-border-color;
+  }
+
   &-overlay {
-    background: $dark-medium-alpha;
+    background: $dark-strong-alpha;
   }
 }

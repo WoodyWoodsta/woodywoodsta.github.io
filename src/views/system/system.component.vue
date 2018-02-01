@@ -128,5 +128,9 @@ export default {
         }
       }
     }
+
+    @include media-breakpoint-down(sm) {
+      @include p(sm);
+    }
   }
 </style>

@@ -3,6 +3,7 @@ export const APP_IS_READY = 'APP_IS_READY';
 export const MUTATIONS = {
   SET_THEME: 'SET_THEME',
   SET_WINDOW_MODE: 'SET_WINDOW_MODE',
+  SET_SIDE_PANE_OPEN: 'SET_SIDE_PANE_OPEN',
 };
 
 export const THEMES = {

@@ -1,9 +1,9 @@
 <template>
   <modal name="about-modal" adaptive :height="'auto'">
     <section class="about-modal-container">
-      <!-- <fa-icon class="about-icon" icon="question-circle"></fa-icon> -->
+      <fa-icon class="about-icon" icon="cogs" set="fas"></fa-icon>
       <p>A portfolio intended to be a part of the portfolio itself. Portfolio-ception.</p>
-      <p>Made with the great tech available in the open source community:</p>
+      <p>Built with the great tech available in the open source community:</p>
 
       <!-- Tech grid -->
       <div class="tech-grid major">
@@ -71,15 +71,16 @@ export default {
       height: 60px;
       width: 60px;
 
-      @include mb(lg);
+      @include mb(md);
     }
 
     > .tech-grid {
       @include flexbox;
       @include flex-wrap(wrap);
+      @include justify-content(center);
 
       &.major {
-        @include mt(md);
+        @include mt(lg);
 
         > a {
           > .tech-icon {

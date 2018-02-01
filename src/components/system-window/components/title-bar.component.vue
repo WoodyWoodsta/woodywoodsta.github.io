@@ -51,6 +51,18 @@ export default {
 </script>
 
 <style lang="scss">
+  @mixin thin-title-bar {
+    min-height: $window-title-bar-height;
+
+    > .traffic-lights-wrapper {
+      @include px(sm);
+    }
+
+    > .about-button {
+      display: none;
+    }
+  }
+
   $traffic-light-size: 13px;
   $traffic-light-red-background: rgb(237, 108, 97);
   $traffic-light-amber-background: rgb(245, 190, 79);
@@ -88,15 +100,7 @@ export default {
     }
 
     &.windowModePicker {
-      min-height: $window-title-bar-height;
-
-      > .traffic-lights-wrapper {
-        @include px(sm);
-      }
-
-      > .about-button {
-        display: none;
-      }
+      @include thin-title-bar;
     }
 
     > .traffic-lights-wrapper {
@@ -171,6 +175,10 @@ export default {
       }
     }
 
+    @include media-breakpoint-down(sm) {
+      @include thin-title-bar;
+    }
+
     > .about-button {
       $button-size: 20px;
 
@@ -178,6 +186,10 @@ export default {
       left: calc(#{$side-pane-width} - #{get-size(md)} - #{$button-size});
       height: $button-size;
       width: $button-size;
+
+      @include media-breakpoint-down(md) {
+        left: calc(#{$side-pane-width-md} - #{get-size(md)} - #{$button-size});
+      }
     }
 
     > .balancer {

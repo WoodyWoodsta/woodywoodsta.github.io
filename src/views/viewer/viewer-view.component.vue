@@ -1,5 +1,5 @@
 <template>
-  <section class="viewer-view">
+  <section class="viewer-view" :class="{ sidePaneOpen }">
     <div class="side-pane-wrapper">
       <side-pane
         :views="views"
@@ -30,6 +30,7 @@ export default {
   },
   computed: {
     ...mapState('navigation', ['currentView']),
+    ...mapState('system', ['sidePaneOpen']),
   },
 
   methods: {
@@ -47,6 +48,8 @@ export default {
 </script>
 
 <style lang="scss">
+  $translate-x-width: calc(#{-$side-pane-width} + #{get-size(md)});
+
   .viewer-view {
     @include view(contained);
     @include flexbox;
@@ -54,6 +57,18 @@ export default {
 
     > .side-pane-wrapper {
       min-width: $side-pane-width;
+
+      transition: all $transition;
+      transition-property: opacity;
+
+      @include media-breakpoint-down(md) {
+        min-width: $side-pane-width-md;
+      }
+
+      @include media-breakpoint-down(sm) {
+        min-width: $side-pane-width;
+        opacity: 0;
+      }
     }
 
     > .viewer-pane {
@@ -64,7 +79,26 @@ export default {
       @include m(md);
       @include ml(none);
 
-      margin-top: calc(#{-$window-title-bar-height * 2} + #{get-size(md)});
+      transition: all $transition;
+      transition-property: transform;
+
+      @include media-breakpoint-up(md) {
+        margin-top: calc(#{-$window-title-bar-height * 2} + #{get-size(md)});
+      }
+
+      @include media-breakpoint-down(sm) {
+        margin-left: $translate-x-width;
+      }
+    }
+
+    &.sidePaneOpen {
+      > .side-pane-wrapper {
+        opacity: 1;
+      }
+
+      > .viewer-pane {
+        transform: translateX(calc(-1 * #{$translate-x-width}));
+      }
     }
   }
 </style>

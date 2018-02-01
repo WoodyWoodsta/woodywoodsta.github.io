@@ -21,4 +21,8 @@ export default {
 
     console.error(`No such window mode: ${newWindowMode}`);
   },
+
+  [MUTATIONS.SET_SIDE_PANE_OPEN]: (state, newSidePaneOpen) => {
+    state.sidePaneOpen = newSidePaneOpen;
+  },
 };

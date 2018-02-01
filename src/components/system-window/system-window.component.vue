@@ -52,6 +52,9 @@ export default {
 </script>
 
 <style lang="scss">
+  @mixin thin-title-bar {
+
+  }
   .system-window {
     height: 100%;
     width: 100%;
@@ -106,6 +109,12 @@ export default {
       > .footer-bar-component {
         margin-bottom: -$window-footer-bar-height;
         opacity: 0;
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      .client {
+        height: calc(100% - #{$window-footer-bar-height} - #{$window-title-bar-height});
       }
     }
   }
