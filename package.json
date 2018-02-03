@@ -26,6 +26,7 @@
     "vuex-router-sync": "^5.0.0"
   },
   "devDependencies": {
+    "@awt-tooling/eslint-config-awt": "^1.0.0",
     "autoprefixer": "^7.1.5",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
@@ -40,7 +41,6 @@
     "css-loader": "^0.28.7",
     "cssnano": "^3.10.0",
     "eslint": "^4.9.0",
-    "@awt-tooling/eslint-config-awt": "^1.0.0",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.7.0",
