@@ -10,7 +10,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .system-window-section {
     border: 1px solid $transparent;
     border-radius: $border-radius;

@@ -15,10 +15,10 @@
     <div class="spacer"></div>
 
     <!-- Social Menut Items -->
-    <div class="menu-item-header">
+    <div class="menu-item-header social-items">
       <span>Socials/Links</span>
     </div>
-    <div class="social-items-list-wrapper">
+    <div class="social-items-list-wrapper social-items">
       <menu-item v-for="socialLink of socialLinks" :key="socialLink.title"
         :item="socialLink"
         @click.native="_onSocialLinkClick(socialLink)">
@@ -83,6 +83,8 @@ export default {
     > .menu-item-header {
       @include section-header-bar;
 
+      @include flex-shrink(0);
+
       &:not(:first-child) {
         border-top-width: 1px;
         border-top-style: solid;
@@ -99,6 +101,23 @@ export default {
 
     > .social-items-list-wrapper {
       @include mb(lg);
+    }
+
+    > .social-items {
+      z-index: 1;
+
+      @include theme(dark) {
+        background: $dark-window-background-color;
+      }
+      @include theme(light) {
+        background: $light-window-background-color;
+      }
+      @include theme(red) {
+        background: $red-window-background-color;
+      }
+      @include theme(blue) {
+        background: $blue-window-background-color;
+      }
     }
 
     .spacer {

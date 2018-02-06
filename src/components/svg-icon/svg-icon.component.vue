@@ -19,7 +19,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   $default-size: 24px;
 
   .svg-icon {

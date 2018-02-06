@@ -10,7 +10,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .system-page {
     min-height: 100%;
     box-sizing: border-box;

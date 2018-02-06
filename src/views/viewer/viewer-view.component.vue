@@ -3,7 +3,8 @@
     <mobile-side-pane-toggle class="mobile-side-pane-toggle-component"
       :class="{ active: sidePaneOpen }"
       :active="sidePaneOpen"
-      @click.native="_onMobileSidePaneToggleClick">
+      @menu-button-click="_onMobileSidePaneMenuClick"
+      @arrow-left-button-click="_onMobileSidePaneArrowLeftClick">
     </mobile-side-pane-toggle>
 
     <!-- Horizontal Client and Side Panes -->
@@ -52,8 +53,12 @@ export default {
       this[navigationConsts.ACTIONS.NAVIGATE](view.name);
     },
 
-    _onMobileSidePaneToggleClick() {
-      this[systemConsts.MUTATIONS.SET_SIDE_PANE_OPEN](!this.sidePaneOpen);
+    _onMobileSidePaneMenuClick() {
+      this[systemConsts.MUTATIONS.SET_SIDE_PANE_OPEN](true);
+    },
+
+    _onMobileSidePaneArrowLeftClick() {
+      this[systemConsts.MUTATIONS.SET_SIDE_PANE_OPEN](false);
     },
   },
 
@@ -129,6 +134,10 @@ export default {
       > .pane-area {
         > .side-pane-wrapper {
           opacity: 1;
+
+          @include media-breakpoint-down(sm) {
+            pointer-events: all;
+          }
         }
 
         > .viewer-pane {

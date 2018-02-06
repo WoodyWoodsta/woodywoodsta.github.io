@@ -15,9 +15,7 @@
     </div>
 
     <!-- About -->
-    <fa-button class="about-button" icon="question"
-      @click.native="_onAboutButtonClick()">
-    </fa-button>
+    <about-button class="about-button-component"></about-button>
 
     <!-- Title -->
     <span class="spacer"></span>
@@ -42,10 +40,6 @@ export default {
         type,
       });
     },
-
-    _onAboutButtonClick() {
-      this.$modal.show('about-modal');
-    },
   },
 };
 </script>
@@ -58,8 +52,9 @@ export default {
       @include px(sm);
     }
 
-    > .about-button {
-      display: none;
+    > .about-button-component {
+      // HACK: Unfortunately, CSS injection order (and therefore specificity) is in issue here. https://github.com/vuejs/vue-loader/issues/808
+      display: none !important;
     }
   }
 
@@ -179,16 +174,13 @@ export default {
       @include thin-title-bar;
     }
 
-    > .about-button {
-      $button-size: 20px;
-
-      position: absolute;
-      left: calc(#{$side-pane-width} - #{get-size(md)} - #{$button-size});
-      height: $button-size;
-      width: $button-size;
+    > .about-button-component {
+      // HACK: Unfortunately, CSS injection order (and therefore specificity) is in issue here. https://github.com/vuejs/vue-loader/issues/808
+      position: absolute !important;
+      left: calc(#{$side-pane-width} - #{get-size(md)} - #{$about-button-size}) !important;
 
       @include media-breakpoint-down(md) {
-        left: calc(#{$side-pane-width-md} - #{get-size(md)} - #{$button-size});
+        left: calc(#{$side-pane-width-md} - #{get-size(md)} - #{$about-button-size}) !important;
       }
     }
 

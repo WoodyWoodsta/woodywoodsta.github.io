@@ -5,6 +5,7 @@ import faFreeRegular from '@fortawesome/fontawesome-free-regular';
 import faFreeBrands from '@fortawesome/fontawesome-free-brands';
 import VModal from 'vue-js-modal';
 
+import AboutButtonComponent from './about-button/about-button.component.vue';
 import SystemPageComponent from './system-page/system-page.component.vue';
 import SystemWindowComponent from './system-window/system-window.component.vue';
 import SystemWindowSectionComponent from './system-window-section/system-window-section.component.vue';
@@ -14,13 +15,15 @@ import FaIconComponent from './fa-icon/fa-icon.component.vue';
 import SvgIconComponent from './svg-icon/svg-icon.component.vue';
 
 const components = [
+  FaIconComponent,
+  FaButtonComponent,
+  SvgIconComponent,
+
+  AboutButtonComponent,
   SystemPageComponent,
   SystemWindowComponent,
   SystemWindowSectionComponent,
   SystemModalsComponent,
-  FaButtonComponent,
-  FaIconComponent,
-  SvgIconComponent,
 ];
 
 export default {
