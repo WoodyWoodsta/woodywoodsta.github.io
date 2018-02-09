@@ -4,6 +4,7 @@ import faFreeSolid from '@fortawesome/fontawesome-free-solid';
 import faFreeRegular from '@fortawesome/fontawesome-free-regular';
 import faFreeBrands from '@fortawesome/fontawesome-free-brands';
 import VModal from 'vue-js-modal';
+import VueMarkdown from 'vue-markdown';
 
 import AboutButtonComponent from './about-button/about-button.component.vue';
 import SystemPageComponent from './system-page/system-page.component.vue';
@@ -34,6 +35,7 @@ export default {
 
     // Install Third Party Components
     Vue.component(FontAwesomeIcon.name, FontAwesomeIcon);
+    Vue.component('vue-markdown', VueMarkdown);
     Vue.use(VModal);
 
     // Install Custom Components

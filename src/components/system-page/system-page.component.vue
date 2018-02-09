@@ -13,7 +13,9 @@ export default {
 <style lang="scss" scoped>
   .system-page {
     min-height: 100%;
+    max-width: 1000px;
     box-sizing: border-box;
+    margin: auto;
 
     @include decomposite;
     @include p(lg);

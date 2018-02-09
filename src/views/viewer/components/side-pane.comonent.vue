@@ -106,6 +106,11 @@ export default {
     > .social-items {
       z-index: 1;
 
+      transition: all $transition;
+      transition-property: background-color;
+
+      @include decomposite;
+
       @include theme(dark) {
         background: $dark-window-background-color;
       }

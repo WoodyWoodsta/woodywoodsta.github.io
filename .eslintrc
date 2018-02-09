@@ -2,6 +2,7 @@
   "parser": "babel-eslint",
   "extends": "@awt-tooling/eslint-config-awt",
   "rules": {
-    "no-console": "off"
+    "no-console": "off",
+    "class-methods-use-this": "off"
   }
 }

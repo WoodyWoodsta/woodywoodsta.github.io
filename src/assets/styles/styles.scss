@@ -36,6 +36,27 @@ body[unresolved] {
   display: none;
 }
 
+// Typography
+h1 {
+  @include mdc-typography(display1);
+}
+
+h2 {
+  @include mdc-typography(headline);
+}
+
+h3 {
+  @include mdc-typography(title);
+}
+
+h4 {
+  @include mdc-typography(subheading2);
+}
+
+h5 {
+  @include mdc-typography(subheading1);
+}
+
 @include theme(dark) {
   color: $dark-theme-color;
   background: $dark-theme-background;

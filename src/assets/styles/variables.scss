@@ -4,6 +4,10 @@
 @import '~sass-flex-mixin/_flex';
 @import '~sass-material-colors';
 
+$app-font-family-mono: 'PT Mono', monospace;
+$mdc-typography-font-family: $app-font-family-mono;
+@import '~@material/typography/mixins';
+
 // Mixins
 @import './mixins/system';
 @import './mixins/window';
@@ -153,7 +157,6 @@ $border-radius: 4px;
 /* === App Variables === */
 $app-font-size: $font-size-body;
 $app-font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$app-font-family-mono: 'PT Mono', monospace;
 $app-color: $primary-text-color;
 $app-background: $app-primary-background-color;
 

@@ -1,22 +1,53 @@
 <template>
   <section class="home-view-component">
-    <system-page class="home-view-component__system-page">
-      <h1>This is home</h1>
-      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-      The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+    <system-page class="system-page-component">
+      <img class="headshot" src="https://www.gravatar.com/avatar/4ba1f28ef88bdade0db82f950e22b941.jpg?s=150" alt="profile-gravatar">
+      <h2>{{ pageData.title }}</h2>
+      <vue-markdown :source="pageData.body"></vue-markdown>
+      <vue-markdown :source="pageData.footnotes"></vue-markdown>
     </system-page>
   </section>
 </template>
 
 <script>
+  import * as gistContent from '../../core/content/gist';
+  import * as contentConsts from '../../constants/content';
+
   export default {
     name: 'home-view',
+
+    mounted() {
+      gistContent.provider.get(contentConsts.GIST_CONTENT_TYPES.PAGES)
+        .then((data) => {
+          this.pageData = data && data.home;
+        });
+    },
+
+    data() {
+      return {
+        pageData: {},
+      };
+    },
   };
 </script>
 
 <style lang="scss">
   .home-view-component {
     @include view;
+
+    > .system-page-component {
+      @include flexbox;
+      @include flex-direction(column);
+      @include align-items(center);
+
+      text-align: center;
+
+      > .headshot {
+        border-radius: 50%;
+
+        @include mt(lg);
+        @include mb(md);
+      }
+    }
   }
 </style>
