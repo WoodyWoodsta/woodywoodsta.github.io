@@ -4,29 +4,31 @@
       <img class="headshot" src="https://www.gravatar.com/avatar/4ba1f28ef88bdade0db82f950e22b941.jpg?s=150" alt="profile-gravatar">
       <h2>{{ pageData.title }}</h2>
       <vue-markdown :source="pageData.body"></vue-markdown>
-      <vue-markdown :source="pageData.footnotes"></vue-markdown>
+
+      <h3>Tech Skills</h3>
+      <tech-skills-block :skills="pageData.techSkills"></tech-skills-block>
+
+      <vue-markdown class="footnotes" :source="pageData.footnotes"></vue-markdown>
     </system-page>
   </section>
 </template>
 
 <script>
-  import * as gistContent from '../../core/content/gist';
-  import * as contentConsts from '../../constants/content';
+  import { home } from '../../content/pages';
+
+  import TechSkillsBlockComponent from './components/tech-skills-block.component.vue';
 
   export default {
     name: 'home-view',
 
-    mounted() {
-      gistContent.provider.get(contentConsts.GIST_CONTENT_TYPES.PAGES)
-        .then((data) => {
-          this.pageData = data && data.home;
-        });
-    },
-
     data() {
       return {
-        pageData: {},
+        pageData: home,
       };
+    },
+
+    components: {
+      techSkillsBlock: TechSkillsBlockComponent,
     },
   };
 </script>
@@ -34,6 +36,7 @@
 <style lang="scss">
   .home-view-component {
     @include view;
+    overflow-x: hidden;
 
     > .system-page-component {
       @include flexbox;
@@ -47,6 +50,10 @@
 
         @include mt(lg);
         @include mb(md);
+      }
+
+      > .footnotes {
+        @include mt(xl);
       }
     }
   }

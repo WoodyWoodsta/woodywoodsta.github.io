@@ -20,6 +20,6 @@ $window-footer-bar-height: 30px;
 }
 
 @mixin decomposite() {
-  transform: translateZ(0);
+  transform: translateZ(0) scale(1.0, 1.0);
   backface-visibility: hidden;
 }

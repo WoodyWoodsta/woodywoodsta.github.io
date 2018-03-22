@@ -3,6 +3,7 @@
   "extends": "@awt-tooling/eslint-config-awt",
   "rules": {
     "no-console": "off",
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "max-len": ["error", { "ignoreStrings": true, "code": 130 }]
   }
 }
