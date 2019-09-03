@@ -19,8 +19,11 @@
 .about-icon {
   height: 16px;
   width: 16px;
-  margin-right: var(--margin-thin);
   fill: currentColor;
+}
+
+.about-leader {
+  margin-left: var(--margin-thin);
 }
 
 .wrapper > span,

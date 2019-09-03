@@ -61,8 +61,8 @@ const mapDispatchToProps = dispatch => ({
   changeTheme: (theme) => {
     dispatch(changeTheme(theme));
   },
-  updateScroll: (pos) => {
-    dispatch(updateScroll(pos));
+  updateScroll: (...args) => {
+    dispatch(updateScroll(...args));
   },
 });
 

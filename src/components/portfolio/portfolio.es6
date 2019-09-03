@@ -43,7 +43,7 @@ export class Portfolio extends Component {
         </div>
         <div styleName="scroll-to-top-wrapper" className={this.props.scroll.isAtTop ? 'hidden' : ''}>
           <FloatingButton onClick={ this._onScrollToTopClick }>
-            <ReactSVG path="assets/icons/chevron-double-up.svg" styleName="scroll-to-top-icon"></ReactSVG>
+            <ReactSVG src="assets/icons/chevron-double-up.svg" styleName="scroll-to-top-icon"></ReactSVG>
           </FloatingButton>
         </div>
         { this._computeToastEl() }
@@ -58,7 +58,7 @@ export class Portfolio extends Component {
 
   _onScroll(event) {
     // TODO: Improve scrolling perf. Consider lowering the frequency of these updates
-    this.props.updateScroll({ y: event.target.scrollTop });
+    this.props.updateScroll({ y: event.target.scrollTop }, this.props.scroll);
   }
 
   _onScrollToTopClick() {
