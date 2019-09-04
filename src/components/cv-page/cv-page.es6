@@ -13,83 +13,41 @@ export class CVPage extends Component {
     this.md = `
 # Tech Experience
 
-##### Material Design
-
-- Understanding and use of Material Design UI patterns and principles.
-- Designed, built and implemented expressive, functional, intuitive web application controls and elements like desktop and mobile drawer panels, headers, buttons, form elements, modals etc.
-
-##### Responsive, Cross-platform Ethos
-
-- Business applications usable on mobile and desktop, in the browser, Electron or NW.js containers and native mobile webviews.
-- Designed responsive architectures maintaining platform and form-factor agnosticism.
-
-##### Modern Modular Web architectures
-
-- Built context-aware document elements and templates.
-- Built reusable components with styling and data-flow APIs.
-- Built plug-in Javascript DOM libraries and helper modules.
-
-##### Progressive Web Applications
-
-- Developed against W3C CustomElements v1 and ServiceWorker specifications.
-- Supporter of web 1st class mobile citizen applications.
-- Implemented ServiceWorker providing intelligent module and resource caching.
-
-##### Accessibility
-- Built polyfill loader for above modern web features.
-
-##### React
-- Built global application theming and UA aware hooks for React.
-- Portfolio built with React: [**https://woodywoodsta.github.io/**](https://woodywoodsta.github.io/)
-
-##### Flux and Redux
-- Implemented Flux principles using Redux. Configurations include multi-store and single-store architectures, state selection, custom middleware, reducer combinations and more.
-
-##### Google Polymer
-- Built complete client-facing business application.
-- Designed and built responsive and modular application shell architecture with lazy loaded plugin interop including ShadowDOM friendly theming and style module architecture leveraging brand-new CSS features (Custom Properties, Mixins).
-- Developed front end web application for a University thesis project found at: [**https://github.com/WoodyWoodsta/mars-rover-rsvp-client**](https://github.com/WoodyWoodsta/mars-rover-rsvp-client)
-
-##### Angular
-- University robotics project. Developed a mobile application for an IoT enabled robot.
-
-##### Koa and Express
-- Built around web application server processes.
-
-##### Electron and NW.js
-- Implemented business applications in Electron and Node Webkit using transparent and frameless windows.
-- Packaged applications for cross-platform installation.
-
-##### Babel, Rollup, Browserify and Webpack
-- Implemented real-time multimedia broadcast for University robotics thesis found at: [**https://github.com/WoodyWoodsta/mars-rover**](https://github.com/WoodyWoodsta/mars-rover).
-- Built synchronised, remote data stores for IoT devices and robotics.
-
-##### Javascript (ES5/6/7)
-- Node.js and web applications.
-- Written CLI applications with node, including user input, project management and build.
-- Built Rete data validation system leveraging inferencing algorithms.
-
-##### HTML5 and CSS3
-- Web application front ends.
-- Native CustomElements and vanilla JS DOM solutions.
-
-##### Embedded C (Including RTOS)
-- Multiple robotics projects.
-- Wrote driver for UART-USB, two-way, structured data communication including WiFi module support (SPI).
-
-##### MATLAB
-- Statistical analysis projects as well as computational intelligence work (neural networks, regression).
-
+- *FRAMEWORKS:* React Native • React • Vue • Angular (2+) • Google Polymer • Handlebars • Electron • Express.js • IBM Loopback
+- *LANGUAGES:* Javascript (ES5/6/7/next) • Typescript • CSS • SASS • Stylus • HTML5 • Markdown • Ruby • Java • Objective-C
+- *STATE MANAGEMENT:* Redux • Redux Saga • RxJs • Vuex
+- *RUNTIMES:* Node.js
+- *SUPPORTING MODULES/SERVICES:* Jest • Mocha • Chai • Google Maps • Contentful • JOI • Chalk • date-fns • Moment.js • Lottie • lodash • Supertest • Commander • Socket.io • Koa • GraphQL • Sentry • Axios • Firebase • and many more!
+- *DEVELOPMENT TOOLING/SERVICES:* Docker • Teamcity • Gitlab • Gitea • Github • Bitbucket • DroneCI • Firebase • Webpack • Metro • ESLint • TSLint • Babel • Fastlane • Azure Devops • AppCenter
+- *MISC TOOLING:* NPM • Yarn • Nodemon • NDB
+- *TEAM MANAGEMENT:* Jira • Trello • Glo Boards • Agile
+- *BEFORE 9AM + AFTER 6PM:* C++ • C • Matlab • Python • Embedded Systems • RTOS • Most of the Adobe Suite • Photography (both land and aerial, still and motion)
 
 ---
 
 # Work Experience
 
+- **Senior React Native and Full Stack Developer | Oliver Wyman, London, UK**
+
+  _January 2018 – September 2019_
+
+  Contract position leading the development of a React Native application for a large German energy provider. The app has thousands of daily users and was placed in the top 8 consumer apps in Germany.
+
+  I was trusted with core feature development, feature maintenance, analytics and a complete conversion of the application codebase from Flow annotations to Typescript. The rewrite drew on understanding complex type-space relationships between components and state, through higher order component interfaces, and between the application and third-party projects/services. On top of that, I designed and implemented the iOS and Android store deployment and rollout flows.
+
+  The role also included architectural guidance and continued development of two responsive Angular front-end solutions, Express.js modular marketing website and a Node.js integration backend layer interfacing with external services. I played a pivotal role in re-designing workflows and processes across the stack, from the start of design to development and thereafter, which included a custom-built flavour of Git Flow to facilitate a multi-stage, multi-environment release process molded around the project management workflow.
+
+- **Full Stack Developer | Draw Group, London, UK**
+
+  _March 2017 – January 2018_
+
+  Developer and owner of a Node.js service integration layer servicing multiple applications, abstracting backend nodes in a distributed network for a large energy supplier in Germany. Work included the development of an administrative and customer support frontend for the same service, and significant architectural design and implementation work on both marketing and customer frontends.
+
 - **Lead Front End/UX Software Engineer | Advanced Apps PTY LTD.**
 
-  _July 2016 – february 2017_
+  _July 2016 – February 2017_
 
-  Part-time (July-November, during studies) and full-time (November-February) management of the development of front end components in business applications. Design and development included cross-platform, cross-form-factor web applications involving in-browser and in-shell platforms. The work involved large portions of the back-end Node.js components which drew on technologies such as GraphQL, ArangoDB and Koa. Front end architecture embraced leading edge web specifications via the use of Google Polymer (2.0), wide range of supporting technologies and tooling and modern, progressive design principles such as Google's Material Design.
+  Part-time (July-November) and full-time (November-February) management of the development of front-end components in business applications. Design and development included cross-platform, cross-form-factor web applications involving in-browser and in-shell platforms. The work involved large portions of the back-end Node.js components which drew on technologies such as GraphQL, ArangoDB and Koa.js. Front end architecture embraced leading edge web specifications via the use of Google Polymer (2.0), wide range of supporting technologies and tooling, and modern, progressive design principles such as Google's Material Design.
 
 - **Front End Designer | Advanced Apps PTY Ltd.**
 
@@ -117,12 +75,6 @@ export class CVPage extends Component {
   _Degree - BSc Eng in Mechatronics_
 
   2013 – 2016
-
-- **Port Shepstone High School | Port Shepstone, KZN, South Africa**
-
-  _High School (National Senior Certificate)_
-
-  2008 – 2012
 `;
   }
 

@@ -108,7 +108,7 @@ export class Header extends Component {
         <Menu
           styleName="menu"
           navigateToPage={this.props.navigateToPage}
-          updateScroll={this.props.updateScroll}
+          updateScroll={pos => this.props.updateScroll(pos, this.props.scroll)}
           page={this.props.nav.page}>
         </Menu>
       </div>

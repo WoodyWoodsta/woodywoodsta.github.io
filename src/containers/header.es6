@@ -17,8 +17,8 @@ const mapDispatchToProps = dispatch => ({
   navigateToPage: (page) => {
     dispatch(navigateToPage(page));
   },
-  updateScroll: (pos) => {
-    dispatch(updateScroll(pos));
+  updateScroll: (...args) => {
+    dispatch(updateScroll(...args));
   },
   updateLoadingState: (state) => {
     dispatch(updateLoadingState(state));

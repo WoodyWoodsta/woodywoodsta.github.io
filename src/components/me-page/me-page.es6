@@ -12,24 +12,66 @@ export class MePage extends Component {
   constructor(props) {
     super(props);
 
-    this.skills = ['Javascript',
-      'ES6',
-      'Google Polymer',
+    this.skills = [
+      'React Native',
       'React',
+      'Vue',
+      'Angular',
+      'Handlebars',
+      'Electron',
+      'IBM Loopback',
+      'Javascript',
+      'TypeScript',
+      'Google Polymer',
       'HTML5',
+      'Markdown',
+      'Ruby',
+      'Java',
+      'Objective-C',
       'CSS',
+      'SASS',
+      'Stylus',
       'Redux',
+      'Redux Saga',
+      'RxJs',
+      'Vuex',
+      'Node',
+      'Jest',
+      'Mocha',
+      'Chai',
+      'Google Maps',
+      'Contentful',
+      'JOI',
+      'Chalk',
+      'date-fns',
+      'Moment.js',
+      'Lottie',
+      'lodash',
+      'Supertest',
+      'Commander',
+      'Socket.io',
+      'Koa',
+      'GraphQL',
+      'Sentry',
+      'Axios',
+      'Firebase',
       'PWA',
       'SPA',
-      'Angular',
       'Babel',
       'Rollup',
       'Browserify',
       'Webpack',
-      'Electron',
       'NW.js',
       'Koa.js',
       'Express',
+      'NPM',
+      'Yarn',
+      'Nodemon',
+      'NDB',
+      'Jira',
+      'Trello',
+      'Glo Boards',
+      'Agile',
       'WebRTC',
       'Kurento',
       'Socket.io',
@@ -46,7 +88,7 @@ export class MePage extends Component {
       <Page showing={this.props.selected} styleName="page">
         <img styleName="headshot" src="/assets/images/headshot.png"/>
         <h1>About Me</h1>
-        <p>Graduate Mechatronics Engineer (BSc in Engineering in Mechatronics) from the University of Cape Town, South Africa. I am a huge fan of innovative thinking and enjoy mixing this way of seeing the world with creativity in a manner which uplifts others. I rise up to life challenges and practice this in juggling hard work with keeping fit, learning new tricks and skills, freelance graphic design and music. I turn down conventional thinking and substitute it with the will to find a better way!</p>
+        <p>Innovative thinker and problem solver. Well-exercised (hardened) in the world of Javascript. I work hard, communicate effectively and take pride in producing quality solutions and products from concepts whilst maintaining a focus on business objectives and team dynamic. My engineering background gives me the fundamentals of problem rationalisation and solution design, while my digital art and photography hobbies develop upon my eye for aesthetics. The two work well together across the stack, and I often borrow principles from all disciplines when developing.</p>
 
         <div className="page-divider-wrapper">
           <div className="page-divider"></div>
@@ -62,12 +104,12 @@ export class MePage extends Component {
         <div styleName="social-buttons-wrapper" className="layout horizontal center center-justified wrap">
           <a href="https://www.linkedin.com/in/woodywoodsta/" target="noopener">
             <FloatingButton>
-              <ReactSVG path="assets/icons/linkedin.svg" styleName="social-svg"></ReactSVG>
+              <ReactSVG src="assets/icons/linkedin.svg" styleName="social-svg"></ReactSVG>
             </FloatingButton>
           </a>
           <a href="https://github.com/WoodyWoodsta" target="noopener">
             <FloatingButton>
-              <ReactSVG path="assets/icons/github.svg" styleName="social-svg"></ReactSVG>
+              <ReactSVG src="assets/icons/github.svg" styleName="social-svg"></ReactSVG>
             </FloatingButton>
           </a>
         </div>

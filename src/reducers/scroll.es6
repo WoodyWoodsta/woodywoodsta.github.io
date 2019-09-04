@@ -11,7 +11,7 @@ const initialState = Immutable({
   isAtTop: true,
 });
 
-export const scrollReducer = (state = initialState, action) => {
+export const scrollReducer = (state = initialState, action, ...otherArgs) => {
   switch (action.type) {
     case UPDATE_SCROLL: {
       // Flag non-zero scroll position
@@ -20,7 +20,7 @@ export const scrollReducer = (state = initialState, action) => {
       // Prevent unnecessary state change. Cap the Y position at SCROLL_THRESHOLD
       if (action.pos.y <= SCROLL_THRESHOLD) {
         return _state.merge({ pos: action.pos });
-      } else if (store.getState().scroll.pos.y !== SCROLL_THRESHOLD) {
+      } else if (action.scroll.pos.y !== SCROLL_THRESHOLD) {
         return _state.merge({ pos: { y: SCROLL_THRESHOLD } });
       }
 
